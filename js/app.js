@@ -13,3 +13,22 @@ setInterval(function () {
     document.getElementById("current-time").innerHTML =
       year + " - " + hours + ":" + minutes + ":" + seconds;
   }, 1000); // Update every second
+
+
+
+
+  document.addEventListener('mousemove', function(e) {
+    var customCursor = document.querySelector('.custom-cursor');
+    customCursor.style.left = e.clientX + 'px';
+    customCursor.style.top = e.clientY + 'px';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var body = document.querySelector('body');
+    body.style.cursor = 'none'; // Hide default cursor when the page is loaded
+});
+
+
+
+
+
