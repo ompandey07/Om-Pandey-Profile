@@ -32,7 +32,12 @@
 
     <!-- Remix Icons -->
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       rel="stylesheet"
     />
 
@@ -266,28 +271,86 @@
           <h1 class="text-6xl md:text-8xl font-bold mb-8">
             They <span class="gradient-text">Call me</span> Spark
           </h1>
-          <p id="blinking-text" class="text-xl text-gray-400 max-w-2xl mx-auto">
-            Welcome to my digital playground! Get ready for a rollercoaster ride
-            through pixels, code, and quirky humor.
-          </p>
-          <script>
-            // Get the text element by its ID
-            const textElement = document.getElementById("blinking-text");
+          <div class="font-mono text-lg max-w-3xl mx-auto px-4">
+            <pre class="text-left">
+        <span class="text-pink-500/80">const</span> <span class="text-indigo-500/80">introduction</span> <span class="text-gray-400/60">=</span> <span class="text-green-500/80">async</span> () <span class="text-gray-400/60">=></span> <span class="text-gray-400/60">{</span>
+          <span class="text-pink-500/80">return</span> <span id="typed-text" class="text-yellow-500/80"></span><span class="typing-cursor">|</span>
+        <span class="text-gray-400/60">}</span></pre>
+          </div>
+        </div>
 
-            // Set a variable for the blink speed (in milliseconds)
-            let blinkSpeed = 200; // Change this value to adjust the blink speed (lower is faster)
+        <style>
+          @keyframes blink {
+            0%,
+            100% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0;
+            }
+          }
 
-            // Function to create the blinking effect
-            function blinkText() {
-              // Randomize the opacity slightly to create a flickering effect
-              let opacity = Math.random() * (1 - 0.7) + 0.7; // Random opacity between 0.7 and 1
-              textElement.style.opacity = opacity;
+          .typing-cursor {
+            animation: blink 1s step-end infinite;
+            color: rgba(255, 255, 255, 0.4);
+          }
+        </style>
+
+        <script>
+          const messages = [
+            '"I make cool things with code, like building digital magic! ✨💻"',
+            '"I turn coffee into code, because that’s how I get my superpowers! ☕⚡"',
+            '"When I write code, I’m creating little adventures on the screen! 🎮💻"',
+            '"Code is like a puzzle, and I love solving it! 🧩👨‍💻"',
+            '"I build things that make people smile, one line of code at a time! 😊💻"',
+          ];
+          let currentMessageIndex = 0;
+          let currentCharIndex = 0;
+          let isDeleting = false;
+          const uniformSpeed = 100; // Uniform speed for all actions
+          const pauseTime = 3000; // Pause between messages
+
+          function typeText() {
+            const typedElement = document.getElementById("typed-text");
+            const currentMessage = messages[currentMessageIndex];
+
+            if (isDeleting) {
+              typedElement.textContent = currentMessage.substring(
+                0,
+                currentCharIndex - 1
+              );
+              currentCharIndex--;
+            } else {
+              typedElement.textContent = currentMessage.substring(
+                0,
+                currentCharIndex + 1
+              );
+              currentCharIndex++;
             }
 
-            // Set the interval to make the text blink at the specified speed
-            setInterval(blinkText, blinkSpeed);
-          </script>
-        </div>
+            // Determine next timeout
+            let timeout = uniformSpeed;
+
+            // Check if completed typing
+            if (!isDeleting && currentCharIndex === currentMessage.length) {
+              isDeleting = true;
+              timeout = pauseTime;
+            }
+
+            // Check if completed deleting
+            if (isDeleting && currentCharIndex === 0) {
+              isDeleting = false;
+              currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+            }
+
+            setTimeout(typeText, timeout);
+          }
+
+          // Start the typing effect with a delay
+          document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeText, 1500);
+          });
+        </script>
 
         <!-- Animated Circle with Image -->
         <div class="relative flex justify-center items-center">
@@ -429,9 +492,7 @@
             <!-- Center Image -->
             <div class="absolute inset-0 flex items-center justify-center">
               <div class="relative w-72 h-72">
-                <div
-                  class="absolute "
-                ></div>
+                <div class="absolute"></div>
                 <img
                   src="Profile/ProfileWIthBg.jpg"
                   alt="Profile"
@@ -493,6 +554,7 @@
         animation: spin-reverse-slow 35s linear infinite;
       }
     </style>
+    <!-- Hero Section - Complete -->
 
     <!-- Recent Works -->
     <section class="py-20 relative">
@@ -504,15 +566,21 @@
       <div class="max-w-7xl mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-4">
-            <img src="images/works.gif" alt="Works" class="w-16 h-16" />
+          <div class="inline-flex items-center gap-6">
             <div>
               <h2
                 class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent"
               >
                 Featured Projects
               </h2>
-              <p class="text-gray-400 mt-2">Showcasing my digital creations</p>
+              <div class="mt-2 font-mono text-sm text-gray-400/60">
+                <span class="text-pink-500/60">const</span>
+                <span class="text-indigo-500/60">showcase</span>
+                <span class="text-gray-400/60">=</span>
+                <span class="text-green-500/60"
+                  >"Creating digital experiences that matter"</span
+                ><span class="text-gray-400/60">;</span>
+              </div>
             </div>
           </div>
         </div>
@@ -770,91 +838,105 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-20 relative">
-      <div class="max-w-7xl mx-auto px-4">
-        <!-- Main Container -->
-        <div class="flex flex-col items-start gap-12 md:gap-16">
-          <!-- Header -->
-          <div class="flex items-center w-full gap-8">
-            <img
-              src="images/wine.gif"
-              alt="Profile"
-              class="w-24 h-24 object-cover"
-            />
-            <div>
-              <h3 class="text-2xl font-bold">Om Pandey</h3>
-              <p class="text-gray-400">Full Stack Developer</p>
+    <section class="py-20 relative overflow-hidden">
+      <!-- Background Effects -->
+      <div class="absolute inset-0 grid-pattern opacity-10"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <!-- Header -->
+        <div class="flex items-center gap-3 mb-16">
+          <i class="ri-user-3-line text-xl text-gray-100"></i>
+          <div>
+            <h2 class="text-xl font-bold text-gray-100">ABOUT ME</h2>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid md:grid-cols-12 gap-16 items-start">
+          <!-- Image Side -->
+          <div class="md:col-span-5 lg:col-span-4">
+            <div class="sticky top-20">
+              <!-- Profile Image -->
+              <div class="relative">
+                <div class="absolute"></div>
+                <img
+                  src="Profile/Hero.gif"
+                  alt="Profile"
+                  class="relative w-full aspect-square object-cover"
+                />
+              </div>
+
+              <!-- Quick Info -->
+              <div class="mt-8 space-y-4">
+                <div class="bg-white/[0.02] p-4 flex items-center gap-3">
+                  <i class="ri-map-pin-line text-pink-500"></i>
+                  <span class="text-sm text-gray-300">Based in Nepal</span>
+                </div>
+                <div class="bg-white/[0.02] p-4 flex items-center gap-3">
+                  <i class="ri-time-line text-indigo-500"></i>
+                  <span class="text-sm text-gray-300">Full-time Available</span>
+                </div>
+                <div class="bg-white/[0.02] p-4 flex items-center gap-3">
+                  <i class="ri-global-line text-green-500"></i>
+                  <span class="text-sm text-gray-300">Open to Remote Work</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Content Grid -->
-          <div class="grid md:grid-cols-5 gap-12">
-            <!-- Image Side -->
-            <div class="md:col-span-2">
-              <div class="sticky top-20">
-                <img
-                  src="Progres/new.gif"
-                  alt="Profile"
-                  class="w-full aspect-square object-cover"
-                />
-                <a
-                  href="https://www.linkedin.com/in/om-pandey-511818277/"
-                  target="_blank"
-                  class="mt-6 inline-flex items-center text-gray-400 hover:text-white group"
-                >
-                  <span>Connect on LinkedIn</span>
-                  <i
-                    class="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform"
-                  ></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Text Side -->
-            <div class="md:col-span-3 space-y-8">
-              <div class="text-gray-300 space-y-6">
-                <p class="leading-relaxed text-lg">
-                  Hey there, I'm Om Pandey, hailing from the beautiful nation of
-                  Nepal! When I'm not soaking in the serenity of the Himalayas,
-                  you can find me diving headfirst into the exhilarating world
-                  of web development.
+          <!-- Text Content -->
+          <div class="md:col-span-7 lg:col-span-8">
+            <div class="space-y-8">
+              <!-- Introduction -->
+              <div class="space-y-6 text-gray-300">
+                <p class="text-2xl font-light leading-relaxed">
+                  Hey there! I'm a passionate Full Stack Developer from the
+                  beautiful landscapes of Nepal 🏔️, where coding meets
+                  creativity!
                 </p>
 
                 <p class="leading-relaxed">
-                  With a passion for pixels and a knack for code, I'm fluent in
-                  HTML, CSS, JavaScript, Python, Django, MySQL, React, Node.js,
-                  GSAP, Bootstrap, and Tailwind - basically, I speak the
-                  language of the internet!
+                  When I'm not soaking in the serenity of the Himalayas, you can
+                  find me diving headfirst into the exhilarating world of web
+                  development 💻. My journey in tech is fueled by curiosity and
+                  a love for crafting digital experiences that make a
+                  difference.
                 </p>
 
                 <p class="leading-relaxed">
-                  But it's not all serious business - I believe laughter is the
-                  best debugging tool, and my code has been known to carry a
-                  hint of humor (and the occasional Easter egg). When I'm not
-                  crafting digital masterpieces, you might catch me attempting
-                  to teach my cat Python or debating the merits of pineapple on
-                  pizza (spoiler: it's a hard no).
+                  I bring a unique blend of technical expertise and creative
+                  problem-solving to every project. Whether it's building robust
+                  backend systems or crafting intuitive user interfaces, I'm
+                  always excited to take on new challenges 🚀.
                 </p>
 
                 <p class="leading-relaxed">
-                  So, welcome to my corner of the web! Let's build something
-                  awesome together - with a sprinkle of laughter along the way!
+                  But it's not all serious business - I believe in adding a
+                  touch of humor to everything I do! When I'm not crafting
+                  digital masterpieces, you might find me attempting to teach my
+                  cat to code (spoiler: not going well 😄) or exploring new
+                  technologies with a cup of Nepali tea ☕.
+                </p>
+
+                <p class="leading-relaxed">
+                  Let's create something amazing together! Whether you have a
+                  specific project in mind or just want to explore
+                  possibilities, I'm always open to new adventures in the
+                  digital realm 🌟.
                 </p>
               </div>
 
-              <!-- Tech Stack -->
-              <div class="border-t border-white/10 pt-8"></div>
-
-              <!-- Bottom Link -->
-              <div class="flex items-center gap-4 pt-4">
-                <img src="images/explore.gif" alt="Explore" class="w-12 h-12" />
-                <a
-                  href="https://www.linkedin.com/in/om-pandey-511818277/"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white"
-                >
-                  Explore More
-                </a>
+              <!-- Bottom Section -->
+              <div class="pt-8 border-t border-white/10">
+                <div class="bg-white/[0.02] p-6">
+                  <pre class="text-xs font-mono text-gray-400/60">
+              <span class="text-pink-500/60">function</span> <span class="text-indigo-500/60">getMotivation</span>() {
+                <span class="text-pink-500/60">return</span> <span class="text-green-500/60">"Why do programmers prefer dark mode? Because light attracts bugs! 🐛"</span>;
+              }</pre>
+                </div>
               </div>
             </div>
           </div>
@@ -862,7 +944,14 @@
       </div>
     </section>
 
-    <!-- Services Section -->
+    <style>
+      .grid-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      }
+    </style>
+    <!-- About Section -->
+
+    <!-- Skiils Sections -->
     <section class="py-20 relative overflow-hidden">
       <!-- Animated Background -->
       <div class="absolute inset-0">
@@ -880,301 +969,168 @@
         <div class="absolute inset-0 bg-grid-white/[0.02]"></div>
       </div>
 
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="max-w-7xl mx-auto relative z-10 cursor-pointer">
         <!-- Section Header -->
-        <div class="text-center mb-20">
-          <img
-            src="images/whati.gif"
-            alt="Services"
-            class="w-40 mx-auto mb-8"
-          />
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            Crafting Digital
-            <span class="relative">
-              <span class="absolute -top-1 -left-1 text-gray-500 opacity-20"
-                >Excellence</span
-              >
-              <span class="relative gradient-text">Excellence</span>
-            </span>
-          </h2>
-          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-            Transforming ideas into digital awesomeness, one byte at a time!
-            Let's code, laugh, and create wonders together! 💻😄
-          </p>
+        <div class="flex items-center gap-3 mb-12">
+          <i class="ri-tools-fill text-xl text-gray-100"></i>
+          <h2 class="text-xl font-bold text-gray-100">SKILLS</h2>
         </div>
 
-        <!-- Services Display -->
-        <div class="flex flex-col items-center">
-          <!-- Web Development -->
-          <div class="w-full mb-24">
-            <div class="relative">
-              <!-- Large Number Background -->
-              <div
-                class="absolute -left-20 -top-40 text-[200px] font-bold text-gray-500/5"
-              >
-                01
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Web Design & Development -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-code-s-slash-line text-xl text-blue-500"></i>
               </div>
-
-              <div class="flex flex-col md:flex-row items-center gap-12">
-                <!-- Service Image -->
-                <div class="md:w-1/2">
-                  <div class="relative group">
-                    <div
-                      class="absolute -inset-1 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                    ></div>
-                    <div
-                      class="relative glass p-8 min-h-[400px] flex items-center justify-center"
-                    >
-                      <img
-                        src="images/webdeve.gif"
-                        alt="Web Development"
-                        class="w-64 h-64 object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Service Content -->
-                <div class="md:w-1/2 space-y-6">
-                  <div class="flex items-center gap-4 mb-6">
-                    <div
-                      class="w-12 h-12 rounded-full glass flex items-center justify-center"
-                    >
-                      <i
-                        class="ri-code-s-slash-line text-2xl gradient-text"
-                      ></i>
-                    </div>
-                    <h3 class="text-3xl font-bold">Web Development</h3>
-                  </div>
-
-                  <p class="text-gray-400 text-lg leading-relaxed">
-                    Specializing in sleek, user-friendly websites that make your
-                    brand shine online. Let's create a digital masterpiece
-                    tailored just for you!
-                  </p>
-
-                  <!-- Tech Stack -->
-                  <div class="flex flex-wrap gap-4 mt-8">
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/html.gif"
-                        alt="HTML"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">HTML5</span>
-                    </div>
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/css-3.png"
-                        alt="CSS"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">CSS3</span>
-                    </div>
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/javascript.gif"
-                        alt="JavaScript"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">JavaScript</span>
-                    </div>
-                  </div>
-                </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  Web Design & Development
+                </h3>
+                <p class="text-xs text-gray-500 truncate">
+                  (HTML, CSS, JavaScript, TypeScript)
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- E-commerce -->
-          <div class="w-full mb-24">
-            <div class="relative">
-              <!-- Large Number Background -->
-              <div
-                class="absolute -right-20 -top-40 text-[200px] font-bold text-gray-500/5"
-              >
-                02
+          <!-- Frontend Javascript Frameworks -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-angularjs-line text-xl text-red-500"></i>
               </div>
-
-              <div
-                class="flex flex-col-reverse md:flex-row items-center gap-12"
-              >
-                <!-- Service Content -->
-                <div class="md:w-1/2 space-y-6">
-                  <div class="flex items-center gap-4 mb-6">
-                    <div
-                      class="w-12 h-12 rounded-full glass flex items-center justify-center"
-                    >
-                      <i
-                        class="ri-shopping-cart-2-line text-2xl gradient-text"
-                      ></i>
-                    </div>
-                    <h3 class="text-3xl font-bold">E-commerce Solutions</h3>
-                  </div>
-
-                  <p class="text-gray-400 text-lg leading-relaxed">
-                    Designing and developing e-commerce sites that turn clicks
-                    into customers. Let's build your online store and boost your
-                    sales.
-                  </p>
-
-                  <!-- Tech Stack -->
-                  <div class="flex flex-wrap gap-4 mt-8">
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/reactjs.gif"
-                        alt="React"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">React</span>
-                    </div>
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/nodejs.gif"
-                        alt="Node.js"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">Node.js</span>
-                    </div>
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/mongodb.gif"
-                        alt="MongoDB"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">MongoDB</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Service Image -->
-                <div class="md:w-1/2">
-                  <div class="relative group">
-                    <div
-                      class="absolute -inset-1 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                    ></div>
-                    <div
-                      class="relative glass p-8 min-h-[400px] flex items-center justify-center"
-                    >
-                      <img
-                        src="images/Eccomerce.gif"
-                        alt="E-commerce"
-                        class="w-64 h-64 object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  Frontend Javascript Frameworks
+                </h3>
+                <p class="text-xs text-gray-500 truncate">
+                  (Angular, React, Vue.js, Svelte)
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Web Design -->
-          <div class="w-full">
-            <div class="relative">
-              <!-- Large Number Background -->
-              <div
-                class="absolute -left-20 -top-40 text-[200px] font-bold text-gray-500/5"
-              >
-                03
+          <!-- Backend Python Frameworks -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-server-line text-xl text-green-500"></i>
               </div>
-
-              <div class="flex flex-col md:flex-row items-center gap-12">
-                <!-- Service Image -->
-                <div class="md:w-1/2">
-                  <div class="relative group">
-                    <div
-                      class="absolute -inset-1 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                    ></div>
-                    <div
-                      class="relative glass p-8 min-h-[400px] flex items-center justify-center"
-                    >
-                      <img
-                        src="images/Design.gif"
-                        alt="Web Design"
-                        class="w-64 h-64 object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Service Content -->
-                <div class="md:w-1/2 space-y-6">
-                  <div class="flex items-center gap-4 mb-6">
-                    <div
-                      class="w-12 h-12 rounded-full glass flex items-center justify-center"
-                    >
-                      <i class="ri-paint-brush-line text-2xl gradient-text"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold">Web Design</h3>
-                  </div>
-
-                  <p class="text-gray-400 text-lg leading-relaxed">
-                    Crafting captivating web designs that make your brand
-                    unforgettable. Let's create a stunning online presence that
-                    truly reflects your vision!
-                  </p>
-
-                  <!-- Tech Stack -->
-                  <div class="flex flex-wrap gap-4 mt-8">
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/bootstarp.gif"
-                        alt="Bootstrap"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">Bootstrap</span>
-                    </div>
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img
-                        src="Experties/docker.gif"
-                        alt="Docker"
-                        class="w-6 h-6"
-                      />
-                      <span class="text-sm">Docker</span>
-                    </div>
-                    <div
-                      class="glass px-4 py-2 rounded-full flex items-center gap-2"
-                    >
-                      <img src="Experties/sql.gif" alt="SQL" class="w-6 h-6" />
-                      <span class="text-sm">SQL</span>
-                    </div>
-                  </div>
-                </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  Backend Python Frameworks
+                </h3>
+                <p class="text-xs text-gray-500 truncate">(Python, Django)</p>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Bottom Code Comment -->
-        <div class="text-center mt-20">
-          <div class="inline-block glass px-8 py-4">
-            <code class="text-sm text-gray-400">
-              <span class="text-pink-500">/**</span>
-              <span class="text-gray-400">
-                Building digital experiences that leave a lasting impression
-              </span>
-              <span class="text-pink-500">*/</span>
-            </code>
+          <!-- Cross Platform App Development -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-smartphone-line text-xl text-purple-500"></i>
+              </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  Cross Platform App Development
+                </h3>
+                <p class="text-xs text-gray-500 truncate">
+                  (Dart, Flutter, Firebase)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scripting Frameworks -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-terminal-box-line text-xl text-yellow-500"></i>
+              </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  Scripting Frameworks
+                </h3>
+                <p class="text-xs text-gray-500 truncate">
+                  (Python, Rust, Selenium, Puppeteer)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database Management System -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-database-2-line text-xl text-blue-500"></i>
+              </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  Database Management System
+                </h3>
+                <p class="text-xs text-gray-500 truncate">
+                  (Postgres, TypeORM, MongoDB, Mongoose)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search Engine Optimization -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-search-line text-xl text-green-500"></i>
+              </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  Search Engine Optimization
+                </h3>
+                <p class="text-xs text-gray-500 truncate">
+                  (PageRank, Backlinks, Google Analytics)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- UI/UX Design -->
+          <div
+            class="border border-gray-800 p-3 h-[72px] hover:border-gray-700 transition-colors duration-300 flex flex-col justify-center w-[320px]"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-paint-brush-line text-xl text-pink-500"></i>
+              </div>
+              <div class="overflow-hidden">
+                <h3 class="text-sm font-medium text-gray-100 truncate">
+                  UI/UX Design
+                </h3>
+                <p class="text-xs text-gray-500 truncate">
+                  (Adobe XD, Figma, Sketch)
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- service styles -->
+
     <style>
       @keyframes blob {
         0% {
@@ -1206,145 +1162,130 @@
       .bg-grid-white {
         background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
       }
+
+      @media (max-width: 1024px) {
+        .w-\[320px\] {
+          width: 100%;
+        }
+      }
     </style>
+    <!-- Skiils Sections -->
 
     <!-- Education Section -->
-    <section class="py-20 relative">
+    <section class="py-20 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4">
         <!-- Header -->
-        <div class="flex items-center gap-6 mb-16">
-          <img src="images/education.gif" alt="Education" class="w-16 h-16" />
+        <div class="flex items-center gap-3 mb-16">
+          <i class="ri-graduation-cap-line text-xl text-gray-100"></i>
           <div class="flex-1">
-            <h2 class="text-2xl font-bold">Educational Journey</h2>
+            <h2 class="text-xl font-bold text-gray-100">EDUCATION</h2>
             <div class="flex items-center gap-4 mt-2">
-              <span class="text-gray-400">Academic Background</span>
+              <span class="text-gray-500">Academic Background</span>
               <div class="flex-1 h-px bg-white/10"></div>
               <a
                 href="/images/Resume.pdf"
                 target="_blank"
                 class="text-sm text-gray-400 hover:text-white flex items-center gap-2"
               >
-                View Resume
-                <i class="ri-arrow-right-line"></i>
+                View Resume <i class="ri-arrow-right-line"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Timeline -->
-        <div class="space-y-12">
+        <!-- Education List -->
+        <div class="space-y-4">
           <!-- Bachelor's -->
-          <div class="flex gap-8 group">
-            <!-- Left Content -->
-            <div class="w-48 flex-shrink-0 pt-1">
-              <div class="text-sm text-gray-400">CURRENT</div>
-              <div class="text-xl mt-1">Bachelor's</div>
-            </div>
-
-            <!-- Timeline Line -->
-            <div class="relative flex flex-col items-center flex-shrink-0">
-              <div
-                class="w-3 h-3 bg-white/20 group-hover:bg-indigo-500 rounded-full transition-colors"
-              ></div>
-              <div class="w-px h-full bg-white/10 translate-y-3"></div>
-            </div>
-
-            <!-- Right Content -->
-            <div class="flex-1 bg-white/5 p-8">
-              <div class="flex items-start gap-8">
-                <div class="flex-1">
-                  <h3 class="text-xl font-semibold">
-                    Ganesh Man Singh Multiple Campus
-                  </h3>
-                  <p class="text-gray-400 mt-2">Currently Enrolled</p>
-                </div>
+          <div
+            class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors group"
+          >
+            <div class="flex p-6">
+              <div class="w-48 flex-shrink-0">
+                <div class="text-sm text-gray-400">CURRENT</div>
+                <div class="text-xl font-medium mt-1">Bachelor's</div>
                 <img
                   src="images/ganeshclint.png"
                   alt="GMS Campus"
-                  class="w-16 h-16 object-contain"
+                  class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
                 />
+              </div>
+              <div class="w-px bg-white/10 mx-8 relative">
+                <div
+                  class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-indigo-500 transition-colors"
+                ></div>
+              </div>
+              <div class="flex-1 pt-1">
+                <h3 class="text-xl font-medium">
+                  Ganesh Man Singh Multiple Campus
+                </h3>
+                <p class="text-gray-400 mt-2">Currently Enrolled</p>
+                <div class="text-sm text-gray-500 mt-4">
+                  Computer Science and Information Technology
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Higher Secondary -->
-          <div class="flex gap-8 group">
-            <!-- Left Content -->
-            <div class="w-48 flex-shrink-0 pt-1">
-              <div class="text-sm text-gray-400">2020 - 2022</div>
-              <div class="text-xl mt-1">H.S.E.B</div>
-            </div>
-
-            <!-- Timeline Line -->
-            <div class="relative flex flex-col items-center flex-shrink-0">
-              <div
-                class="w-3 h-3 bg-white/20 group-hover:bg-indigo-500 rounded-full transition-colors"
-              ></div>
-              <div class="w-px h-full bg-white/10 translate-y-3"></div>
-            </div>
-
-            <!-- Right Content -->
-            <div class="flex-1 bg-white/5 p-8">
-              <div class="flex items-start gap-8">
-                <div class="flex-1">
-                  <h3 class="text-xl font-semibold">
-                    St.Xavier's Secondary School
-                  </h3>
-                  <p class="text-gray-400 mt-2">Completed with GPA: 3.11</p>
-                  <div
-                    class="mt-4 inline-flex items-center text-sm text-white/60"
-                  >
-                    <i class="ri-check-line mr-2"></i>
-                    Graduated with Computer major
-                  </div>
-                </div>
+          <div
+            class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors group"
+          >
+            <div class="flex p-6">
+              <div class="w-48 flex-shrink-0">
+                <div class="text-sm text-gray-400">2020 - 2022</div>
+                <div class="text-xl font-medium mt-1">H.S.E.B</div>
                 <img
                   src="images/stx.png"
                   alt="St. Xavier's"
-                  class="w-16 h-16 object-contain"
+                  class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
                 />
+              </div>
+              <div class="w-px bg-white/10 mx-8 relative">
+                <div
+                  class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-indigo-500 transition-colors"
+                ></div>
+              </div>
+              <div class="flex-1 pt-1">
+                <h3 class="text-xl font-medium">
+                  St.Xavier's Secondary School
+                </h3>
+                <p class="text-gray-400 mt-2">Completed with GPA: 3.11</p>
+                <div class="text-sm text-gray-500 mt-4 flex items-center gap-2">
+                  <i class="ri-check-line"></i>
+                  Graduated with Computer major
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Secondary -->
-          <div class="flex gap-8 group">
-            <!-- Left Content -->
-            <div class="w-48 flex-shrink-0 pt-1">
-              <div class="text-sm text-gray-400">2018 - 2020</div>
-              <div class="text-xl mt-1">S.L.C</div>
-            </div>
-
-            <!-- Timeline Line -->
-            <div class="relative flex flex-col items-center flex-shrink-0">
-              <div
-                class="w-3 h-3 bg-white/20 group-hover:bg-indigo-500 rounded-full transition-colors"
-              ></div>
-              <div
-                class="w-px h-full bg-white/10 translate-y-3 opacity-0"
-              ></div>
-            </div>
-
-            <!-- Right Content -->
-            <div class="flex-1 bg-white/5 p-8">
-              <div class="flex items-start gap-8">
-                <div class="flex-1">
-                  <h3 class="text-xl font-semibold">
-                    Maisthan Bidyapeeth Secondary School
-                  </h3>
-                  <p class="text-gray-400 mt-2">Completed with GPA: 3.20</p>
-                  <div
-                    class="mt-4 inline-flex items-center text-sm text-white/60"
-                  >
-                    <i class="ri-check-line mr-2"></i>
-                    Secondary Education Certificate
-                  </div>
-                </div>
+          <div
+            class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors group"
+          >
+            <div class="flex p-6">
+              <div class="w-48 flex-shrink-0">
+                <div class="text-sm text-gray-400">2018 - 2020</div>
+                <div class="text-xl font-medium mt-1">S.L.C</div>
                 <img
                   src="images/school.png"
                   alt="School"
-                  class="w-16 h-16 object-contain"
+                  class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
                 />
+              </div>
+              <div class="w-px bg-white/10 mx-8 relative">
+                <div
+                  class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-indigo-500 transition-colors"
+                ></div>
+              </div>
+              <div class="flex-1 pt-1">
+                <h3 class="text-xl font-medium">
+                  Maisthan Bidyapeeth Secondary School
+                </h3>
+                <p class="text-gray-400 mt-2">Completed with GPA: 3.20</p>
+                <div class="text-sm text-gray-500 mt-4 flex items-center gap-2">
+                  <i class="ri-check-line"></i>
+                  Secondary Education Certificate
+                </div>
               </div>
             </div>
           </div>
@@ -1352,12 +1293,15 @@
 
         <!-- Bottom Note -->
         <div class="mt-16 flex justify-center">
-          <div class="inline-flex items-center gap-4 bg-white/5 px-6 py-3">
-            <i class="ri-github-line"></i>
-            <span class="text-sm text-gray-400"
-              >Continuous learning & growth</span
+          <div class="flex items-center gap-4 bg-white/[0.02] px-6 py-3">
+            <span class="text-xs font-mono text-green-500">const</span>
+            <span class="text-xs font-mono text-blue-500"
+              >continuousLearning</span
             >
-            <i class="ri-linkedin-line"></i>
+            =
+            <span class="text-xs font-mono text-pink-500"
+              >"Continuous learning & growth"</span
+            >;
           </div>
         </div>
       </div>
@@ -1373,564 +1317,457 @@
 
       <div class="max-w-7xl mx-auto px-4 relative z-10">
         <!-- Section Header -->
-        <div class="text-center mb-20">
-          <img
-            src="/images/dancing.gif"
-            alt="Certifications"
-            class="w-40 mx-auto mb-8"
-          />
-          <h2 class="text-4xl font-bold mb-4">Achievements & Certifications</h2>
-          <p class="text-gray-400 text-lg">Milestones in my tech journey 🚀</p>
-          <div class="wave">
-            <svg class="w-24 mx-auto">
-              <path
-                d="M10,10 L50,100 L90,50"
-                stroke="#0389ff"
-                fill="none"
-                class="stroke-2"
-              ></path>
-            </svg>
-          </div>
+        <div class="flex items-center gap-3 mb-16">
+          <i class="ri-trophy-line text-xl text-gray-100"></i>
+          <h2 class="text-xl font-bold text-gray-100">CERTIFICATIONS</h2>
         </div>
 
-        <!-- Timeline Container -->
-        <div class="relative">
-          <!-- Center Timeline Line with Gradient -->
-          <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1">
-            <div
-              class="h-full w-full bg-gradient-to-b from-indigo-500 via-pink-500 to-indigo-500 animate-pulse"
-            ></div>
-          </div>
-
-          <!-- Timeline Items -->
-          <div class="space-y-24">
-            <!-- Django Developer -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 text-right">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    Django Developer
-                  </h3>
-                  <p class="text-gray-400">
-                    Completed a two-month <b>Django</b> course with
-                    certifications in web development. Ready to tackle new
-                    challenges with expertise.
-                  </p>
-                </div>
+        <!-- Certifications List -->
+        <div class="space-y-4">
+          <!-- Django Developer -->
+          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+            <div class="flex items-center p-4">
+              <div
+                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
+              >
+                <i class="ri-code-box-line text-2xl text-indigo-500"></i>
               </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 glass border-4 border-indigo-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-code-box-line text-2xl text-indigo-500"></i>
-                </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-white">Django Developer</h3>
+                <p class="text-gray-500 text-sm">
+                  Two-month Django course with certifications
+                </p>
               </div>
-              <div class="w-1/2 pl-16">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/Django.jpg"
-                    alt="Django"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Django Proficiency -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 flex justify-end">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/character.jpg"
-                    alt="Django Proficiency"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 rounded-full glass border-4 border-pink-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-award-line text-2xl text-pink-500"></i>
-                </div>
-              </div>
-              <div class="w-1/2 pl-16">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    Django Proficiency
-                  </h3>
-                  <p class="text-gray-400">
-                    Received a <b>Performance Certificate in Django</b>,
-                    showcasing proficiency in web development utilizing the
-                    Django framework.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Frontend Development -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 text-right">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    Frontend Development
-                  </h3>
-                  <p class="text-gray-400">
-                    Received a Certificate in <b>Frontend Development</b>,
-                    showcasing proficiency in web development utilizing the
-                    Frontend Development framework.
-                  </p>
-                </div>
-              </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 rounded-full glass border-4 border-indigo-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-layout-line text-2xl text-indigo-500"></i>
-                </div>
-              </div>
-              <div class="w-1/2 pl-16">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/HTML.jpg"
-                    alt="Frontend"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Python Uses -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 flex justify-end">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/Python.jpg"
-                    alt="Python"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 rounded-full glass border-4 border-pink-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-python-line text-2xl text-pink-500"></i>
-                </div>
-              </div>
-              <div class="w-1/2 pl-16">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    Python Expert
-                  </h3>
-                  <p class="text-gray-400">
-                    Received a Certificate in <b>Python Development</b>,
-                    showcasing proficiency in utilizing Python for various
-                    applications.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- MERN STACK -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 text-right">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    MERN Stack
-                  </h3>
-                  <p class="text-gray-400">
-                    Completed a two-month <b>MERNSTACK</b> course with
-                    certifications in web development. Ready to tackle new
-                    challenges with expertise.
-                  </p>
-                </div>
-              </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 rounded-full glass border-4 border-indigo-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-reactjs-line text-2xl text-indigo-500"></i>
-                </div>
-              </div>
-              <div class="w-1/2 pl-16">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/MERN.jpg"
-                    alt="MERN"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- ChatGPT -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 flex justify-end">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/Linuxx.jpg"
-                    alt="ChatGPT"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 rounded-full glass border-4 border-pink-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-robot-line text-2xl text-pink-500"></i>
-                </div>
-              </div>
-              <div class="w-1/2 pl-16">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    ChatGPT Expert
-                  </h3>
-                  <p class="text-gray-400">
-                    Received a Certificate in <b>ChatGPT for Beginners</b>,
-                    showcasing proficiency in utilizing ChatGPT for various
-                    applications.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Linux Operations -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 text-right">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    Linux Operations
-                  </h3>
-                  <p class="text-gray-400">
-                    Received a Certificate in Linux Operations, showcasing
-                    proficiency in utilizing <b>Linux</b> for various tasks and
-                    operations.
-                  </p>
-                </div>
-              </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 rounded-full glass border-4 border-indigo-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-terminal-box-line text-2xl text-indigo-500"></i>
-                </div>
-              </div>
-              <div class="w-1/2 pl-16">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-pink-500 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/Linuxx.jpg"
-                    alt="Linux"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Anaconda Python -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <div class="w-1/2 pr-16 flex justify-end">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="images/Anaconda.jpg"
-                    alt="Anaconda"
-                    class="relative w-full h-48 object-cover"
-                  />
-                </div>
-              </div>
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 glass border-4 border-pink-500 flex items-center justify-center animate-pulse"
-                >
-                  <i class="ri-database-2-line text-2xl text-pink-500"></i>
-                </div>
-              </div>
-              <div class="w-1/2 pl-16">
-                <div class="glass p-6  inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">
-                    Anaconda Python
-                  </h3>
-                  <p class="text-gray-400">
-                    Received a Certificate in Anaconda Python, showcasing
-                    proficiency in utilizing Anaconda Python for data science
-                    applications.
-                  </p>
+              <div class="text-right">
+                <span class="text-xs text-gray-500">CERTIFIED</span>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Bottom Decoration -->
-        <div class="text-center mt-20">
-          <div class="inline-block glass px-8 py-4 ">
-            <p class="text-gray-400">
-              <span class="gradient-text font-bold">const</span> journey =
-              <span class="text-pink-500">'never</span>.<span
-                class="text-indigo-500"
-                >stop</span
-              >.<span class="text-pink-500">learning</span>'
-            </p>
+          <!-- Frontend Development -->
+          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+            <div class="flex items-center p-4">
+              <div
+                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
+              >
+                <i class="ri-layout-line text-2xl text-pink-500"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-white">
+                  Frontend Development
+                </h3>
+                <p class="text-gray-500 text-sm">
+                  Advanced web development and modern frameworks
+                </p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-gray-500">CERTIFIED</span>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Python Expert -->
+          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+            <div class="flex items-center p-4">
+              <div
+                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
+              >
+                <i class="fa-brands fa-python text-2xl text-blue-500"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-white">Python Expert</h3>
+                <p class="text-gray-500 text-sm">
+                  Advanced Python programming and applications
+                </p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-gray-500">CERTIFIED</span>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MERN Stack -->
+          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+            <div class="flex items-center p-4">
+              <div
+                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
+              >
+                <i class="ri-reactjs-line text-2xl text-cyan-500"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-white">
+                  MERN Stack Developer
+                </h3>
+                <p class="text-gray-500 text-sm">
+                  Full-stack development with MERN technologies
+                </p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-gray-500">CERTIFIED</span>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Linux Operations -->
+          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+            <div class="flex items-center p-4">
+              <div
+                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
+              >
+                <i class="ri-terminal-box-line text-2xl text-yellow-500"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-white">Linux Operations</h3>
+                <p class="text-gray-500 text-sm">
+                  System administration and Linux operations
+                </p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-gray-500">CERTIFIED</span>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ChatGPT Expert -->
+          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+            <div class="flex items-center p-4">
+              <div
+                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
+              >
+                <i class="ri-robot-line text-2xl text-purple-500"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-white">ChatGPT Expert</h3>
+                <p class="text-gray-500 text-sm">
+                  AI applications and ChatGPT implementations
+                </p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-gray-500">CERTIFIED</span>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anaconda Python -->
+          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+            <div class="flex items-center p-4">
+              <div
+                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
+              >
+                <i class="ri-database-2-line text-2xl text-green-500"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium text-white">Anaconda Python</h3>
+                <p class="text-gray-500 text-sm">
+                  Data science with Anaconda Python
+                </p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-gray-500">CERTIFIED</span>
+                <div class="mt-1 flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section - Complete -->
+    <style>
+      .grid-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      }
+    </style>
+    <!-- Certifications Section -->
+
+    <!-- Programing Section - Complete -->
     <section class="py-20 relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4">
+      <!-- Background Effects -->
+      <div class="absolute inset-0 grid-pattern opacity-10"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-pink-500/5 to-transparent"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
         <!-- Section Header -->
-        <div class="text-center mb-16">
-          <img
-            src="/images/working.gif"
-            alt="Skills"
-            class="w-40 mx-auto mb-8"
-          />
-          <h2 class="text-4xl font-bold mb-4">Technical Weapons</h2>
-          <div  class="border border-b-gray-800 border-transparent" ></div>
+        <div class="flex items-center gap-3 mb-16">
+          <i class="ri-tools-fill text-xl text-gray-100"></i>
+          <div>
+            <h2 class="text-xl font-bold text-gray-100">TECHNICAL SKILLS</h2>
+          </div>
         </div>
 
-        <!-- Skills Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 ">
-          <!-- Python -->
-          <div class="skill-circle group">
-            <div class="relative">
+        <!-- Skills Categories -->
+        <div class="space-y-12">
+          <!-- Frontend Technologies -->
+          <div class="space-y-6">
+            <div class="text-sm text-gray-400">FRONTEND TECHNOLOGIES</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
               >
-                <img
-                  src="Experties/Python.gif"
-                  alt="Python"
-                  class="w-16 h-16"
-                />
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/html.gif"
+                    alt="HTML"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">HTML</div>
+                  <div class="text-xs text-gray-500">Web Structure</div>
+                </div>
               </div>
+
               <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">Python</p>
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/css-3.png"
+                    alt="CSS"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">CSS</div>
+                  <div class="text-xs text-gray-500">Styling</div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/javascript.gif"
+                    alt="JavaScript"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">JavaScript</div>
+                  <div class="text-xs text-gray-500">Programming</div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/reactjs.gif"
+                    alt="React"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">React</div>
+                  <div class="text-xs text-gray-500">Framework</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Django -->
-          <div class="skill-circle group">
-            <div class="relative">
+          <!-- Backend Technologies -->
+          <div class="space-y-6">
+            <div class="text-sm text-gray-400">BACKEND TECHNOLOGIES</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
               >
-                <img
-                  src="Experties/Django.gif"
-                  alt="Django"
-                  class="w-16 h-16"
-                />
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/Python.gif"
+                    alt="Python"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">Python</div>
+                  <div class="text-xs text-gray-500">Programming</div>
+                </div>
               </div>
+
               <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">Django</p>
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/Django.gif"
+                    alt="Django"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">Django</div>
+                  <div class="text-xs text-gray-500">Framework</div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/nodejs.gif"
+                    alt="Node.js"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">Node.js</div>
+                  <div class="text-xs text-gray-500">Runtime</div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/sql.gif"
+                    alt="SQL"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">SQL</div>
+                  <div class="text-xs text-gray-500">Database</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- MongoDB -->
-          <div class="skill-circle group">
-            <div class="relative">
+          <!-- Development Tools -->
+          <div class="space-y-6">
+            <div class="text-sm text-gray-400">DEVELOPMENT TOOLS</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
               >
-                <img
-                  src="Experties/mongodb.gif"
-                  alt="MongoDB"
-                  class="w-16 h-16"
-                />
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/docker.gif"
+                    alt="Docker"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">Docker</div>
+                  <div class="text-xs text-gray-500">Containerization</div>
+                </div>
               </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">MongoDB</p>
-            </div>
-          </div>
 
-          <!-- React -->
-          <div class="skill-circle group">
-            <div class="relative">
               <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
               >
-                <img
-                  src="Experties/reactjs.gif"
-                  alt="React"
-                  class="w-16 h-16"
-                />
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/npm.webp"
+                    alt="NPM"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">NPM</div>
+                  <div class="text-xs text-gray-500">Package Manager</div>
+                </div>
               </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">React</p>
-            </div>
-          </div>
 
-          <!-- Node.js -->
-          <div class="skill-circle group">
-            <div class="relative">
               <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
               >
-                <img
-                  src="Experties/nodejs.gif"
-                  alt="Node.js"
-                  class="w-16 h-16"
-                />
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/mongodb.gif"
+                    alt="MongoDB"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">MongoDB</div>
+                  <div class="text-xs text-gray-500">Database</div>
+                </div>
               </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">Node.js</p>
-            </div>
-          </div>
 
-          <!-- Bootstrap -->
-          <div class="skill-circle group">
-            <div class="relative">
               <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
               >
-                <img
-                  src="Experties/bootstarp.gif"
-                  alt="Bootstrap"
-                  class="w-16 h-16"
-                />
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
+                >
+                  <img
+                    src="Experties/bootstarp.gif"
+                    alt="Bootstrap"
+                    class="w-8 h-8 group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div>
+                  <div class="font-medium">Bootstrap</div>
+                  <div class="text-xs text-gray-500">UI Framework</div>
+                </div>
               </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">Bootstrap</p>
-            </div>
-          </div>
-
-          <!-- HTML -->
-          <div class="skill-circle group">
-            <div class="relative">
-              <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-              >
-                <img src="Experties/html.gif" alt="HTML" class="w-16 h-16" />
-              </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">HTML</p>
-            </div>
-          </div>
-
-          <!-- CSS -->
-          <div class="skill-circle group">
-            <div class="relative">
-              <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-              >
-                <img src="Experties/css-3.png" alt="CSS" class="w-16 h-16" />
-              </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">CSS</p>
-            </div>
-          </div>
-
-          <!-- JavaScript -->
-          <div class="skill-circle group">
-            <div class="relative">
-              <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-              >
-                <img
-                  src="Experties/javascript.gif"
-                  alt="JavaScript"
-                  class="w-16 h-16"
-                />
-              </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">JavaScript</p>
-            </div>
-          </div>
-
-          <!-- NPM -->
-          <div class="skill-circle group">
-            <div class="relative">
-              <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-              >
-                <img src="Experties/npm.webp" alt="NPM" class="w-16 h-16" />
-              </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">NPM</p>
-            </div>
-          </div>
-
-          <!-- SQL -->
-          <div class="skill-circle group">
-            <div class="relative">
-              <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-              >
-                <img src="Experties/sql.gif" alt="SQL" class="w-16 h-16" />
-              </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">SQL</p>
-            </div>
-          </div>
-
-          <!-- Docker -->
-          <div class="skill-circle group">
-            <div class="relative">
-              <div
-                class="w-32 h-32 mx-auto rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-              >
-                <img
-                  src="Experties/docker.gif"
-                  alt="Docker"
-                  class="w-16 h-16"
-                />
-              </div>
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-20 blur transition-opacity"
-              ></div>
-              <p class="text-center mt-4 font-medium">Docker</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <style>
+      .grid-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      }
+    </style>
+    <!-- Programing Section - Complete -->
 
     <!-- Daily Routine Section - Complete -->
     <section class="py-20 relative overflow-hidden">
@@ -1941,179 +1778,96 @@
       ></div>
 
       <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <!-- Section Header -->
-        <div class="text-center mb-20">
-          <img
-            src="images/smart.gif"
-            alt="Daily Routine"
-            class="w-40 mx-auto mb-8"
-          />
-          <h2 class="text-4xl font-bold mb-4">Life of a Developer</h2>
-          <p class="text-gray-400 text-lg mb-4">
-            Coder by day, comedian by night. Let's turn tech troubles into
-            triumphs with a sprinkle of humor and a lot of code!
-          </p>
-          <div class="wave">
-            <svg class="w-24 mx-auto">
-              <path
-                d="M10,10 L50,100 L90,50"
-                stroke="#0389ff"
-                fill="none"
-                class="stroke-2"
-              ></path>
-            </svg>
+        <!-- Header -->
+        <div class="flex items-center gap-3 mb-16">
+          <i class="ri-code-line text-xl text-gray-100"></i>
+          <div>
+            <h2 class="text-xl font-bold text-gray-100">LIFE LINE</h2>
           </div>
         </div>
 
-        <!-- Timeline Container -->
-        <div class="relative">
-          <!-- Center Timeline Line with Gradient -->
-          <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1">
-            <div
-              class="h-full w-full bg-gradient-to-b from-indigo-500 via-pink-500 to-indigo-500 animate-pulse"
-            ></div>
-          </div>
-
-          <!-- Timeline Items -->
-          <div class="space-y-24">
-            <!-- Eat Section -->
-            <div class="relative flex items-center" data-aos="fade-up">
-              <!-- Left Content -->
-              <div class="w-1/2 pr-16 text-right">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">Eat</h3>
-                  <p class="text-gray-400">
+        <!-- Routine Items -->
+        <div class="grid grid-cols-[1fr_auto_1fr] gap-8">
+          <!-- Left Side -->
+          <div class="space-y-40">
+            <!-- Eat -->
+            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
+                >
+                  <img src="Progres/eat.gif" alt="Eat" class="w-10 h-10" />
+                </div>
+                <div>
+                  <div class="text-sm text-indigo-500">08:00 AM</div>
+                  <h3 class="text-lg font-medium mt-1">Eat</h3>
+                  <p class="text-gray-400 text-sm mt-2">
                     Fueling creativity, one byte at a time 🍕
                   </p>
                 </div>
               </div>
-
-              <!-- Center Icon -->
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                <div
-                  class="w-16 h-16 rounded-full glass border-4 border-indigo-500 flex items-center justify-center animate-pulse"
-                >
-                  <img src="Progres/eat.gif" alt="Eat" class="w-10 h-10" />
-                </div>
-              </div>
-
-              <!-- Right Image -->
-              <div class="w-1/2 pl-16">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="Progres/eat.gif"
-                    alt="Eat Animation"
-                    class="relative w-48 h-48 object-cover rounded-lg"
-                  />
-                </div>
-              </div>
             </div>
 
-            <!-- Sleep Section -->
-            <div
-              class="relative flex items-center"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <!-- Left Image -->
-              <div class="w-1/2 pr-16 flex justify-end">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="Progres/sleep.gif"
-                    alt="Sleep Animation"
-                    class="relative w-48 h-48 object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-
-              <!-- Center Icon -->
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+            <!-- Code -->
+            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
+              <div class="flex items-center gap-6">
                 <div
-                  class="w-16 h-16 rounded-full glass border-4 border-pink-500 flex items-center justify-center animate-pulse"
+                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
                 >
-                  <img src="Progres/sleep.gif" alt="Sleep" class="w-10 h-10" />
+                  <img src="Progres/code.gif" alt="Code" class="w-10 h-10" />
                 </div>
-              </div>
-
-              <!-- Right Content -->
-              <div class="w-1/2 pl-16">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">Sleep</h3>
-                  <p class="text-gray-400">Debugging dreams in sleep mode 😴</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Code Section -->
-            <div
-              class="relative flex items-center"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <!-- Left Content -->
-              <div class="w-1/2 pr-16 text-right">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">Code</h3>
-                  <p class="text-gray-400">
+                <div>
+                  <div class="text-sm text-indigo-500">09:00 AM</div>
+                  <h3 class="text-lg font-medium mt-1">Code</h3>
+                  <p class="text-gray-400 text-sm mt-2">
                     Where magic happens, bugs disappear 💻
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <!-- Center Icon -->
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+          <!-- Center Line -->
+          <div class="relative flex flex-col items-center">
+            <div
+              class="w-px h-full bg-gradient-to-b from-indigo-500 via-pink-500 to-indigo-500"
+            ></div>
+            <div
+              class="absolute top-[25%] w-4 h-4 bg-indigo-500 rotate-45 transform -translate-x-1/2"
+            ></div>
+            <div
+              class="absolute top-[50%] w-4 h-4 bg-pink-500 rotate-45 transform -translate-x-1/2"
+            ></div>
+            <div
+              class="absolute top-[75%] w-4 h-4 bg-indigo-500 rotate-45 transform -translate-x-1/2"
+            ></div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="space-y-40 pt-40">
+            <!-- Sleep -->
+            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
+              <div class="flex items-center gap-6">
                 <div
-                  class="w-16 h-16 rounded-full glass border-4 border-indigo-500 flex items-center justify-center animate-pulse"
+                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
                 >
-                  <img src="Progres/code.gif" alt="Code" class="w-10 h-10" />
+                  <img src="Progres/sleep.gif" alt="Sleep" class="w-10 h-10" />
                 </div>
-              </div>
-
-              <!-- Right Image -->
-              <div class="w-1/2 pl-16">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="Progres/code.gif"
-                    alt="Code Animation"
-                    class="relative w-48 h-48 object-cover rounded-lg"
-                  />
+                <div>
+                  <div class="text-sm text-pink-500">12:00 AM</div>
+                  <h3 class="text-lg font-medium mt-1">Sleep</h3>
+                  <p class="text-gray-400 text-sm mt-2">
+                    Debugging dreams in sleep mode 😴
+                  </p>
                 </div>
               </div>
             </div>
 
-            <!-- Repeat Section -->
-            <div
-              class="relative flex items-center"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <!-- Left Image -->
-              <div class="w-1/2 pr-16 flex justify-end">
-                <div class="relative group">
-                  <div
-                    class="absolute -inset-1 blur opacity-25 group-hover:opacity-75 transition duration-1000"
-                  ></div>
-                  <img
-                    src="Progres/repeet.gif"
-                    alt="Repeat Animation"
-                    class="relative w-48 h-48 object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-
-              <!-- Center Icon -->
-              <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+            <!-- Repeat -->
+            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
+              <div class="flex items-center gap-6">
                 <div
-                  class="w-16 h-16 rounded-full glass border-4 border-pink-500 flex items-center justify-center animate-pulse"
+                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
                 >
                   <img
                     src="Progres/repeet.gif"
@@ -2121,33 +1875,58 @@
                     class="w-10 h-10"
                   />
                 </div>
-              </div>
-
-              <!-- Right Content -->
-              <div class="w-1/2 pl-16">
-                <div class="glass p-6 inline-block">
-                  <h3 class="text-2xl font-bold gradient-text mb-3">Repeat</h3>
-                  <p class="text-gray-400">Because excellence is a habit 🔄</p>
+                <div>
+                  <div class="text-sm text-pink-500">24/7</div>
+                  <h3 class="text-lg font-medium mt-1">Repeat</h3>
+                  <p class="text-gray-400 text-sm mt-2">
+                    Because excellence is a habit 🔄
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Bottom Decoration -->
-        <div class="text-center mt-20">
-          <div class="inline-block glass px-8 py-4">
-            <p class="text-gray-400">
-              <span class="gradient-text font-bold">while</span>(awake) {
-              <span class="text-pink-500">code</span>.<span
-                class="text-indigo-500"
-                >improve</span
-              >() }
-            </p>
+        <!-- Progress Bar -->
+        <div class="mt-20">
+          <div class="max-w-md mx-auto">
+            <div
+              class="flex items-center justify-between mb-2 text-sm text-gray-400"
+            >
+              <span>Progress</span>
+              <span>∞</span>
+            </div>
+            <div class="h-1 bg-white/[0.02]">
+              <div
+                class="w-3/4 h-full bg-gradient-to-r from-indigo-500 to-pink-500"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Code -->
+        <div class="text-center mt-16">
+          <div class="inline-block bg-white/[0.02] px-8 py-4">
+            <code class="text-sm font-mono">
+              <span class="text-pink-500">function</span>
+              <span class="text-gray-400">devLife</span>
+              <span class="text-gray-400">() {</span>
+              <span class="text-indigo-500">return</span>
+              <span class="text-gray-400">'</span>
+              <span class="text-green-500">passion + persistence</span>
+              <span class="text-gray-400">'}</span>
+            </code>
           </div>
         </div>
       </div>
     </section>
+
+    <style>
+      .grid-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      }
+    </style>
+    <!-- Daily Routine Section - Complete -->
 
     <!-- Testimonials Section -->
     <section class="py-20 relative">
@@ -2155,13 +1934,18 @@
         <!-- Header -->
         <div class="flex items-center justify-between mb-16">
           <div class="flex items-center gap-6">
-            <img src="images/saying.gif" alt="Testimonials" class="w-16 h-16" />
             <div>
-              <h2 class="text-2xl font-bold">Client Feedback</h2>
-              <p class="text-gray-400 mt-1">Words from collaborators</p>
+              <h2>
+                <span class="text-green-500 text-sm font-mono">const</span>
+                <span class="text-blue-500 text-sm font-mono">feedback =</span>
+                <span class="text-pink-500 text-sm font-mono"
+                  >"Client Feedback"</span
+                >
+              </h2>
+              <div class="border border-b-gray-800 border-transparent"></div>
             </div>
           </div>
-          <div  class="border border-b-gray-800 border-transparent" ></div>
+          <div class="border border-b-gray-800 border-transparent"></div>
           <div
             class="hidden md:block h-px w-32 bg-gradient-to-r from-transparent via-gray-500 to-transparent"
           ></div>
@@ -2309,219 +2093,338 @@
 
         <!-- Bottom Decoration -->
         <div class="mt-16 flex justify-center">
-          <div class="bg-white/[0.02] px-6 py-3 text-sm text-gray-400">
-            Real feedback from real clients
+          <div class="inline-block bg-white/[0.02] px-8 py-4">
+            <code class="text-sm font-mono">
+              <span class="text-pink-500">const</span>
+              <span class="text-gray-400">feedback</span>
+              <span class="text-gray-400">=</span>
+              <span class="text-gray-400">'</span>
+              <span class="text-green-500"
+                >Authentic feedback from authentic clients</span
+              >
+              <span class="text-gray-400">'</span>;
+            </code>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20 relative diagonal-pattern">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <img
-            src="images/contact.gif"
-            alt="Contact"
-            class="w-40 mx-auto mb-8"
-          />
-          <p class="text-gray-400 text-xl">Available for work. Get in touch</p>
+    <section class="py-20 relative overflow-hidden">
+      <!-- Background Effects -->
+      <div class="absolute inset-0 grid-pattern opacity-10"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"
+      ></div>
+
+      <div class="max-w-3xl mx-auto px-4 relative z-10">
+        <!-- Attractive Header -->
+        <div class="text-center mb-20">
+          <div class="flex items-center justify-center mb-6 space-x-4">
+            <i
+              class="ri-code-box-line text-4xl bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent"
+            ></i>
+            <i class="ri-arrow-right-line text-2xl text-gray-400"></i>
+            <i
+              class="ri-chat-smile-2-line text-4xl bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent"
+            ></i>
+          </div>
+          <h2 class="text-3xl font-bold mb-4">
+            Let's Build Something Amazing Together
+          </h2>
+          <div class="mt-6 flex justify-center gap-2 text-gray-400 text-sm">
+            <span class="flex items-center gap-2">
+              <i class="ri-checkbox-circle-line text-green-500"></i>
+              Available for Projects
+            </span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
+            <span class="flex items-center gap-2">
+              <i class="ri-time-line text-blue-500"></i>
+              Quick Response
+            </span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
+            <span class="flex items-center gap-2">
+              <i class="ri-global-line text-purple-500"></i>
+              Remote Work
+            </span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Left Side - Contact Form -->
-          <div class="space-y-8">
-            <!-- Contact Info Cards -->
-            <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="glass p-4">
-                <div class="flex items-center gap-3">
-                  <i class="ri-phone-line text-xl text-gray-400"></i>
-                  <div>
-                    <p class="text-sm text-gray-400">Phone</p>
-                    <p class="text-sm">+977-9863588895</p>
-                  </div>
-                </div>
+        <!-- Contact Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Phone -->
+          <a
+            href="tel:+977-9863588895"
+            class="glass p-6 group hover:border-blue-500 border border-transparent transition-all hover:-translate-y-1"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-white/5"
+              >
+                <i
+                  class="ri-phone-line text-2xl text-gray-400 group-hover:text-blue-500 transition-colors"
+                ></i>
               </div>
-              <div class="glass p-4">
-                <div class="flex items-center gap-3">
-                  <i class="ri-mail-line text-xl text-gray-400"></i>
-                  <div>
-                    <p class="text-sm text-gray-400">Email</p>
-                    <p class="text-sm">iamompandey.it@gmail.com</p>
-                  </div>
-                </div>
+              <div>
+                <p class="text-sm text-gray-400">Phone</p>
+                <p
+                  class="text-base mt-1 group-hover:text-blue-500 transition-colors"
+                >
+                  +977-9863588895
+                </p>
               </div>
             </div>
+          </a>
 
-            <!-- Contact Form -->
-            <div class="glass p-8">
-              <form action="#" class="space-y-6">
-                <div class="grid grid-cols-2 gap-6">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Firstname"
-                      class="w-full bg-white/5 border border-white/10 px-4 py-3 focus:border-indigo-500 focus:outline-none"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Lastname"
-                      class="w-full bg-white/5 border border-white/10 px-4 py-3 focus:border-indigo-500 focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email address"
-                    class="w-full bg-white/5 border border-white/10 px-4 py-3 focus:border-indigo-500 focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <textarea
-                    placeholder="Write your message..."
-                    rows="5"
-                    class="w-full bg-white/5 border border-white/10 px-4 py-3 focus:border-indigo-500 focus:outline-none"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="w-full gradient-bg text-white py-4 font-semibold hover:opacity-90 transition-opacity"
+          <!-- Email -->
+          <a
+            href="mailto:iamompandey.it@gmail.com"
+            class="glass p-6 group hover:border-red-500 border border-transparent transition-all hover:-translate-y-1"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-white/5"
+              >
+                <i
+                  class="ri-mail-line text-2xl text-gray-400 group-hover:text-red-500 transition-colors"
+                ></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-400">Email</p>
+                <p
+                  class="text-base mt-1 group-hover:text-red-500 transition-colors"
                 >
-                  Send Message
-                </button>
-              </form>
+                  iamompandey.it@gmail.com
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Location -->
+          <div
+            class="glass p-6 group hover:border-green-500 border border-transparent transition-all hover:-translate-y-1 sm:col-span-2"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-white/5"
+              >
+                <i
+                  class="ri-map-pin-line text-2xl text-gray-400 group-hover:text-green-500 transition-colors"
+                ></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-400">Location</p>
+                <p
+                  class="text-base mt-1 group-hover:text-green-500 transition-colors"
+                >
+                  Link Marg, Kalanki, Kathmandu 44600
+                </p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Right Side -->
-          <div class="space-y-8">
-            <!-- Location Card -->
-            <div class="glass p-4">
-              <div class="flex items-start gap-3">
-                <i class="ri-map-pin-line text-xl text-gray-400 mt-1"></i>
-                <div>
-                  <p class="text-sm text-gray-400">Location</p>
-                  <p class="text-sm">Link Marg, Kalanki, Kathmandu 44600</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Animation -->
-            <div class="flex justify-center">
-              <img src="images/hellow.gif" alt="Hello" class="w-[500px]" />
-            </div>
+        <!-- Social Links -->
+        <div class="mt-8 glass p-8 text-center">
+          <p class="text-sm text-gray-400 mb-6">
+            CONNECT WITH ME ON SOCIAL MEDIA
+          </p>
+          <div class="flex justify-center gap-6">
+            <a
+              href="https://github.com/ompandey07"
+              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
+            >
+              <i
+                class="ri-github-line text-2xl text-gray-400 group-hover:text-[#333] transition-colors"
+              ></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/om-pandey-647844305/"
+              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
+            >
+              <i
+                class="ri-linkedin-line text-2xl text-gray-400 group-hover:text-[#0077b5] transition-colors"
+              ></i>
+            </a>
+            <a
+              href="https://x.com/OPandey36030"
+              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
+            >
+              <i
+                class="ri-twitter-line text-2xl text-gray-400 group-hover:text-[#1da1f2] transition-colors"
+              ></i>
+            </a>
+            <a
+              href="https://www.instagram.com/organiccoders/"
+              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
+            >
+              <i
+                class="ri-instagram-line text-2xl text-gray-400 group-hover:text-[#e4405f] transition-colors"
+              ></i>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <style>
+      .grid-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+    </style>
+    <!-- Contact Section -->
+
     <!-- Footer -->
     <footer class="py-8 border-t border-white/10">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center">
-          <p class="text-gray-400">
-            Copyright © Om Pandey <span id="current-year"></span>. All Rights
-            Reserved.
-          </p>
+          <code class="text-sm font-mono">
+            <span class="text-pink-500">const</span>
+            <span class="text-gray-400">copyright</span>
+            <span class="text-gray-400">=</span>
+            <span class="text-gray-400">'Copyright © Om Pandey '</span>
+            <span class="text-indigo-500">+</span>
+            <span class="text-gray-400" id="current-year"></span>
+            <span class="text-gray-400">All Rights Reserved.</span>;
+          </code>
         </div>
       </div>
     </footer>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
+    <script>
+      // Dynamically update the year
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+    <!-- Footer -->
 
     <!-- Loader -->
-    <div id="overlayer" class="fixed inset-0 bg-black z-50">
-      <div class="loader flex items-center justify-center h-screen">
-        <img src="/images/skill.gif" alt="Loading" class="w-20 h-20" />
+    <div
+      id="overlayer"
+      class="fixed inset-0 z-50 bg-gray-900 flex items-center justify-center"
+    >
+      <div class="code-container font-mono text-lg">
+        <pre class="typing-code">
+          <span class="typing-animation" id="greeting"></span>
+        </pre>
       </div>
     </div>
 
-    <!-- Scripts -->
-    <script>
-      // Set current year
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
+    <!-- Add the messages directly in HTML -->
+    <div id="message1" style="display: none">const greet = "Hello";</div>
+    <div id="message2" style="display: none">const greet = "Namaste";</div>
 
-        document.getElementById("intro").textContent = "Portfolio " + new Date().getFullYear();
-
-
-      // Page loader
-      window.addEventListener("load", function () {
-        const overlayer = document.getElementById("overlayer");
-        overlayer.style.display = "none";
-      });
-
-      // Current time display
-      function updateTime() {
-        const timeElement = document.getElementById("current-time");
-        const now = new Date();
-        timeElement.textContent = now.toLocaleTimeString();
+    <style>
+      .typing-code {
+        white-space: pre;
+        overflow: hidden;
       }
-      setInterval(updateTime, 1000);
-      updateTime();
 
-      // Disable right-click
-      document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-      });
+      .keyword {
+        color: #ff79c6;
+      } /* JavaScript keyword color */
+      .operator {
+        color: #ff79c6;
+      } /* Operator color */
+      .variable {
+        color: #8be9fd;
+      } /* Variable color */
+      .string {
+        color: #f1fa8c;
+      } /* String color */
 
-      // Disable developer tools shortcuts
-      document.addEventListener("keydown", function (e) {
-        if (
-          e.key === "F12" ||
-          (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-          (e.ctrlKey && e.key === "U") ||
-          (e.ctrlKey && e.shiftKey && e.key === "C")
-        ) {
-          e.preventDefault();
+      .typing-animation {
+        display: inline-block;
+        border-right: 2px solid #4ade80;
+        animation: blink 0.75s step-end infinite;
+        white-space: nowrap;
+        margin: 0;
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          border-color: transparent;
         }
-      });
+        50% {
+          border-color: #4ade80;
+        }
+      }
 
-      // Custom cursor
-      const cursor = document.querySelector(".custom-cursor");
-      document.addEventListener("mousemove", (e) => {
-        cursor.style.left = e.clientX + "px";
-        cursor.style.top = e.clientY + "px";
-      });
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
 
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
+    <script>
+      window.addEventListener("load", function () {
+        const greetingElement = document.getElementById("greeting");
+        const overlayer = document.getElementById("overlayer");
+
+        // Fetch messages from HTML
+        const messages = [
+          document.getElementById("message1").textContent.trim(),
+          document.getElementById("message2").textContent.trim(),
+        ];
+
+        let currentMessageIndex = 0;
+
+        function typeText(message, callback) {
+          let charIndex = 0;
+          greetingElement.innerHTML = ""; // Clear the content
+
+          function type() {
+            if (charIndex < message.length) {
+              greetingElement.innerHTML += message.charAt(charIndex);
+              charIndex++;
+              setTimeout(type, 100); // Typing speed
+            } else {
+              callback(); // Call the callback when typing is done
+            }
           }
-        });
+
+          type();
+        }
+
+        function removeOverlay() {
+          overlayer.style.opacity = "0";
+          overlayer.style.transition = "opacity 0.5s ease";
+          setTimeout(() => {
+            overlayer.style.display = "none";
+          }, 500);
+        }
+
+        // Function to cycle through messages
+        function cycleMessages() {
+          typeText(messages[currentMessageIndex], () => {
+            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+            if (currentMessageIndex === 0) {
+              setTimeout(removeOverlay, 1000); // Delay before hiding the overlay
+            } else {
+              setTimeout(cycleMessages, 1000); // Delay before typing the next message
+            }
+          });
+        }
+
+        // Start typing the first message
+        cycleMessages();
       });
     </script>
 
-    <!-- Chatra Integration -->
     <script>
-      (function (d, w, c) {
-        w.ChatraID = "2LFgv4LNMx8Qk56XN";
-        var s = d.createElement("script");
-        w[c] =
-          w[c] ||
-          function () {
-            (w[c].q = w[c].q || []).push(arguments);
-          };
-        s.async = true;
-        s.src = "https://call.chatra.io/chatra.js";
-        if (d.head) d.head.appendChild(s);
-      })(document, window, "Chatra");
-    </script>
-    <script>
+      document.getElementById("intro").textContent =
+        "Portfolio " + new Date().getFullYear();
       // Simple AOS (Animate On Scroll) Implementation
       document.addEventListener("DOMContentLoaded", function () {
         const observerOptions = {
