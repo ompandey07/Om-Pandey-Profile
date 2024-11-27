@@ -1928,6 +1928,434 @@
     </style>
     <!-- Daily Routine Section - Complete -->
 
+
+
+    <!-- Music Player Section -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
+    
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <!-- Section Header -->
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center gap-3">
+            <i class="ri-music-2-line text-2xl p-2"></i>
+            <div>
+              <h2 class="text-xl font-bold text-gray-100">LOGIC LOOPS</h2>
+            </div>
+          </div>
+        </div>
+    
+        <div class="glass">
+          <div class="grid md:grid-cols-[350px,1fr] divide-x divide-white/5">
+            <!-- Playlist Side -->
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="font-bold text-lg">Your Playlist</h3>
+                <span class="text-sm text-gray-400">${songs.length} tracks</span>
+              </div>
+    
+              <div class="space-y-1 max-h-[500px] overflow-y-auto pr-4" id="playlist">
+                <!-- Songs will be added here by JavaScript -->
+              </div>
+            </div>
+    
+            <!-- Player Side -->
+            <div class="p-6">
+              <div class="flex flex-col h-full">
+                <!-- Current Song Display -->
+                <div class="flex gap-6 items-start mb-8">
+                  <div class="relative w-[200px] h-[200px] flex-shrink-0 bg-black/20">
+                    <div id="default-icon" class="absolute inset-0 flex items-center justify-center">
+                      <i class="ri-disc-line text-5xl text-white/20 animate-spin-slow"></i>
+                    </div>
+                    <img id="current-song-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300">
+                  </div>
+                  <div class="flex-1 pt-4">
+                    <h3 id="current-song-title" class="text-2xl font-bold mb-2">Select a Track</h3>
+                    <p id="current-song-artist" class="text-gray-400 mb-4">Choose from your playlist</p>
+                    
+                    <!-- Volume Controls -->
+                    <div class="flex items-center gap-4 mt-8">
+                      <button id="volume-down" class="p-2 hover:bg-white/10 rounded transition-colors">
+                        <i class="ri-volume-down-line text-xl"></i>
+                      </button>
+                      <div class="relative flex-1 h-1 bg-white/10 rounded-full group">
+                        <input type="range" id="volume-slider" class="absolute inset-0 w-full opacity-0 cursor-pointer" min="0" max="100" value="50">
+                        <div class="h-full bg-green-500 rounded-full relative" id="volume-level" style="width: 50%">
+                          <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                      </div>
+                      <button id="volume-up" class="p-2 hover:bg-white/10 rounded transition-colors">
+                        <i class="ri-volume-up-line text-xl"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+    
+                <!-- Progress Bar -->
+                <div class="mb-6">
+                  <div class="relative h-1 bg-white/10 rounded-full group cursor-pointer" id="progress-container">
+                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="h-full bg-green-500 rounded-full relative" id="progress-bar">
+                      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100"></div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between text-sm text-gray-400 mt-2">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                  </div>
+                </div>
+    
+                <!-- Controls -->
+                <div class="flex flex-col gap-6">
+                  <!-- Main Controls -->
+                  <div class="flex items-center justify-center gap-8">
+                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="shuffle-btn">
+                      <i class="ri-shuffle-line text-xl"></i>
+                    </button>
+                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="prev-btn">
+                      <i class="ri-skip-back-fill text-2xl"></i>
+                    </button>
+                    <button class="w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center transition-colors shadow-lg" id="play-btn">
+                      <i class="ri-play-fill text-2xl"></i>
+                    </button>
+                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="next-btn">
+                      <i class="ri-skip-forward-fill text-2xl"></i>
+                    </button>
+                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="repeat-btn">
+                      <i class="ri-repeat-line text-xl"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-8 space-y-3 font-mono text-sm text-gray-500/60">
+                  <div class="p-4 bg-black/20">
+                    <span class="text-pink-500/60">const</span> 
+                    <span class="text-indigo-500/60">musicLovers</span> 
+                    <span class="text-gray-400/60">=</span> 
+                    <span class="text-green-500/60">"Code + Music = Perfect Harmony"</span>;
+                  </div>
+                
+                  <div class="p-4 bg-black/20">
+                    <span class="text-pink-500/60">function</span> 
+                    <span class="text-indigo-500/60">createMusicMagic</span>() {
+                    <span class="text-gray-400/60">return</span> 
+                    <span class="text-green-500/60">"🎵 + 💻 = 🎮"</span>;
+                  </div>
+                
+                  <div class="p-4 bg-black/20">
+                    <span class="text-pink-500/60">while</span>(<span class="text-indigo-500/60">coding</span>) {
+                      <span class="text-gray-400/60">playMusic</span>.<span class="text-green-500/60">volume</span> = <span class="text-yellow-500/60">∞</span>;
+                    }
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <style>
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .animate-spin-slow {
+      animation: spin-slow 4s linear infinite;
+    }
+    
+    .max-h-\[500px\]::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    .max-h-\[500px\]::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .max-h-\[500px\]::-webkit-scrollbar-thumb {
+      background: #22c55e;
+      border-radius: 2px;
+    }
+    
+    .glass {
+      background: rgba(20, 20, 20, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .song-item {
+      position: relative;
+      padding: 0.75rem;
+      transition: all 0.3s;
+    }
+    
+    .song-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #22c55e;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .song-item.active::before {
+      opacity: 1;
+    }
+    
+    .song-item.active {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Hide default range input styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 0;
+      width: 0;
+    }
+    </style>
+
+
+   <script>
+      const songs = [
+  { title: "Wrong", artist: "Lui Khel", path: "Audio/Worng.mp3", image: "SongsImage/worng.jpg" },
+  { title: "Closer", artist: "The Chainsmoker", path: "Audio/Closer.mp3", image: "SongsImage/Closer.jpg" },
+  { title: "Perfect", artist: "Ed Sheeran", path: "Audio/Perfect.mp3", image: "SongsImage/Perfect.jpg" },
+  { title: "Night Changes", artist: "One Direction", path: "Audio/NightChanges.mp3", image: "SongsImage/Night Changes.jpg" },
+  { title: "Bardali", artist: "Sushant KC", path: "Audio/Bardali.mp3", image: "SongsImage/Bardali.jpg" },
+  { title: "Dil Se Dil Tak", artist: "Laqshay Kapoor", path: "Audio/DilSeDilTak.mp3", image: "SongsImage/Dil Se DIl Tak.jpg" },
+  { title: "O Mahi", artist: "Arjit Singh", path: "Audio/Omahi.mp3", image: "SongsImage/O Mahi.jpg" },
+  { title: "AMSTERDAM", artist: "JAMESY", path: "Audio/GermanGadi.mp3", image: "SongsImage/AMSTERDAM.jpg" },
+  { title: "favorite", artist: "Isabel LaRosa", path: "Audio/Favroute.mp3", image: "SongsImage/favorite.jpg" },
+  { title: "Girls Like You", artist: "Maroon 5", path: "Audio/Girls.mp3", image: "SongsImage/Girls Like You.jpg" }
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = new Audio();
+  const playBtn = document.getElementById('play-btn');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const shuffleBtn = document.getElementById('shuffle-btn');
+  const repeatBtn = document.getElementById('repeat-btn');
+  const volumeDownBtn = document.getElementById('volume-down');
+  const volumeUpBtn = document.getElementById('volume-up');
+  const volumeSlider = document.getElementById('volume-slider');
+  const volumeLevel = document.getElementById('volume-level');
+  const progressBar = document.getElementById('progress-bar');
+  const progressContainer = document.getElementById('progress-container');
+  const currentTimeSpan = document.getElementById('current-time');
+  const durationSpan = document.getElementById('duration');
+  const playlist = document.getElementById('playlist');
+  const songTitle = document.getElementById('current-song-title');
+  const songArtist = document.getElementById('current-song-artist');
+  const songImage = document.getElementById('current-song-image');
+  const defaultIcon = document.getElementById('default-icon');
+
+  let currentSongIndex = 0;
+  let isPlaying = false;
+  let isShuffled = false;
+  let isRepeating = false;
+
+  // Populate playlist
+  songs.forEach((song, index) => {
+    const songItem = document.createElement('div');
+    songItem.className = 'song-item flex items-center gap-4 cursor-pointer group';
+    songItem.innerHTML = `
+      <div class="w-10 h-10">
+        <img src="${song.image}" alt="${song.title}" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-1 min-w-0">
+        <h4 class="font-medium truncate group-hover:text-green-500 transition-colors">${song.title}</h4>
+        <p class="text-sm text-gray-400 truncate">${song.artist}</p>
+      </div>
+      <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+        <i class="ri-play-fill text-green-500"></i>
+      </div>
+    `;
+    songItem.addEventListener('click', () => loadAndPlaySong(index));
+    playlist.appendChild(songItem);
+  });
+
+  function loadAndPlaySong(index) {
+    currentSongIndex = index;
+    const song = songs[currentSongIndex];
+    
+    audio.src = song.path;
+    songTitle.textContent = song.title;
+    songArtist.textContent = song.artist;
+    
+    songImage.src = song.image;
+    songImage.style.opacity = '1';
+    defaultIcon.style.opacity = '0';
+    
+    document.querySelectorAll('.song-item').forEach((item, i) => {
+      item.classList.toggle('active', i === index);
+    });
+
+    playAudio();
+  }
+
+  function playAudio() {
+    audio.play();
+    isPlaying = true;
+    playBtn.innerHTML = '<i class="ri-pause-fill text-2xl"></i>';
+  }
+
+  function pauseAudio() {
+    audio.pause();
+    isPlaying = false;
+    playBtn.innerHTML = '<i class="ri-play-fill text-2xl"></i>';
+  }
+
+  // Volume Controls
+  volumeDownBtn.addEventListener('click', () => {
+    let newVolume = Math.max(0, audio.volume - 0.1);
+    updateVolume(newVolume);
+  });
+
+  volumeUpBtn.addEventListener('click', () => {
+    let newVolume = Math.min(1, audio.volume + 0.1);
+    updateVolume(newVolume);
+  });
+
+  volumeSlider.addEventListener('input', (e) => {
+    updateVolume(e.target.value / 100);
+  });
+
+  function updateVolume(value) {
+    audio.volume = value;
+    volumeSlider.value = value * 100;
+    volumeLevel.style.width = `${value * 100}%`;
+  }
+
+  // Progress bar click
+  progressContainer.addEventListener('click', (e) => {
+    const clickPosition = e.offsetX / progressContainer.offsetWidth;
+    audio.currentTime = clickPosition * audio.duration;
+  });
+
+  // Play/Pause
+  playBtn.addEventListener('click', () => {
+    if (!audio.src) {
+      loadAndPlaySong(0);
+    } else if (isPlaying) {
+      pauseAudio();
+    } else {
+      playAudio();
+    }
+  });
+
+  // Previous and Next
+  prevBtn.addEventListener('click', () => {
+    if (isShuffled) {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * songs.length);
+      } while (newIndex === currentSongIndex);
+      loadAndPlaySong(newIndex);
+    } else {
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      loadAndPlaySong(currentSongIndex);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (isShuffled) {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * songs.length);
+      } while (newIndex === currentSongIndex);
+      loadAndPlaySong(newIndex);
+    } else {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      loadAndPlaySong(currentSongIndex);
+    }
+  });
+
+  // Shuffle and Repeat
+  shuffleBtn.addEventListener('click', () => {
+    isShuffled = !isShuffled;
+    shuffleBtn.classList.toggle('text-green-500');
+  });
+
+  repeatBtn.addEventListener('click', () => {
+    isRepeating = !isRepeating;
+    repeatBtn.classList.toggle('text-green-500');
+  });
+
+  // Audio time update
+  audio.addEventListener('timeupdate', () => {
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = `${progress}%`;
+    currentTimeSpan.textContent = formatTime(audio.currentTime);
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    durationSpan.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener('ended', () => {
+    if (isRepeating) {
+      audio.currentTime = 0;
+      playAudio();
+    } else {
+      nextBtn.click();
+    }
+  });
+
+  // Time formatting
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
+
+  // Keyboard controls
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+      e.preventDefault();
+      playBtn.click();
+    } else if (e.code === 'ArrowLeft') {
+      prevBtn.click();
+    } else if (e.code === 'ArrowRight') {
+      nextBtn.click();
+    } else if (e.code === 'ArrowUp') {
+      let newVolume = Math.min(1, audio.volume + 0.1);
+      updateVolume(newVolume);
+    } else if (e.code === 'ArrowDown') {
+      let newVolume = Math.max(0, audio.volume - 0.1);
+      updateVolume(newVolume);
+    }
+  });
+
+  // Initial volume setup
+  updateVolume(0.5);
+
+  // Add hover effect to progress bar
+  progressContainer.addEventListener('mousemove', (e) => {
+    const rect = progressContainer.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / progressContainer.offsetWidth;
+    if (audio.duration) {
+      const timeToShow = formatTime(pos * audio.duration);
+      progressContainer.title = timeToShow;
+    }
+  });
+});
+   </script>
+    <!-- Music Player Section -->
+    
+
+
     <!-- Testimonials Section -->
     <section class="py-20 relative">
       <div class="max-w-7xl mx-auto px-4">
