@@ -47,211 +47,38 @@
       rel="stylesheet"
     />
 
-    <style>
-      :root {
-        --color-primary: #6366f1;
-        --color-secondary: #ec4899;
-        --color-dark: #030712;
-        --color-darker: #020617;
-        --color-light: #f8fafc;
-      }
+    <!-- Custom CSS -->    
+    <link rel="stylesheet" href="Assests/styles.css">
+    <link rel="stylesheet" href="Assests/loder.css">
 
-      body {
-        font-family: "Space Grotesk", sans-serif;
-        background-color: var(--color-dark);
-        color: var(--color-light);
-      }
-
-      /* Glass Effect */
-      .glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
-      /* Gradient Effects */
-      .gradient-text {
-        background: linear-gradient(
-          135deg,
-          var(--color-primary),
-          var(--color-secondary)
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .gradient-border {
-        position: relative;
-        border: double 1px transparent;
-        background-image: linear-gradient(var(--color-dark), var(--color-dark)),
-          linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-      }
-
-      .gradient-bg {
-        background: linear-gradient(
-          135deg,
-          var(--color-primary),
-          var(--color-secondary)
-        );
-      }
-
-      /* Animations */
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .animate-pulse-slow {
-        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.5;
-        }
-      }
-
-      /* Card Effects */
-      .card-hover {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .card-hover:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Grid and Background Patterns */
-      .grid-pattern {
-        background-image: radial-gradient(
-          rgba(255, 255, 255, 0.1) 1px,
-          transparent 1px
-        );
-        background-size: 30px 30px;
-      }
-
-      .diagonal-pattern {
-        background-image: linear-gradient(
-            45deg,
-            rgba(255, 255, 255, 0.05) 25%,
-            transparent 25%
-          ),
-          linear-gradient(
-            -45deg,
-            rgba(255, 255, 255, 0.05) 25%,
-            transparent 25%
-          ),
-          linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%),
-          linear-gradient(
-            -45deg,
-            transparent 75%,
-            rgba(255, 255, 255, 0.05) 75%
-          );
-        background-size: 20px 20px;
-      }
-
-      /* Glow Effects */
-      .glow {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        filter: blur(100px);
-        opacity: 0.15;
-        pointer-events: none;
-      }
-
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: var(--color-darker);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          135deg,
-          var(--color-primary),
-          var(--color-secondary)
-        );
-        border-radius: 4px;
-      }
-
-      /* Selection Color */
-      ::selection {
-        background: var(--color-primary);
-        color: var(--color-light);
-      }
-      /* Animation for Timeline Items */
-      [data-aos] {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-
-      [data-aos].aos-animate {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Glass Effect */
-      .glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
-      /* Timeline Line Animation */
-      @keyframes gradient-flow {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      .gradient-line {
-        background: linear-gradient(
-          to bottom,
-          var(--color-primary),
-          var(--color-secondary),
-          var(--color-primary)
-        );
-        background-size: 200% 200%;
-        animation: gradient-flow 6s linear infinite;
-      }
-    </style>
+    
   </head>
 
+
+  <!-- Loader -->
+  <div id="overlayer">
+    <div class="code-container">
+      <pre class="typing-code">
+        <span class="typing-animation" id="greeting"></span><span class="cursor"></span>
+      </pre>
+    </div>
+  </div>
+  <!-- Loader -->
+
+  
+
   <body class="overflow-x-hidden">
+
+
     <!-- Background Effects -->
     <div class="fixed inset-0 z-0">
       <div class="absolute top-0 left-0 glow bg-indigo-500"></div>
       <div class="absolute bottom-0 right-0 glow bg-pink-500"></div>
       <div class="absolute inset-0 grid-pattern opacity-20"></div>
     </div>
+    <!-- Background Effects -->
+
+
 
     <!-- Hero Section - Complete -->
     <section class="min-h-screen relative overflow-hidden flex items-center">
@@ -278,79 +105,6 @@
         <span class="text-gray-400/60">}</span></pre>
           </div>
         </div>
-
-        <style>
-          @keyframes blink {
-            0%,
-            100% {
-              opacity: 1;
-            }
-            50% {
-              opacity: 0;
-            }
-          }
-
-          .typing-cursor {
-            animation: blink 1s step-end infinite;
-            color: rgba(255, 255, 255, 0.4);
-          }
-        </style>
-
-        <script>
-          const messages = [
-            '"I make cool things with code, like building digital magic! ✨💻"',
-            '"I turn coffee into code, because that’s how I get my superpowers! ☕⚡"',
-            '"When I write code, I’m creating little adventures on the screen! 🎮💻"',
-            '"Code is like a puzzle, and I love solving it! 🧩👨‍💻"',
-            '"I build things that make people smile, one line of code at a time! 😊💻"',
-          ];
-          let currentMessageIndex = 0;
-          let currentCharIndex = 0;
-          let isDeleting = false;
-          const uniformSpeed = 100; // Uniform speed for all actions
-          const pauseTime = 3000; // Pause between messages
-
-          function typeText() {
-            const typedElement = document.getElementById("typed-text");
-            const currentMessage = messages[currentMessageIndex];
-
-            if (isDeleting) {
-              typedElement.textContent = currentMessage.substring(
-                0,
-                currentCharIndex - 1
-              );
-              currentCharIndex--;
-            } else {
-              typedElement.textContent = currentMessage.substring(
-                0,
-                currentCharIndex + 1
-              );
-              currentCharIndex++;
-            }
-
-            // Determine next timeout
-            let timeout = uniformSpeed;
-
-            // Check if completed typing
-            if (!isDeleting && currentCharIndex === currentMessage.length) {
-              isDeleting = true;
-              timeout = pauseTime;
-            }
-
-            // Check if completed deleting
-            if (isDeleting && currentCharIndex === 0) {
-              isDeleting = false;
-              currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-            }
-
-            setTimeout(typeText, timeout);
-          }
-
-          // Start the typing effect with a delay
-          document.addEventListener("DOMContentLoaded", () => {
-            setTimeout(typeText, 1500);
-          });
-        </script>
 
         <!-- Animated Circle with Image -->
         <div class="relative flex justify-center items-center">
@@ -526,35 +280,10 @@
         </div>
       </div>
     </section>
+     <!-- Hero Section - Complete -->
 
-    <style>
-      @keyframes spin-slow {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
 
-      @keyframes spin-reverse-slow {
-        from {
-          transform: rotate(360deg);
-        }
-        to {
-          transform: rotate(0deg);
-        }
-      }
 
-      .animate-spin-slow {
-        animation: spin-slow 30s linear infinite;
-      }
-
-      .animate-spin-reverse-slow {
-        animation: spin-reverse-slow 35s linear infinite;
-      }
-    </style>
-    <!-- Hero Section - Complete -->
 
     <!-- Recent Works -->
     <section class="py-20 relative">
@@ -836,6 +565,8 @@
         </div>
       </div>
     </section>
+    <!-- Recent Works -->
+
 
     <!-- About Section -->
     <section class="py-20 relative overflow-hidden">
@@ -943,13 +674,8 @@
         </div>
       </div>
     </section>
-
-    <style>
-      .grid-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-      }
-    </style>
     <!-- About Section -->
+
 
     <!-- Skiils Sections -->
     <section class="py-20 relative overflow-hidden">
@@ -1130,46 +856,8 @@
         </div>
       </div>
     </section>
-
-    <style>
-      @keyframes blob {
-        0% {
-          transform: translate(0px, 0px) scale(1);
-        }
-        33% {
-          transform: translate(30px, -50px) scale(1.1);
-        }
-        66% {
-          transform: translate(-20px, 20px) scale(0.9);
-        }
-        100% {
-          transform: translate(0px, 0px) scale(1);
-        }
-      }
-
-      .animate-blob {
-        animation: blob 7s infinite;
-      }
-
-      .animation-delay-2000 {
-        animation-delay: 2s;
-      }
-
-      .animation-delay-4000 {
-        animation-delay: 4s;
-      }
-
-      .bg-grid-white {
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-      }
-
-      @media (max-width: 1024px) {
-        .w-\[320px\] {
-          width: 100%;
-        }
-      }
-    </style>
     <!-- Skiils Sections -->
+
 
     <!-- Education Section -->
     <section class="py-20 relative overflow-hidden">
@@ -1306,6 +994,8 @@
         </div>
       </div>
     </section>
+    <!-- Education Section -->
+
 
     <!-- Certifications Section -->
     <section class="py-20 relative overflow-hidden">
@@ -1498,12 +1188,6 @@
         </div>
       </div>
     </section>
-
-    <style>
-      .grid-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-      }
-    </style>
     <!-- Certifications Section -->
 
     <!-- Programing Section - Complete -->
@@ -1761,13 +1445,8 @@
         </div>
       </div>
     </section>
-
-    <style>
-      .grid-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-      }
-    </style>
     <!-- Programing Section - Complete -->
+
 
     <!-- Daily Routine Section - Complete -->
     <section class="py-20 relative overflow-hidden">
@@ -1920,12 +1599,6 @@
         </div>
       </div>
     </section>
-
-    <style>
-      .grid-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-      }
-    </style>
     <!-- Daily Routine Section - Complete -->
 
 
@@ -2058,302 +1731,6 @@
         </div>
       </div>
     </section>
-    
-    <style>
-    @keyframes spin-slow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    .animate-spin-slow {
-      animation: spin-slow 4s linear infinite;
-    }
-    
-    .max-h-\[500px\]::-webkit-scrollbar {
-      width: 4px;
-    }
-    
-    .max-h-\[500px\]::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.05);
-    }
-    
-    .max-h-\[500px\]::-webkit-scrollbar-thumb {
-      background: #22c55e;
-      border-radius: 2px;
-    }
-    
-    .glass {
-      background: rgba(20, 20, 20, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    
-    .song-item {
-      position: relative;
-      padding: 0.75rem;
-      transition: all 0.3s;
-    }
-    
-    .song-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background: #22c55e;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    
-    .song-item.active::before {
-      opacity: 1;
-    }
-    
-    .song-item.active {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Hide default range input styling */
-    input[type="range"] {
-      -webkit-appearance: none;
-      background: transparent;
-    }
-    
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      height: 0;
-      width: 0;
-    }
-    </style>
-
-
-   <script>
-      const songs = [
-  { title: "Wrong", artist: "Lui Khel", path: "Audio/Worng.mp3", image: "SongsImage/worng.jpg" },
-  { title: "Closer", artist: "The Chainsmoker", path: "Audio/Closer.mp3", image: "SongsImage/Closer.jpg" },
-  { title: "Perfect", artist: "Ed Sheeran", path: "Audio/Perfect.mp3", image: "SongsImage/Perfect.jpg" },
-  { title: "Night Changes", artist: "One Direction", path: "Audio/NightChanges.mp3", image: "SongsImage/Night Changes.jpg" },
-  { title: "Bardali", artist: "Sushant KC", path: "Audio/Bardali.mp3", image: "SongsImage/Bardali.jpg" },
-  { title: "Dil Se Dil Tak", artist: "Laqshay Kapoor", path: "Audio/DilSeDilTak.mp3", image: "SongsImage/Dil Se DIl Tak.jpg" },
-  { title: "O Mahi", artist: "Arjit Singh", path: "Audio/Omahi.mp3", image: "SongsImage/O Mahi.jpg" },
-  { title: "AMSTERDAM", artist: "JAMESY", path: "Audio/GermanGadi.mp3", image: "SongsImage/AMSTERDAM.jpg" },
-  { title: "favorite", artist: "Isabel LaRosa", path: "Audio/Favroute.mp3", image: "SongsImage/favorite.jpg" },
-  { title: "Girls Like You", artist: "Maroon 5", path: "Audio/Girls.mp3", image: "SongsImage/Girls Like You.jpg" }
-];
-
-document.addEventListener('DOMContentLoaded', function() {
-  const audio = new Audio();
-  const playBtn = document.getElementById('play-btn');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-  const shuffleBtn = document.getElementById('shuffle-btn');
-  const repeatBtn = document.getElementById('repeat-btn');
-  const volumeDownBtn = document.getElementById('volume-down');
-  const volumeUpBtn = document.getElementById('volume-up');
-  const volumeSlider = document.getElementById('volume-slider');
-  const volumeLevel = document.getElementById('volume-level');
-  const progressBar = document.getElementById('progress-bar');
-  const progressContainer = document.getElementById('progress-container');
-  const currentTimeSpan = document.getElementById('current-time');
-  const durationSpan = document.getElementById('duration');
-  const playlist = document.getElementById('playlist');
-  const songTitle = document.getElementById('current-song-title');
-  const songArtist = document.getElementById('current-song-artist');
-  const songImage = document.getElementById('current-song-image');
-  const defaultIcon = document.getElementById('default-icon');
-
-  let currentSongIndex = 0;
-  let isPlaying = false;
-  let isShuffled = false;
-  let isRepeating = false;
-
-  // Populate playlist
-  songs.forEach((song, index) => {
-    const songItem = document.createElement('div');
-    songItem.className = 'song-item flex items-center gap-4 cursor-pointer group';
-    songItem.innerHTML = `
-      <div class="w-10 h-10">
-        <img src="${song.image}" alt="${song.title}" class="w-full h-full object-cover">
-      </div>
-      <div class="flex-1 min-w-0">
-        <h4 class="font-medium truncate group-hover:text-green-500 transition-colors">${song.title}</h4>
-        <p class="text-sm text-gray-400 truncate">${song.artist}</p>
-      </div>
-      <div class="opacity-0 group-hover:opacity-100 transition-opacity">
-        <i class="ri-play-fill text-green-500"></i>
-      </div>
-    `;
-    songItem.addEventListener('click', () => loadAndPlaySong(index));
-    playlist.appendChild(songItem);
-  });
-
-  function loadAndPlaySong(index) {
-    currentSongIndex = index;
-    const song = songs[currentSongIndex];
-    
-    audio.src = song.path;
-    songTitle.textContent = song.title;
-    songArtist.textContent = song.artist;
-    
-    songImage.src = song.image;
-    songImage.style.opacity = '1';
-    defaultIcon.style.opacity = '0';
-    
-    document.querySelectorAll('.song-item').forEach((item, i) => {
-      item.classList.toggle('active', i === index);
-    });
-
-    playAudio();
-  }
-
-  function playAudio() {
-    audio.play();
-    isPlaying = true;
-    playBtn.innerHTML = '<i class="ri-pause-fill text-2xl"></i>';
-  }
-
-  function pauseAudio() {
-    audio.pause();
-    isPlaying = false;
-    playBtn.innerHTML = '<i class="ri-play-fill text-2xl"></i>';
-  }
-
-  // Volume Controls
-  volumeDownBtn.addEventListener('click', () => {
-    let newVolume = Math.max(0, audio.volume - 0.1);
-    updateVolume(newVolume);
-  });
-
-  volumeUpBtn.addEventListener('click', () => {
-    let newVolume = Math.min(1, audio.volume + 0.1);
-    updateVolume(newVolume);
-  });
-
-  volumeSlider.addEventListener('input', (e) => {
-    updateVolume(e.target.value / 100);
-  });
-
-  function updateVolume(value) {
-    audio.volume = value;
-    volumeSlider.value = value * 100;
-    volumeLevel.style.width = `${value * 100}%`;
-  }
-
-  // Progress bar click
-  progressContainer.addEventListener('click', (e) => {
-    const clickPosition = e.offsetX / progressContainer.offsetWidth;
-    audio.currentTime = clickPosition * audio.duration;
-  });
-
-  // Play/Pause
-  playBtn.addEventListener('click', () => {
-    if (!audio.src) {
-      loadAndPlaySong(0);
-    } else if (isPlaying) {
-      pauseAudio();
-    } else {
-      playAudio();
-    }
-  });
-
-  // Previous and Next
-  prevBtn.addEventListener('click', () => {
-    if (isShuffled) {
-      let newIndex;
-      do {
-        newIndex = Math.floor(Math.random() * songs.length);
-      } while (newIndex === currentSongIndex);
-      loadAndPlaySong(newIndex);
-    } else {
-      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-      loadAndPlaySong(currentSongIndex);
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (isShuffled) {
-      let newIndex;
-      do {
-        newIndex = Math.floor(Math.random() * songs.length);
-      } while (newIndex === currentSongIndex);
-      loadAndPlaySong(newIndex);
-    } else {
-      currentSongIndex = (currentSongIndex + 1) % songs.length;
-      loadAndPlaySong(currentSongIndex);
-    }
-  });
-
-  // Shuffle and Repeat
-  shuffleBtn.addEventListener('click', () => {
-    isShuffled = !isShuffled;
-    shuffleBtn.classList.toggle('text-green-500');
-  });
-
-  repeatBtn.addEventListener('click', () => {
-    isRepeating = !isRepeating;
-    repeatBtn.classList.toggle('text-green-500');
-  });
-
-  // Audio time update
-  audio.addEventListener('timeupdate', () => {
-    const progress = (audio.currentTime / audio.duration) * 100;
-    progressBar.style.width = `${progress}%`;
-    currentTimeSpan.textContent = formatTime(audio.currentTime);
-  });
-
-  audio.addEventListener('loadedmetadata', () => {
-    durationSpan.textContent = formatTime(audio.duration);
-  });
-
-  audio.addEventListener('ended', () => {
-    if (isRepeating) {
-      audio.currentTime = 0;
-      playAudio();
-    } else {
-      nextBtn.click();
-    }
-  });
-
-  // Time formatting
-  function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-  }
-
-  // Keyboard controls
-  document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
-      e.preventDefault();
-      playBtn.click();
-    } else if (e.code === 'ArrowLeft') {
-      prevBtn.click();
-    } else if (e.code === 'ArrowRight') {
-      nextBtn.click();
-    } else if (e.code === 'ArrowUp') {
-      let newVolume = Math.min(1, audio.volume + 0.1);
-      updateVolume(newVolume);
-    } else if (e.code === 'ArrowDown') {
-      let newVolume = Math.max(0, audio.volume - 0.1);
-      updateVolume(newVolume);
-    }
-  });
-
-  // Initial volume setup
-  updateVolume(0.5);
-
-  // Add hover effect to progress bar
-  progressContainer.addEventListener('mousemove', (e) => {
-    const rect = progressContainer.getBoundingClientRect();
-    const pos = (e.clientX - rect.left) / progressContainer.offsetWidth;
-    if (audio.duration) {
-      const timeToShow = formatTime(pos * audio.duration);
-      progressContainer.title = timeToShow;
-    }
-  });
-});
-   </script>
     <!-- Music Player Section -->
     
 
@@ -2538,6 +1915,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </section>
+    <!-- Testimonials Section -->
 
     <!-- Contact Section -->
     <section class="py-20 relative overflow-hidden">
@@ -2696,19 +2074,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </section>
-
-    <style>
-      .grid-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-      }
-
-      .glass {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-    </style>
     <!-- Contact Section -->
+
+
 
     <!-- Footer -->
     <footer class="py-8 border-t border-white/10">
@@ -2726,178 +2094,15 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </footer>
-
-    <script>
-      // Dynamically update the year
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
-    </script>
     <!-- Footer -->
 
-    <!-- Loader -->
-    <div
-      id="overlayer"
-      class="fixed inset-0 z-50 bg-gray-900 flex items-center justify-center"
-    >
-      <div class="code-container font-mono text-lg">
-        <pre class="typing-code">
-          <span class="typing-animation" id="greeting"></span>
-        </pre>
-      </div>
-    </div>
+    
 
-    <!-- Add the messages directly in HTML -->
-    <div id="message1" style="display: none">const greet = "Hello";</div>
-    <div id="message2" style="display: none">const greet = "Namaste";</div>
+  
 
-    <style>
-      .typing-code {
-        white-space: pre;
-        overflow: hidden;
-      }
-
-      .keyword {
-        color: #ff79c6;
-      } /* JavaScript keyword color */
-      .operator {
-        color: #ff79c6;
-      } /* Operator color */
-      .variable {
-        color: #8be9fd;
-      } /* Variable color */
-      .string {
-        color: #f1fa8c;
-      } /* String color */
-
-      .typing-animation {
-        display: inline-block;
-        border-right: 2px solid #4ade80;
-        animation: blink 0.75s step-end infinite;
-        white-space: nowrap;
-        margin: 0;
-      }
-
-      @keyframes blink {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: #4ade80;
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
-
-    <script>
-      window.addEventListener("load", function () {
-        const greetingElement = document.getElementById("greeting");
-        const overlayer = document.getElementById("overlayer");
-
-        // Fetch messages from HTML
-        const messages = [
-          document.getElementById("message1").textContent.trim(),
-          document.getElementById("message2").textContent.trim(),
-        ];
-
-        let currentMessageIndex = 0;
-
-        function typeText(message, callback) {
-          let charIndex = 0;
-          greetingElement.innerHTML = ""; // Clear the content
-
-          function type() {
-            if (charIndex < message.length) {
-              greetingElement.innerHTML += message.charAt(charIndex);
-              charIndex++;
-              setTimeout(type, 100); // Typing speed
-            } else {
-              callback(); // Call the callback when typing is done
-            }
-          }
-
-          type();
-        }
-
-        function removeOverlay() {
-          overlayer.style.opacity = "0";
-          overlayer.style.transition = "opacity 0.5s ease";
-          setTimeout(() => {
-            overlayer.style.display = "none";
-          }, 500);
-        }
-
-        // Function to cycle through messages
-        function cycleMessages() {
-          typeText(messages[currentMessageIndex], () => {
-            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-            if (currentMessageIndex === 0) {
-              setTimeout(removeOverlay, 1000); // Delay before hiding the overlay
-            } else {
-              setTimeout(cycleMessages, 1000); // Delay before typing the next message
-            }
-          });
-        }
-
-        // Start typing the first message
-        cycleMessages();
-      });
-    </script>
-
-    <script>
-      document.getElementById("intro").textContent =
-        "Portfolio " + new Date().getFullYear();
-      // Simple AOS (Animate On Scroll) Implementation
-      document.addEventListener("DOMContentLoaded", function () {
-        const observerOptions = {
-          threshold: 0.1,
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("aos-animate");
-            }
-          });
-        }, observerOptions);
-
-        document.querySelectorAll("[data-aos]").forEach((element) => {
-          observer.observe(element);
-        });
-      });
-    </script>
-    <script>
-      // Disable right-click
-      document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-      });
-
-      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-      document.addEventListener("keydown", function (e) {
-        if (
-          e.key === "F12" ||
-          (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-          (e.ctrlKey && e.key === "U") ||
-          (e.ctrlKey && e.shiftKey && e.key === "C")
-        ) {
-          e.preventDefault();
-        }
-      });
-    </script>
-
+    <script src="Assests/loder.js"></script>
+    <script src="Assests/app.js"></script>
     <!-- Google AdSense -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1859761208513074"
-      crossorigin="anonymous"
-    ></script>
+    <script async  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1859761208513074" crossorigin="anonymous"></script>
   </body>
 </html>

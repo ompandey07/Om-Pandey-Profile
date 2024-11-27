@@ -1,0 +1,67 @@
+body > *:not(#overlayer) {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  body.loaded > *:not(#overlayer) {
+    opacity: 1;
+  }
+
+  /* Ensure loader is always on top */
+  #overlayer {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .code-container {
+    font-family: monospace;
+    font-size: 1.5rem;
+  }
+
+  .typing-code {
+    white-space: pre;
+    overflow: hidden;
+  }
+
+  .typing-animation {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  /* Cursor effect */
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background: #4ade80;
+    margin-left: 2px;
+    animation: cursor 1s infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Syntax highlighting colors */
+  .keyword {
+    color: #ec4899; /* Pink color for keywords */
+  }
+
+  .variable {
+    color: #6366f1; /* Indigo color for variables */
+  }
+
+  .string {
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
