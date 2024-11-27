@@ -1604,132 +1604,127 @@
 
 
     <!-- Music Player Section -->
-    <section class="py-20 relative overflow-hidden">
-      <div class="absolute inset-0 grid-pattern opacity-10"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
-    
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <!-- Section Header -->
-        <div class="flex items-center justify-between mb-8">
-          <div class="flex items-center gap-3">
-            <i class="ri-music-2-line text-2xl p-2"></i>
-            <div>
-              <h2 class="text-xl font-bold text-gray-100">LOGIC LOOPS</h2>
-            </div>
+    <section class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="flex items-center gap-3 mb-16">
+      <i class="ri-headphone-line text-xl text-gray-100"></i>
+      <div>
+        <h2 class="text-xl font-bold text-gray-100">LOGIC LOOPS</h2>
+      </div>
+    </div>
+
+    <div class="bg-white/[0.02] backdrop-blur-lg border border-white/5">
+      <div class="grid md:grid-cols-[350px,1fr] divide-x divide-white/5">
+        <!-- Playlist Side -->
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-bold text-lg text-blue-700">Code Jams</h3>
+            <span class="text-sm">
+              <span class="text-teal-500">${songs.length}</span> 
+              <span class="text-yellow-500">tracks</span>
+            </span>
+          </div>
+
+          <div class="space-y-1 max-h-[500px] overflow-y-auto pr-4" id="playlist">
+            <!-- Songs will be added here by JavaScript -->
           </div>
         </div>
-    
-        <div class="glass">
-          <div class="grid md:grid-cols-[350px,1fr] divide-x divide-white/5">
-            <!-- Playlist Side -->
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-6">
-                <h3 class="font-bold text-lg text-blue-700">Code Jams</h3>
-                <span class="text-sm">
-                  <span class="text-teal-500">${songs.length}</span> <span class="text-yellow-500">tracks</span>
-                </span>
+
+        <!-- Player Side -->
+        <div class="p-6">
+          <div class="flex flex-col h-full">
+            <!-- Current Song Display -->
+            <div class="flex gap-6 items-start mb-8">
+              <div class="relative w-[200px] h-[200px] flex-shrink-0 bg-black/20">
+                <div id="default-icon" class="absolute inset-0 flex items-center justify-center">
+                  <i class="ri-disc-line text-5xl text-white/20"></i>
+                </div>
+                <img id="current-song-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300">
               </div>
-    
-              <div class="space-y-1 max-h-[500px] overflow-y-auto pr-4" id="playlist">
-                <!-- Songs will be added here by JavaScript -->
+              <div class="flex-1 pt-4">
+                <h3 id="current-song-title" class="text-2xl font-bold mb-2">Select a Track</h3>
+                <p id="current-song-artist" class="text-gray-400 mb-4">Choose from your playlist</p>
+                
+                <!-- Volume Controls -->
+                <div class="flex items-center gap-4 mt-8">
+                  <button id="volume-down" class="p-2 hover:bg-white/10 rounded transition-colors">
+                    <i class="ri-volume-down-line text-xl"></i>
+                  </button>
+                  <div class="relative flex-1 h-1 bg-white/10 rounded-full group">
+                    <input type="range" id="volume-slider" class="absolute inset-0 w-full opacity-0 cursor-pointer" min="0" max="100" value="50">
+                    <div class="h-full bg-green-500 rounded-full relative" id="volume-level" style="width: 50%">
+                      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                  </div>
+                  <button id="volume-up" class="p-2 hover:bg-white/10 rounded transition-colors">
+                    <i class="ri-volume-up-line text-xl"></i>
+                  </button>
+                </div>
               </div>
             </div>
-    
-            <!-- Player Side -->
-            <div class="p-6">
-              <div class="flex flex-col h-full">
-                <!-- Current Song Display -->
-                <div class="flex gap-6 items-start mb-8">
-                  <div class="relative w-[200px] h-[200px] flex-shrink-0 bg-black/20">
-                    <div id="default-icon" class="absolute inset-0 flex items-center justify-center">
-                      <i class="ri-disc-line text-5xl text-white/20 animate-spin-slow"></i>
-                    </div>
-                    <img id="current-song-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300">
-                  </div>
-                  <div class="flex-1 pt-4">
-                    <h3 id="current-song-title" class="text-2xl font-bold mb-2">Select a Track</h3>
-                    <p id="current-song-artist" class="text-gray-400 mb-4">Choose from your playlist</p>
-                    
-                    <!-- Volume Controls -->
-                    <div class="flex items-center gap-4 mt-8">
-                      <button id="volume-down" class="p-2 hover:bg-white/10 rounded transition-colors">
-                        <i class="ri-volume-down-line text-xl"></i>
-                      </button>
-                      <div class="relative flex-1 h-1 bg-white/10 rounded-full group">
-                        <input type="range" id="volume-slider" class="absolute inset-0 w-full opacity-0 cursor-pointer" min="0" max="100" value="50">
-                        <div class="h-full bg-green-500 rounded-full relative" id="volume-level" style="width: 50%">
-                          <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </div>
-                      </div>
-                      <button id="volume-up" class="p-2 hover:bg-white/10 rounded transition-colors">
-                        <i class="ri-volume-up-line text-xl"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-    
-                <!-- Progress Bar -->
-                <div class="mb-6">
-                  <div class="relative h-1 bg-white/10 rounded-full group cursor-pointer" id="progress-container">
-                    <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="h-full bg-green-500 rounded-full relative" id="progress-bar">
-                      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100"></div>
-                    </div>
-                  </div>
-                  <div class="flex justify-between text-sm text-gray-400 mt-2">
-                    <span id="current-time">0:00</span>
-                    <span id="duration">0:00</span>
-                  </div>
-                </div>
-    
-                <!-- Controls -->
-                <div class="flex flex-col gap-6">
-                  <!-- Main Controls -->
-                  <div class="flex items-center justify-center gap-8">
-                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="shuffle-btn">
-                      <i class="ri-shuffle-line text-xl"></i>
-                    </button>
-                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="prev-btn">
-                      <i class="ri-skip-back-fill text-2xl"></i>
-                    </button>
-                    <button class="w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center transition-colors shadow-lg" id="play-btn">
-                      <i class="ri-play-fill text-2xl"></i>
-                    </button>
-                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="next-btn">
-                      <i class="ri-skip-forward-fill text-2xl"></i>
-                    </button>
-                    <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="repeat-btn">
-                      <i class="ri-repeat-line text-xl"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="mt-8 space-y-3 font-mono text-sm text-gray-500/60">
-                  <div class="p-4 bg-black/20">
-                    <span class="text-pink-500/60">const</span> 
-                    <span class="text-indigo-500/60">musicLovers</span> 
-                    <span class="text-gray-400/60">=</span> 
-                    <span class="text-green-500/60">"Code + Music = Perfect Harmony"</span>;
-                  </div>
-                
-                  <div class="p-4 bg-black/20">
-                    <span class="text-pink-500/60">function</span> 
-                    <span class="text-indigo-500/60">createMusicMagic</span>() {
-                    <span class="text-gray-400/60">return</span> 
-                    <span class="text-green-500/60">"🎵 + 💻 = 🎮"</span>;
-                  </div>
-                
-                  <div class="p-4 bg-black/20">
-                    <span class="text-pink-500/60">while</span>(<span class="text-indigo-500/60">coding</span>) {
-                      <span class="text-gray-400/60">playMusic</span>.<span class="text-green-500/60">volume</span> = <span class="text-yellow-500/60">∞</span>;
-                    }
-                  </div>
+
+            <!-- Progress Bar -->
+            <div class="mb-6">
+              <div class="relative h-1 bg-white/10 rounded-full group cursor-pointer" id="progress-container">
+                <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="h-full bg-green-500 rounded-full relative" id="progress-bar">
+                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100"></div>
                 </div>
               </div>
-              
+              <div class="flex justify-between text-sm text-gray-400 mt-2">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex flex-col gap-6">
+              <!-- Main Controls -->
+              <div class="flex items-center justify-center gap-8">
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="shuffle-btn">
+                  <i class="ri-shuffle-line text-xl"></i>
+                </button>
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="prev-btn">
+                  <i class="ri-skip-back-fill text-2xl"></i>
+                </button>
+                <button class="w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center transition-colors shadow-lg" id="play-btn">
+                  <i class="ri-play-fill text-2xl"></i>
+                </button>
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="next-btn">
+                  <i class="ri-skip-forward-fill text-2xl"></i>
+                </button>
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="repeat-btn">
+                  <i class="ri-repeat-line text-xl"></i>
+                </button>
+              </div>
+            </div>
+            <div class="mt-8 space-y-3 font-mono text-sm text-gray-500/60">
+              <div class="p-4 bg-black/20">
+                <span class="text-pink-500/60">const</span> 
+                <span class="text-indigo-500/60">musicLovers</span> 
+                <span class="text-gray-400/60">=</span> 
+                <span class="text-green-500/60">"Code + Music = Perfect Harmony"</span>;
+              </div>
+            
+              <div class="p-4 bg-black/20">
+                <span class="text-pink-500/60">function</span> 
+                <span class="text-indigo-500/60">createMusicMagic</span>() {
+                <span class="text-gray-400/60">return</span> 
+                <span class="text-green-500/60">"🎵 + 💻 = 🎮"</span>;
+              </div>
+            
+              <div class="p-4 bg-black/20">
+                <span class="text-pink-500/60">while</span>(<span class="text-indigo-500/60">coding</span>) {
+                  <span class="text-gray-400/60">playMusic</span>.<span class="text-green-500/60">volume</span> = <span class="text-yellow-500/60">∞</span>;
+                }
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
     </section>
     <!-- Music Player Section -->
     
@@ -1917,164 +1912,129 @@
     </section>
     <!-- Testimonials Section -->
 
-    <!-- Contact Section -->
-    <section class="py-20 relative overflow-hidden">
-      <!-- Background Effects -->
-      <div class="absolute inset-0 grid-pattern opacity-10"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"
-      ></div>
-
-      <div class="max-w-3xl mx-auto px-4 relative z-10">
-        <!-- Attractive Header -->
-        <div class="text-center mb-20">
-          <div class="flex items-center justify-center mb-6 space-x-4">
-            <i
-              class="ri-code-box-line text-4xl bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent"
-            ></i>
-            <i class="ri-arrow-right-line text-2xl text-gray-400"></i>
-            <i
-              class="ri-chat-smile-2-line text-4xl bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent"
-            ></i>
-          </div>
-          <h2 class="text-3xl font-bold mb-4">
-            Let's Build Something Amazing Together
+      <!-- Contact Section -->
+    <section class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-16">
+      <div class="flex items-center gap-6">
+        <div>
+          <h2>
+            <span class="text-green-500 text-sm font-mono">const</span>
+            <span class="text-blue-500 text-sm font-mono">contact =</span>
+            <span class="text-pink-500 text-sm font-mono">"Let's Connect"</span>
           </h2>
-          <div class="mt-6 flex justify-center gap-2 text-gray-400 text-sm">
-            <span class="flex items-center gap-2">
-              <i class="ri-checkbox-circle-line text-green-500"></i>
-              Available for Projects
-            </span>
-            <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
-            <span class="flex items-center gap-2">
-              <i class="ri-time-line text-blue-500"></i>
-              Quick Response
-            </span>
-            <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
-            <span class="flex items-center gap-2">
-              <i class="ri-global-line text-purple-500"></i>
-              Remote Work
-            </span>
-          </div>
-        </div>
-
-        <!-- Contact Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <!-- Phone -->
-          <a
-            href="tel:+977-9863588895"
-            class="glass p-6 group hover:border-blue-500 border border-transparent transition-all hover:-translate-y-1"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="w-12 h-12 flex items-center justify-center bg-white/5"
-              >
-                <i
-                  class="ri-phone-line text-2xl text-gray-400 group-hover:text-blue-500 transition-colors"
-                ></i>
-              </div>
-              <div>
-                <p class="text-sm text-gray-400">Phone</p>
-                <p
-                  class="text-base mt-1 group-hover:text-blue-500 transition-colors"
-                >
-                  +977-9863588895
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <!-- Email -->
-          <a
-            href="mailto:iamompandey.it@gmail.com"
-            class="glass p-6 group hover:border-red-500 border border-transparent transition-all hover:-translate-y-1"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="w-12 h-12 flex items-center justify-center bg-white/5"
-              >
-                <i
-                  class="ri-mail-line text-2xl text-gray-400 group-hover:text-red-500 transition-colors"
-                ></i>
-              </div>
-              <div>
-                <p class="text-sm text-gray-400">Email</p>
-                <p
-                  class="text-base mt-1 group-hover:text-red-500 transition-colors"
-                >
-                  iamompandey.it@gmail.com
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <!-- Location -->
-          <div
-            class="glass p-6 group hover:border-green-500 border border-transparent transition-all hover:-translate-y-1 sm:col-span-2"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="w-12 h-12 flex items-center justify-center bg-white/5"
-              >
-                <i
-                  class="ri-map-pin-line text-2xl text-gray-400 group-hover:text-green-500 transition-colors"
-                ></i>
-              </div>
-              <div>
-                <p class="text-sm text-gray-400">Location</p>
-                <p
-                  class="text-base mt-1 group-hover:text-green-500 transition-colors"
-                >
-                  Link Marg, Kalanki, Kathmandu 44600
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Links -->
-        <div class="mt-8 glass p-8 text-center">
-          <p class="text-sm text-gray-400 mb-6">
-            CONNECT WITH ME ON SOCIAL MEDIA
-          </p>
-          <div class="flex justify-center gap-6">
-            <a
-              href="https://github.com/ompandey07"
-              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
-            >
-              <i
-                class="ri-github-line text-2xl text-gray-400 group-hover:text-[#333] transition-colors"
-              ></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/om-pandey-647844305/"
-              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
-            >
-              <i
-                class="ri-linkedin-line text-2xl text-gray-400 group-hover:text-[#0077b5] transition-colors"
-              ></i>
-            </a>
-            <a
-              href="https://x.com/OPandey36030"
-              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
-            >
-              <i
-                class="ri-twitter-line text-2xl text-gray-400 group-hover:text-[#1da1f2] transition-colors"
-              ></i>
-            </a>
-            <a
-              href="https://www.instagram.com/organiccoders/"
-              class="w-12 h-12 glass flex items-center justify-center group hover:-translate-y-1 transition-transform"
-            >
-              <i
-                class="ri-instagram-line text-2xl text-gray-400 group-hover:text-[#e4405f] transition-colors"
-              ></i>
-            </a>
-          </div>
+          <div class="border border-b-gray-800 border-transparent"></div>
         </div>
       </div>
+      <div class="border border-b-gray-800 border-transparent"></div>
+      <div class="hidden md:block h-px w-32 bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="max-w-3xl mx-auto">
+      <!-- Status Badges -->
+      <div class="flex justify-center gap-2 text-gray-400 text-sm mb-12">
+        <span class="flex items-center gap-2">
+          <i class="ri-checkbox-circle-line text-green-500"></i>
+          Available for Projects
+        </span>
+        <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
+        <span class="flex items-center gap-2">
+          <i class="ri-time-line text-blue-500"></i>
+          Quick Response
+        </span>
+        <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
+        <span class="flex items-center gap-2">
+          <i class="ri-global-line text-purple-500"></i>
+          Remote Work
+        </span>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Phone -->
+        <a href="tel:+977-9863588895" class="bg-white/[0.02] p-6 group hover:border-blue-500 border border-transparent transition-all hover:-translate-y-1">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-white/5">
+              <i class="ri-phone-line text-2xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Phone</p>
+              <p class="text-base mt-1 group-hover:text-blue-500 transition-colors">
+                +977-9863588895
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:iamompandey.it@gmail.com" class="bg-white/[0.02] p-6 group hover:border-red-500 border border-transparent transition-all hover:-translate-y-1">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-white/5">
+              <i class="ri-mail-line text-2xl text-gray-400 group-hover:text-red-500 transition-colors"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Email</p>
+              <p class="text-base mt-1 group-hover:text-red-500 transition-colors">
+                iamompandey.it@gmail.com
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Location -->
+        <a 
+        href="https://www.google.com/maps/place/Kalanki,+Kathmandu+44600/@27.6931714,85.2785685,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb187a97f390b1:0xec3f47092df0d4ca!8m2!3d27.6931052!4d85.2806539!16s%2Fg%2F1tf41c8t?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" 
+        target="_blank" 
+        class="cursor-pointer"
+      >
+        <div class="bg-white/[0.02] p-6 group hover:border-green-500 border border-transparent transition-all hover:-translate-y-1 sm:col-span-2">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex items-center justify-center bg-white/5">
+              <i class="ri-map-pin-line text-2xl text-gray-400 group-hover:text-green-500 transition-colors"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Location</p>
+              <p 
+                class="text-base mt-1 group-hover:text-green-500 transition-colors whitespace-nowrap"
+              >
+                Link Marg, Kalanki, Kathmandu 44600
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      </div>
+
+      <!-- Social Links -->
+      <div class="mt-8 bg-white/[0.02] p-8 text-center">
+        <p class="mb-6">
+            <span class="text-pink-500/70">const</span> 
+            <span class="text-indigo-500/70">socialMedia</span> 
+            <span class="text-gray-400/70">=</span> 
+            <span class="text-green-500/70">"Connect With Me"</span>
+            <span class="text-gray-400/70">;</span>
+        </p>
+        <div class="flex justify-center gap-6">
+            <a href="https://github.com/ompandey07" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <i class="ri-github-line text-2xl text-gray-400/70 group-hover:text-[#333] transition-colors"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/om-pandey-647844305/" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <i class="ri-linkedin-line text-2xl text-gray-400/70 group-hover:text-[#0077b5] transition-colors"></i>
+            </a>
+            <a href="https://x.com/OPandey36030" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <i class="ri-twitter-line text-2xl text-gray-400/70 group-hover:text-[#1da1f2] transition-colors"></i>
+            </a>
+            <a href="https://www.instagram.com/omespark/" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <i class="ri-instagram-line text-2xl text-gray-400/70 group-hover:text-[#e4405f] transition-colors"></i>
+            </a>
+        </div>
+    </div>
+    </div>
+  </div>
     </section>
-    <!-- Contact Section -->
 
 
 
