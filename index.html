@@ -81,187 +81,102 @@
 
 
     <!-- Hero Section - Complete -->
-    <section class="min-h-screen relative overflow-hidden flex items-center">
+    <section class="min-h-screen relative overflow-hidden flex items-center mt-8">
       <!-- Background Elements -->
       <div class="absolute inset-0">
-        <div
-          class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05),transparent_50%)]"
-        ></div>
-        <div
-          class="absolute h-40 w-full top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-indigo-500/5 to-transparent"
-        ></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05),transparent_50%)]"></div>
+        <div class="absolute h-40 w-full top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-indigo-500/5 to-transparent"></div>
       </div>
-
+    
       <div class="max-w-7xl mx-auto px-4 relative">
-        <!-- Main Content -->
-        <div class="text-center mb-20 mt-20">
-          <h1 class="text-6xl md:text-8xl font-bold mb-8">
-            They <span class="gradient-text">Call me</span> Spark
-          </h1>
-          <div class="font-mono text-lg max-w-3xl mx-auto px-4">
-            <pre class="text-left">
-        <span class="text-pink-500/80">const</span> <span class="text-indigo-500/80">introduction</span> <span class="text-gray-400/60">=</span> <span class="text-green-500/80">async</span> () <span class="text-gray-400/60">=></span> <span class="text-gray-400/60">{</span>
-          <span class="text-pink-500/80">return</span> <span id="typed-text" class="text-yellow-500/80"></span><span class="typing-cursor">|</span>
-        <span class="text-gray-400/60">}</span></pre>
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <!-- Left Column - Introduction -->
+          <div class="text-left">
+            <h1 class="text-6xl md:text-8xl font-bold mb-8">
+              丅ᕼᗴƳ <span class="gradient-text">ᴄαℓℓ мє</span> ᑭαи∂єƳ
+            </h1>
+            <div class="font-mono text-lg max-w-xl">
+              <pre class="text-left">
+                <span class="text-pink-500/80">const</span> <span class="text-indigo-500/80">introduction</span> <span class="text-gray-400/60">=</span> <span class="text-green-500/80">async</span> () <span class="text-gray-400/60">=></span> <span class="text-gray-400/60">{</span>
+                  <span class="text-pink-500/80">return</span> <span id="typed-text" class="text-yellow-500/80">"I turn dreams into reality"</span><span class="typing-cursor">|</span>
+                <span class="text-gray-400/60">}</span>
+              </pre>
+            </div>
           </div>
-        </div>
-
-        <!-- Animated Circle with Image -->
-        <div class="relative flex justify-center items-center">
-          <!-- Center Image Container -->
-          <div class="relative w-[400px] h-[400px] mt-[100px]">
-            <!-- Animated Circles -->
-            <div class="absolute inset-0 animate-spin-slow">
-              <div
-                class="absolute inset-0 rounded-full border border-white/5"
-              ></div>
-              <div
-                class="absolute inset-[-40px] rounded-full border border-white/5"
-              ></div>
-              <div
-                class="absolute inset-[-80px] rounded-full border border-white/5"
-              ></div>
-            </div>
-
-            <!-- Frontend Tech Stack (Inner Orbit) -->
-            <div class="absolute inset-[-40px] animate-spin-reverse-slow">
-              <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/html.gif"
-                  alt="HTML"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
+    
+          <!-- Right Column - Spinning Tech Stack -->
+          <div class="relative h-[600px] flex justify-center items-center">
+            <!-- Center Image Container -->
+            <div class="relative w-[400px] h-[400px]">
+              <!-- Animated Circles -->
+              <div class="absolute inset-0 animate-spin-slow">
+                <div class="absolute inset-0 rounded-full border border-white/5"></div>
+                <div class="absolute inset-[-40px] rounded-full border border-white/5"></div>
+                <div class="absolute inset-[-80px] rounded-full border border-white/5"></div>
               </div>
-              <div
-                class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/css-3.png"
-                  alt="CSS"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
+    
+              <!-- Frontend Tech Stack (Inner Orbit) -->
+              <div class="absolute inset-[-40px] animate-spin-reverse-slow">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/html.gif" alt="HTML" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/css-3.png" alt="CSS" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <img src="Experties/javascript.gif" alt="JavaScript" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/reactjs.gif" alt="React" class="w-12 h-12 mix-blend-lighten" />
+                </div>
               </div>
-              <div
-                class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
-              >
-                <img
-                  src="Experties/javascript.gif"
-                  alt="JavaScript"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
+    
+              <!-- Backend Tech Stack (Middle Orbit) -->
+              <div class="absolute inset-[-80px] animate-spin-slow">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/Python.gif" alt="Python" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <img src="Experties/nodejs.gif" alt="Node.js" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
+                </div>
               </div>
-              <div
-                class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/reactjs.gif"
-                  alt="React"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
+    
+              <!-- Tools & Additional Tech (Outer Orbit) -->
+              <div class="absolute inset-[-120px] animate-spin-reverse-slow">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/bootstarp.gif" alt="Bootstrap" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/docker.gif" alt="Docker" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <img src="Experties/sql.gif" alt="SQL" class="w-12 h-12 mix-blend-lighten" />
+                </div>
+                <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                  <img src="Experties/npm.webp" alt="NPM" class="w-12 h-12 mix-blend-lighten" />
+                </div>
               </div>
-            </div>
-
-            <!-- Backend Tech Stack (Middle Orbit) -->
-            <div class="absolute inset-[-80px] animate-spin-slow">
-              <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/Python.gif"
-                  alt="Python"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-              <div
-                class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="images/mongodb.gif"
-                  alt="Django"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-              <div
-                class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
-              >
-                <img
-                  src="Experties/nodejs.gif"
-                  alt="Node.js"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-              <div
-                class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/mongodb.gif"
-                  alt="MongoDB"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-            </div>
-
-            <!-- Tools & Additional Tech (Outer Orbit) -->
-            <div class="absolute inset-[-120px] animate-spin-reverse-slow">
-              <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/bootstarp.gif"
-                  alt="Bootstrap"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-              <div
-                class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/docker.gif"
-                  alt="Docker"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-              <div
-                class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
-              >
-                <img
-                  src="Experties/sql.gif"
-                  alt="SQL"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-              <div
-                class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"
-              >
-                <img
-                  src="Experties/npm.webp"
-                  alt="NPM"
-                  class="w-12 h-12 mix-blend-lighten"
-                />
-              </div>
-            </div>
-
-            <!-- Center Image -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="relative w-72 h-72">
-                <div class="absolute"></div>
-                <img
-                  src="Profile/ProfileWIthBg.jpg"
-                  alt="Profile"
-                  class="w-full h-full object-cover rounded-full p-1 bg-gray-900/80"
-                />
+    
+              <!-- Center Image -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="relative w-72 h-72">
+                  <img src="Profile/MainOne.jpg" alt="Profile" class="w-full h-full object-cover rounded-full p-1 bg-gray-900/80" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-
+    
         <!-- Bottom Stats -->
-        <div class="mt-[180px] flex justify-center">
-          <div
-            class="bg-white/5 backdrop-blur-sm px-8 py-4 flex items-center gap-12"
-          >
+        <div class="mt-20 flex justify-center">
+          <div class="bg-white/5 backdrop-blur-sm px-8 py-4 flex items-center gap-12">
             <div class="text-center">
               <div class="text-2xl font-light">2+</div>
               <div class="text-sm text-gray-400">Years Experience</div>
