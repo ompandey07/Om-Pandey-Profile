@@ -586,110 +586,205 @@
     <div class="fixed inset-0 z-0 sharingan-pattern opacity-70"></div>
 
     <!-- Hero Section -->
-    <section class="min-h-screen relative overflow-hidden flex items-center mt-8">
-      <div class="max-w-7xl mx-auto px-4 relative">
-        <!-- Top Title -->
-        <div class="text-center mb-12">
-          <h1 class="text-6xl md:text-8xl font-bold">
-            丅ᕼᗴƳ <span class="gradient-text">ᴄαℓℓ мє</span> ᑭαи∂єƳ
-          </h1>
+   <!-- Hero Section with Video Limited to Hero Area Only -->
+<section class="hero-section min-h-screen relative overflow-hidden flex items-center">
+  <!-- Background Video - Limited to Hero Section Only -->
+  <div class="video-container absolute inset-0 z-0 overflow-hidden">
+    <video
+      id="hero-video"
+      class="w-full h-full object-cover"
+      loop
+      playsinline
+      muted
+    >
+      <source src="Videos/Minato.mp4" type="video/mp4" />
+      <!-- Fallback image in case video doesn't load -->
+      Your browser does not support the video tag.
+    </video>
+    <!-- Overlay to darken video and make text readable -->
+    <div class="absolute inset-0 bg-[#111111]/70"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <!-- Top Title -->
+    <div class="text-center mb-12">
+      <h1 class="text-6xl md:text-8xl font-bold">
+        丅ᕼᗴƳ <span class="gradient-text">ᴄαℓℓ мє</span> ᑭαи∂єƳ
+      </h1>
+    </div>
+
+    <!-- Centered Circular Image with Tech Stack -->
+    <div class="flex justify-center">
+      <div class="relative w-[400px] h-[400px]">
+        <!-- Animated Circles -->
+        <div class="absolute inset-0 animate-spin-slow">
+          <div class="absolute inset-0 rounded-full border border-white/5"></div>
+          <div class="absolute inset-[-40px] rounded-full border border-white/5"></div>
+          <div class="absolute inset-[-80px] rounded-full border border-white/5"></div>
         </div>
-    
-        <!-- Centered Circular Image with Tech Stack -->
-        <div class="flex justify-center">
-          <div class="relative w-[400px] h-[400px]">
-            <!-- Animated Circles -->
-            <div class="absolute inset-0 animate-spin-slow">
-              <div class="absolute inset-0 rounded-full border border-white/5"></div>
-              <div class="absolute inset-[-40px] rounded-full border border-white/5"></div>
-              <div class="absolute inset-[-80px] rounded-full border border-white/5"></div>
-            </div>
-    
-            <!-- Frontend Tech Stack (Inner Orbit) -->
-            <div class="absolute inset-[-40px] animate-spin-reverse-slow">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/html.gif" alt="HTML" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/css-3.png" alt="CSS" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                <img src="Experties/javascript.gif" alt="JavaScript" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/reactjs.gif" alt="React" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-            </div>
-    
-            <!-- Backend Tech Stack (Middle Orbit) -->
-            <div class="absolute inset-[-80px] animate-spin-slow">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/Python.gif" alt="Python" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                <img src="Experties/nodejs.gif" alt="Node.js" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-            </div>
-    
-            <!-- Tools & Additional Tech (Outer Orbit) -->
-            <div class="absolute inset-[-120px] animate-spin-reverse-slow">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/bootstarp.gif" alt="Bootstrap" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/docker.gif" alt="Docker" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                <img src="Experties/sql.gif" alt="SQL" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-              <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
-                <img src="Experties/npm.webp" alt="NPM" class="w-12 h-12 mix-blend-lighten" />
-              </div>
-            </div>
-    
-            <!-- Center Image -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="relative w-72 h-72">
-                <img src="Profile/Minaoto.gif" alt="Profile" class="w-full h-full object-cover rounded-full p-1 bg-black/50" />
-              </div>
-            </div>
+
+        <!-- Frontend Tech Stack (Inner Orbit) -->
+        <div class="absolute inset-[-40px] animate-spin-reverse-slow">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/html.gif" alt="HTML" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/css-3.png" alt="CSS" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+            <img src="Experties/javascript.gif" alt="JavaScript" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/reactjs.gif" alt="React" class="w-12 h-12 mix-blend-lighten" />
           </div>
         </div>
-    
-        <!-- Code snippet under the circle -->
-        <div class="max-w-xl mx-auto mt-8 mb-12">
-          <pre class="text-left font-mono text-lg">
-            
-          </pre>
+
+        <!-- Backend Tech Stack (Middle Orbit) -->
+        <div class="absolute inset-[-80px] animate-spin-slow">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/Python.gif" alt="Python" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+            <img src="Experties/nodejs.gif" alt="Node.js" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
+          </div>
         </div>
-    
-        <!-- Bottom Stats -->
-        <div class="flex justify-center">
-          <div class="naruto-card backdrop-blur-sm px-8 py-4 flex items-center gap-12">
-            <div class="text-center">
-              <div class="text-2xl font-light text-[#FF7800]">2+</div>
-              <div class="text-sm text-gray-400">Years Training</div>
-            </div>
-            <div class="w-px h-12 bg-white/10"></div>
-            <div class="text-center">
-              <div class="text-2xl font-light text-[#FF7800]">15+</div>
-              <div class="text-sm text-gray-400">Jutsu Mastered</div>
-            </div>
-            <div class="w-px h-12 bg-white/10"></div>
-            <div class="text-center">
-              <div class="text-2xl font-light text-[#FF7800]">10+</div>
-              <div class="text-sm text-gray-400">Chakra Natures</div>
-            </div>
+
+        <!-- Tools & Additional Tech (Outer Orbit) -->
+        <div class="absolute inset-[-120px] animate-spin-reverse-slow">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/bootstarp.gif" alt="Bootstrap" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/docker.gif" alt="Docker" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+            <img src="Experties/sql.gif" alt="SQL" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+          <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+            <img src="Experties/npm.webp" alt="NPM" class="w-12 h-12 mix-blend-lighten" />
+          </div>
+        </div>
+
+        <!-- Center Image -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="relative w-72 h-72">
+            <img src="Profile/Minaoto.gif" alt="Profile" class="w-full h-full object-cover rounded-full p-1 bg-black/50" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Sound Control Button -->
+    <div class="flex justify-center mt-6">
+      <button id="sound-toggle" class="flex items-center gap-2 bg-[#FF7800]/20 hover:bg-[#FF7800]/30 px-4 py-2 rounded-full transition-colors">
+        <i id="sound-icon" class="ri-volume-mute-line text-xl text-[#FF7800]"></i>
+        <span class="text-sm text-gray-300">Click for sound</span>
+      </button>
+    </div>
+
+    <!-- Bottom Stats -->
+    <div class="flex justify-center mt-8">
+      <div class="naruto-card backdrop-blur-sm px-8 py-4 flex items-center gap-12">
+        <div class="text-center">
+          <div class="text-2xl font-light text-[#FF7800]">2+</div>
+          <div class="text-sm text-gray-400">Years Training</div>
+        </div>
+        <div class="w-px h-12 bg-white/10"></div>
+        <div class="text-center">
+          <div class="text-2xl font-light text-[#FF7800]">15+</div>
+          <div class="text-sm text-gray-400">Jutsu Mastered</div>
+        </div>
+        <div class="w-px h-12 bg-white/10"></div>
+        <div class="text-center">
+          <div class="text-2xl font-light text-[#FF7800]">10+</div>
+          <div class="text-sm text-gray-400">Chakra Natures</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /* Video styling for hero section only */
+#hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+/* Hero section with video */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Video container limited to hero section */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Sound toggle button effects */
+#sound-toggle {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 120, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#sound-toggle:hover {
+  box-shadow: 0 0 20px rgba(255, 120, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+#sound-toggle:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 120, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#sound-toggle:hover:after {
+  opacity: 1;
+}
+
+/* Sound icon pulse animation */
+@keyframes soundPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.sound-playing #sound-icon {
+  animation: soundPulse 1.5s infinite ease-in-out;
+  color: #FF7800;
+}
+</style>
   <!-- Hero Section - End -->
 
   <!-- Featured Projects / Missions Section -->
