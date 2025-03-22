@@ -24,8 +24,8 @@
     <meta property="og:url" content="https://www.omkumarpandey.com.np/" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Om Pandey" />
-    <link rel="shortcut icon" href="/images/naughty.png" />
-    <title>Om Pandey</title>
+    <link rel="shortcut icon" href="images/samurai.png" type="image/x-icon">
+    <title>Om Pandey </title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,1710 +51,2263 @@
     <link rel="stylesheet" href="Assests/styles.css">
     <link rel="stylesheet" href="Assests/loder.css">
 
-    
+    <style>
+      :root {
+        --naruto-orange: #FF7800;
+        --naruto-blue: #00458B;
+        --naruto-dark: #111111;
+        --naruto-darker: #0A0A0A;
+        --konoha-green: #2E7D32;
+        --akatsuki-red: #9D2933;
+        --chakra-blue: #52D1DC;
+      }
+      
+      body {
+        background-color: var(--naruto-dark);
+        color: #FFFFFF;
+        overflow-x: hidden;
+        background-image: 
+          linear-gradient(to bottom, rgba(17, 17, 17, 0.9), rgba(10, 10, 10, 0.95)),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Cpath fill='%23FF7800' fill-opacity='0.03' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'%3E%3C/path%3E%3C/svg%3E");
+      }
+      
+      /* Preloader with chakra element animation */
+      #overlayer {
+        background-color: var(--naruto-darker);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      
+      .summoning-circle {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 2px solid var(--naruto-orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        opacity: 0.7;
+        animation: rotateCircle 10s linear infinite;
+      }
+      
+      .summoning-circle::before {
+        content: '';
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        border: 1px solid var(--chakra-blue);
+        animation: pulseCircle 3s ease-in-out infinite;
+      }
+      
+      .summoning-circle::after {
+        content: '';
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255,120,0,0.1) 0%, rgba(10,10,10,0) 70%);
+      }
+      
+      .code-container {
+        position: relative;
+        z-index: 2;
+      }
+      
+      @keyframes rotateCircle {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes pulseCircle {
+        0% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.05); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 0.5; }
+      }
+      
+      /* Background chakra elements */
+      .chakra-flow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      
+      .chakra-particle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--naruto-orange);
+        filter: blur(3px);
+        opacity: 0;
+        animation: float-up 10s infinite linear;
+      }
+      
+      .chakra-particle:nth-child(2n) {
+        background-color: var(--chakra-blue);
+        animation-delay: 2s;
+        animation-duration: 12s;
+      }
+      
+      .chakra-particle:nth-child(3n) {
+        background-color: var(--konoha-green);
+        animation-delay: 4s;
+        animation-duration: 15s;
+      }
+      
+      .chakra-particle:nth-child(5n) {
+        width: 12px;
+        height: 12px;
+        animation-delay: 1s;
+        animation-duration: 18s;
+      }
+      
+      @keyframes float-up {
+        0% {
+          transform: translateY(120vh) translateX(0);
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.3;
+        }
+        80% {
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(-50vh) translateX(20px);
+          opacity: 0;
+        }
+      }
+      
+      /* Naruto Sharingan Scroll Pattern */
+      .sharingan-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='50' fill='%239D2933' fill-opacity='0.03'/%3E%3Cpath d='M60 10 A50 50 0 1 0 110 60' stroke='%239D2933' stroke-opacity='0.03' stroke-width='2' fill='none'/%3E%3Cpath d='M60 10 A50 50 0 0 1 10 60' stroke='%239D2933' stroke-opacity='0.03' stroke-width='2' fill='none'/%3E%3Cpath d='M10 60 A50 50 0 0 0 60 110' stroke='%239D2933' stroke-opacity='0.03' stroke-width='2' fill='none'/%3E%3Cpath d='M110 60 A50 50 0 0 1 60 110' stroke='%239D2933' stroke-opacity='0.03' stroke-width='2' fill='none'/%3E%3Ccircle cx='60' cy='60' r='40' stroke='%239D2933' stroke-opacity='0.05' stroke-width='1' fill='none'/%3E%3Ccircle cx='60' cy='60' r='25' stroke='%239D2933' stroke-opacity='0.05' stroke-width='1' fill='none'/%3E%3Ccircle cx='60' cy='60' r='10' fill='%239D2933' fill-opacity='0.05'/%3E%3C/svg%3E");
+      }
+      
+      /* Kunai animations */
+      .kunai-svg {
+        position: absolute;
+        width: 30px;
+        height: 120px;
+        animation: kunaiThrow 10s linear infinite;
+        opacity: 0;
+        z-index: 0;
+      }
+      
+      @keyframes kunaiThrow {
+        0% {
+          transform: translateX(-100px) translateY(100px) rotate(45deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.2;
+        }
+        90% {
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(45deg);
+          opacity: 0;
+        }
+      }
+      
+      /* Gradient text effect */
+      .gradient-text {
+        background: linear-gradient(120deg, var(--naruto-orange), var(--chakra-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      
+      /* Chakra Nature Card Animations */
+      .chakra-nature-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, rgba(30, 30, 30, 0.7), rgba(20, 20, 20, 0.8));
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .chakra-nature-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          transparent, 
+          transparent, 
+          transparent, 
+          var(--naruto-orange)
+        );
+        animation: rotate 4s linear infinite;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      .chakra-nature-card:hover::before {
+        opacity: 0.3;
+      }
+      
+      .chakra-nature-card::after {
+        content: '';
+        position: absolute;
+        inset: 4px;
+        background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.95));
+        z-index: 1;
+      }
+      
+      .chakra-nature-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Leaf village elements */
+      .leaf-symbol {
+        position: relative;
+        width: 24px;
+        height: 24px;
+      }
+      
+      .leaf-symbol::before {
+        content: '☸';
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 24px;
+        color: var(--konoha-green);
+      }
+      
+      /* Animated borders for sections */
+      .animated-border {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .animated-border::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--naruto-orange), transparent);
+        animation: borderSlide 3s ease-in-out infinite;
+      }
+      
+      @keyframes borderSlide {
+        0% { left: -100%; }
+        50% { left: 100%; }
+        100% { left: 100%; }
+      }
+      
+      /* Naruto-style section cards */
+      .naruto-card {
+        position: relative;
+        background: linear-gradient(135deg, rgba(25, 25, 25, 0.7), rgba(15, 15, 15, 0.8));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .naruto-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M0 20 A20 20 0 0 1 20 0 A20 20 0 0 1 40 20 A20 20 0 0 1 20 40 A20 20 0 0 1 0 20 Z' fill='%23FF7800' fill-opacity='0.03'/%3E%3C/svg%3E");
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .naruto-card:hover::before {
+        opacity: 1;
+      }
+      
+      /* Jutsu mastery scrolls */
+      .jutsu-scroll {
+        position: relative;
+        background: linear-gradient(135deg, rgba(30, 30, 30, 0.7), rgba(20, 20, 20, 0.8));
+        border-left: 3px solid var(--naruto-orange);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .jutsu-scroll:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      .jutsu-icon {
+        position: relative;
+      }
+      
+      .jutsu-icon::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 120, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      .jutsu-scroll:hover .jutsu-icon::after {
+        opacity: 1;
+      }
+      
+      /* Mission cards */
+      .mission-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .mission-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--naruto-orange), var(--chakra-blue));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s ease;
+      }
+      
+      .mission-card:hover::before {
+        transform: scaleX(1);
+      }
+      
+      /* Animated contact scrolls */
+      .contact-scroll {
+        position: relative;
+        background: linear-gradient(135deg, rgba(30, 30, 30, 0.7), rgba(20, 20, 20, 0.8));
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .contact-scroll::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          transparent, 
+          transparent, 
+          transparent, 
+          var(--chakra-blue)
+        );
+        animation: rotate 4s linear infinite;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      .contact-scroll:hover::before {
+        opacity: 0.3;
+      }
+      
+      .contact-scroll::after {
+        content: '';
+        position: absolute;
+        inset: 1px;
+        background: linear-gradient(135deg, rgba(25, 25, 25, 0.9), rgba(15, 15, 15, 0.95));
+        z-index: 1;
+      }
+      
+      .contact-content {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
   </head>
 
-
-  <!-- Loader -->
-  <div id="overlayer">
-    <div class="code-container">
-      <pre class="typing-code">
-        <span class="typing-animation" id="greeting"></span><span class="cursor"></span>
-      </pre>
+    <!-- Ninja-Themed Dynamic Preloader -->
+<div id="overlayer">
+  <div class="flex flex-col items-center justify-center h-full">
+    <div class="ninja-summoning-ritual relative w-64 h-64">
+      <!-- Base Chakra Circle -->
+      <svg class="absolute inset-0 chakra-base" width="256" height="256" viewBox="0 0 256 256">
+        <circle cx="128" cy="128" r="120" fill="none" stroke="#FF7800" stroke-width="1" stroke-dasharray="4 4" class="animate-spin-slow" />
+        <circle cx="128" cy="128" r="100" fill="none" stroke="#52D1DC" stroke-width="1" stroke-dasharray="8 8" class="animate-spin-reverse-slow" />
+      </svg>
+      
+      <!-- Animated Ninja Star -->
+      <svg class="absolute inset-0 ninja-star" width="256" height="256" viewBox="0 0 256 256">
+        <path d="M128 48 L148 108 L208 128 L148 148 L128 208 L108 148 L48 128 L108 108 Z" 
+              fill="none" stroke="#FF7800" stroke-width="2" class="animate-pulse" />
+        <path d="M128 88 L138 118 L168 128 L138 138 L128 168 L118 138 L88 128 L118 118 Z" 
+              fill="none" stroke="#52D1DC" stroke-width="1.5" class="animate-spin-slow" />
+      </svg>
+      
+      <!-- Hidden Leaf Symbol -->
+      <svg class="absolute inset-0 leaf-symbol opacity-0" width="256" height="256" viewBox="0 0 256 256">
+        <circle cx="128" cy="128" r="50" fill="none" stroke="#2E7D32" stroke-width="2" />
+        <path d="M128 78 C168 78 168 128 128 178 C88 128 88 78 128 78 Z" fill="none" stroke="#2E7D32" stroke-width="2" />
+        <circle cx="128" cy="128" r="10" fill="#2E7D32" />
+      </svg>
+      
+      <!-- Glowing Chakra Energy -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-16 h-16 bg-[#FF7800] rounded-full filter blur-lg opacity-30 animate-pulse"></div>
+      </div>
+      
+      <!-- Chakra Seal Circles -->
+      <svg class="absolute inset-0 chakra-seal" width="256" height="256" viewBox="0 0 256 256">
+        <circle cx="128" cy="128" r="60" fill="none" stroke="#FF7800" stroke-width="1" />
+        <circle cx="128" cy="128" r="40" fill="none" stroke="#52D1DC" stroke-width="1" />
+        
+        <!-- Kanji for "Shinobi" -->
+        <text x="128" y="138" text-anchor="middle" font-size="30" fill="#FF7800" font-family="serif">忍</text>
+      </svg>
+      
+      <!-- Kunai Weapons (4 of them) -->
+      <svg class="absolute kunai kunai-1" width="60" height="12" viewBox="0 0 60 12" style="top: 45%; left: -30px;">
+        <path d="M0 6 L50 0 L55 6 L50 12 Z" fill="#888888" />
+        <rect x="50" y="4" width="10" height="4" fill="#555555" />
+      </svg>
+      
+      <svg class="absolute kunai kunai-2" width="60" height="12" viewBox="0 0 60 12" style="top: 45%; right: -30px; transform: scaleX(-1);">
+        <path d="M0 6 L50 0 L55 6 L50 12 Z" fill="#888888" />
+        <rect x="50" y="4" width="10" height="4" fill="#555555" />
+      </svg>
+      
+      <svg class="absolute kunai kunai-3" width="12" height="60" viewBox="0 0 12 60" style="left: 45%; top: -30px; transform: rotate(90deg);">
+        <path d="M0 6 L50 0 L55 6 L50 12 Z" fill="#888888" />
+        <rect x="50" y="4" width="10" height="4" fill="#555555" />
+      </svg>
+      
+      <svg class="absolute kunai kunai-4" width="12" height="60" viewBox="0 0 12 60" style="left: 45%; bottom: -30px; transform: rotate(-90deg);">
+        <path d="M0 6 L50 0 L55 6 L50 12 Z" fill="#888888" />
+        <rect x="50" y="4" width="10" height="4" fill="#555555" />
+      </svg>
     </div>
   </div>
-  <!-- Loader -->
+</div>
 
+<style>
+  /* Additional animations for ninja elements */
+  .kunai {
+    opacity: 0;
+    transition: all 1s ease;
+  }
   
+  .kunai-active {
+    opacity: 1;
+    transform: translateX(0) rotate(0) !important;
+  }
+  
+  .kunai-1.kunai-active { transform: translateX(80px) !important; }
+  .kunai-2.kunai-active { transform: translateX(-80px) scaleX(-1) !important; }
+  .kunai-3.kunai-active { transform: translateY(80px) rotate(90deg) !important; }
+  .kunai-4.kunai-active { transform: translateY(-80px) rotate(-90deg) !important; }
+  
+  .leaf-symbol {
+    transition: opacity 1s ease;
+  }
+  
+  .leaf-symbol-active {
+    opacity: 1;
+  }
+  
+  @keyframes chakraFlare {
+    0% { filter: blur-lg; opacity: 0.3; transform: scale(0.8); }
+    50% { filter: blur-xl; opacity: 0.6; transform: scale(1.2); }
+    100% { filter: blur-lg; opacity: 0.3; transform: scale(0.8); }
+  }
+  
+  .chakra-seal {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: scale(0.5);
+  }
+  
+  .chakra-seal-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
 
   <body class="overflow-x-hidden">
-
-
-    <!-- Background Effects -->
-    <div class="fixed inset-0 z-0">
-      <div class="absolute top-0 left-0 glow bg-indigo-500"></div>
-      <div class="absolute bottom-0 right-0 glow bg-pink-500"></div>
-      <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <!-- Chakra Flow Background -->
+    <div class="chakra-flow">
+      <!-- Chakra Particles Will Be Added by JavaScript -->
     </div>
-    <!-- Background Effects -->
+    
+    <!-- Kunai Animation -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+      <svg class="kunai-svg" style="top: 20%; animation-delay: 0s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 120">
+        <path d="M12 0 L20 80 L12 120 L4 80 Z" fill="#888" />
+        <path d="M12 70 L16 85 L12 105 L8 85 Z" fill="#555" />
+      </svg>
+      
+      <svg class="kunai-svg" style="top: 40%; animation-delay: 3s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 120">
+        <path d="M12 0 L20 80 L12 120 L4 80 Z" fill="#888" />
+        <path d="M12 70 L16 85 L12 105 L8 85 Z" fill="#555" />
+      </svg>
+      
+      <svg class="kunai-svg" style="top: 60%; animation-delay: 6s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 120">
+        <path d="M12 0 L20 80 L12 120 L4 80 Z" fill="#888" />
+        <path d="M12 70 L16 85 L12 105 L8 85 Z" fill="#555" />
+      </svg>
+    </div>
 
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 z-0 sharingan-pattern opacity-70"></div>
 
-
-    <!-- Hero Section - Complete -->
+    <!-- Hero Section -->
     <section class="min-h-screen relative overflow-hidden flex items-center mt-8">
-      <!-- Background Elements -->
-      <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05),transparent_50%)]"></div>
-        <div class="absolute h-40 w-full top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-indigo-500/5 to-transparent"></div>
-      </div>
-    
       <div class="max-w-7xl mx-auto px-4 relative">
-        <!-- Two Column Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <!-- Left Column - Introduction -->
-          <div class="text-left">
-            <h1 class="text-6xl md:text-8xl font-bold mb-8">
-              丅ᕼᗴƳ <span class="gradient-text">ᴄαℓℓ мє</span> ᑭαи∂єƳ
-            </h1>
-            <div class="font-mono text-lg max-w-xl">
-              <pre class="text-left">
-                <span class="text-pink-500/80">const</span> <span class="text-indigo-500/80">introduction</span> <span class="text-gray-400/60">=</span> <span class="text-green-500/80">async</span> () <span class="text-gray-400/60">=></span> <span class="text-gray-400/60">{</span>
-                  <span class="text-pink-500/80">return</span> <span id="typed-text" class="text-yellow-500/80">"I turn dreams into reality"</span><span class="typing-cursor">|</span>
-                <span class="text-gray-400/60">}</span>
-              </pre>
+        <!-- Top Title -->
+        <div class="text-center mb-12">
+          <h1 class="text-6xl md:text-8xl font-bold">
+            丅ᕼᗴƳ <span class="gradient-text">ᴄαℓℓ мє</span> ᑭαи∂єƳ
+          </h1>
+        </div>
+    
+        <!-- Centered Circular Image with Tech Stack -->
+        <div class="flex justify-center">
+          <div class="relative w-[400px] h-[400px]">
+            <!-- Animated Circles -->
+            <div class="absolute inset-0 animate-spin-slow">
+              <div class="absolute inset-0 rounded-full border border-white/5"></div>
+              <div class="absolute inset-[-40px] rounded-full border border-white/5"></div>
+              <div class="absolute inset-[-80px] rounded-full border border-white/5"></div>
             </div>
-          </div>
     
-          <!-- Right Column - Spinning Tech Stack -->
-          <div class="relative h-[600px] flex justify-center items-center">
-            <!-- Center Image Container -->
-            <div class="relative w-[400px] h-[400px]">
-              <!-- Animated Circles -->
-              <div class="absolute inset-0 animate-spin-slow">
-                <div class="absolute inset-0 rounded-full border border-white/5"></div>
-                <div class="absolute inset-[-40px] rounded-full border border-white/5"></div>
-                <div class="absolute inset-[-80px] rounded-full border border-white/5"></div>
+            <!-- Frontend Tech Stack (Inner Orbit) -->
+            <div class="absolute inset-[-40px] animate-spin-reverse-slow">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/html.gif" alt="HTML" class="w-12 h-12 mix-blend-lighten" />
               </div>
-    
-              <!-- Frontend Tech Stack (Inner Orbit) -->
-              <div class="absolute inset-[-40px] animate-spin-reverse-slow">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/html.gif" alt="HTML" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/css-3.png" alt="CSS" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                  <img src="Experties/javascript.gif" alt="JavaScript" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/reactjs.gif" alt="React" class="w-12 h-12 mix-blend-lighten" />
-                </div>
+              <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/css-3.png" alt="CSS" class="w-12 h-12 mix-blend-lighten" />
               </div>
-    
-              <!-- Backend Tech Stack (Middle Orbit) -->
-              <div class="absolute inset-[-80px] animate-spin-slow">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/Python.gif" alt="Python" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                  <img src="Experties/nodejs.gif" alt="Node.js" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
-                </div>
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                <img src="Experties/javascript.gif" alt="JavaScript" class="w-12 h-12 mix-blend-lighten" />
               </div>
-    
-              <!-- Tools & Additional Tech (Outer Orbit) -->
-              <div class="absolute inset-[-120px] animate-spin-reverse-slow">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/bootstarp.gif" alt="Bootstrap" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/docker.gif" alt="Docker" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                  <img src="Experties/sql.gif" alt="SQL" class="w-12 h-12 mix-blend-lighten" />
-                </div>
-                <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
-                  <img src="Experties/npm.webp" alt="NPM" class="w-12 h-12 mix-blend-lighten" />
-                </div>
+              <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/reactjs.gif" alt="React" class="w-12 h-12 mix-blend-lighten" />
               </div>
+            </div>
     
-              <!-- Center Image -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="relative w-72 h-72">
-                  <img src="Profile/MainOne.gif" alt="Profile" class="w-full h-full object-cover rounded-full p-1 bg-gray-900/80" />
-                </div>
+            <!-- Backend Tech Stack (Middle Orbit) -->
+            <div class="absolute inset-[-80px] animate-spin-slow">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/Python.gif" alt="Python" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+              <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                <img src="Experties/nodejs.gif" alt="Node.js" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+              <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/mongodb.gif" alt="MongoDB" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+            </div>
+    
+            <!-- Tools & Additional Tech (Outer Orbit) -->
+            <div class="absolute inset-[-120px] animate-spin-reverse-slow">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/bootstarp.gif" alt="Bootstrap" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+              <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/docker.gif" alt="Docker" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                <img src="Experties/sql.gif" alt="SQL" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+              <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                <img src="Experties/npm.webp" alt="NPM" class="w-12 h-12 mix-blend-lighten" />
+              </div>
+            </div>
+    
+            <!-- Center Image -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="relative w-72 h-72">
+                <img src="Profile/Minaoto.gif" alt="Profile" class="w-full h-full object-cover rounded-full p-1 bg-black/50" />
               </div>
             </div>
           </div>
+        </div>
+    
+        <!-- Code snippet under the circle -->
+        <div class="max-w-xl mx-auto mt-8 mb-12">
+          <pre class="text-left font-mono text-lg">
+            
+          </pre>
         </div>
     
         <!-- Bottom Stats -->
-        <div class="mt-20 flex justify-center">
-          <div class="bg-white/5 backdrop-blur-sm px-8 py-4 flex items-center gap-12">
+        <div class="flex justify-center">
+          <div class="naruto-card backdrop-blur-sm px-8 py-4 flex items-center gap-12">
             <div class="text-center">
-              <div class="text-2xl font-light">2+</div>
-              <div class="text-sm text-gray-400">Years Experience</div>
+              <div class="text-2xl font-light text-[#FF7800]">2+</div>
+              <div class="text-sm text-gray-400">Years Training</div>
             </div>
             <div class="w-px h-12 bg-white/10"></div>
             <div class="text-center">
-              <div class="text-2xl font-light">15+</div>
-              <div class="text-sm text-gray-400">Projects</div>
+              <div class="text-2xl font-light text-[#FF7800]">15+</div>
+              <div class="text-sm text-gray-400">Jutsu Mastered</div>
             </div>
             <div class="w-px h-12 bg-white/10"></div>
             <div class="text-center">
-              <div class="text-2xl font-light">10+</div>
-              <div class="text-sm text-gray-400">Technologies</div>
+              <div class="text-2xl font-light text-[#FF7800]">10+</div>
+              <div class="text-sm text-gray-400">Chakra Natures</div>
             </div>
           </div>
         </div>
       </div>
     </section>
-     <!-- Hero Section - Complete -->
+  <!-- Hero Section - End -->
 
-
-
-
-    <!-- Recent Works -->
-    <section class="py-20 relative">
-      <!-- Subtle Background Pattern -->
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_-50%,rgba(99,102,241,0.05),transparent)]"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-4">
-        <!-- Section Header -->
-        <div class="text-center mb-16">
-          <div class="inline-flex items-center gap-6">
-            <div>
-              <h2
-                class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent"
-              >
-                Featured Projects
-              </h2>
-              <div class="mt-2 font-mono text-sm text-gray-400/60">
-                <span class="text-pink-500/60">const</span>
-                <span class="text-indigo-500/60">showcase</span>
-                <span class="text-gray-400/60">=</span>
-                <span class="text-green-500/60"
-                  >"Creating digital experiences that matter"</span
-                ><span class="text-gray-400/60">;</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Pioneer Software -->
-          <a
-            href="https://www.pioneersoftware.com.np/"
-            target="_blank"
-            class="group block bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://cdn.dribbble.com/users/5731887/screenshots/19479736/media/ac7ce839c93a356d3b464eeb49a4815b.jpg?format=webp&resize=400x300&vertical=center"
-                alt="Pioneer Software"
-                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Pioneer Software</h3>
-              <p class="text-sm text-gray-400 mb-4">
-                Corporate website development featuring modern design principles
-              </p>
-              <div class="flex flex-wrap items-center justify-between">
-                <div class="flex gap-2">
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >React</span
-                  >
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >Node.js</span
-                  >
-                </div>
-                <div
-                  class="text-indigo-400 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                >
-                  View Project →
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- Movie App -->
-          <a
-            href="https://nepalicinema.vercel.app/"
-            target="_blank"
-            class="group block bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://xdfile.com/wp-content/uploads/2020/04/cinema-website-template-for-xd.jpg"
-                alt="Movie App"
-                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Nepali Cinema</h3>
-              <p class="text-sm text-gray-400 mb-4">
-                Movie database application with advanced filtering
-              </p>
-              <div class="flex flex-wrap items-center justify-between">
-                <div class="flex gap-2">
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >Next.js</span
-                  >
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >API</span
-                  >
-                </div>
-                <div
-                  class="text-indigo-400 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                >
-                  View Project →
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- Axis Solutions -->
-          <a
-            href="https://www.axissolutions.com.np/"
-            target="_blank"
-            class="group block bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://cdn.dribbble.com/userupload/15150261/file/still-a6179b5ea6d75deb8a47bdb1f4fde84a.png?format=webp&resize=400x300&vertical=center"
-                alt="Axis Solutions"
-                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Axis Solutions</h3>
-              <p class="text-sm text-gray-400 mb-4">
-                Corporate website with dynamic content management
-              </p>
-              <div class="flex flex-wrap items-center justify-between">
-                <div class="flex gap-2">
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >Django</span
-                  >
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >AWS</span
-                  >
-                </div>
-                <div
-                  class="text-indigo-400 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                >
-                  View Project →
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- Portfolio Project -->
-          <a
-            href="https://www.peshrajsyangbo.com.np/"
-            target="_blank"
-            class="group block bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://wishdesk-prod.s3.eu-central-1.amazonaws.com/s3fs-public/inline-images/example-of-dark-website-design-3.png"
-                alt="Portfolio"
-                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Portfolio Design</h3>
-              <p class="text-sm text-gray-400 mb-4">
-                Personal portfolio website showcasing developer skills
-              </p>
-              <div class="flex flex-wrap items-center justify-between">
-                <div class="flex gap-2">
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >React</span
-                  >
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >GSAP</span
-                  >
-                </div>
-                <div
-                  class="text-indigo-400 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                >
-                  View Project →
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- Sonal Copy -->
-          <a
-            href="https://sonalcopyproduction.netlify.app/"
-            target="_blank"
-            class="group block bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://cdn.dribbble.com/users/4898370/screenshots/17807318/media/b760a14028f9c5ccc8345a3491eaf436.png?resize=400x300&vertical=center"
-                alt="Sonal Copy"
-                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Sonal Copy Production</h3>
-              <p class="text-sm text-gray-400 mb-4">
-                Business website with portfolio showcase
-              </p>
-              <div class="flex flex-wrap items-center justify-between">
-                <div class="flex gap-2">
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >Next.js</span
-                  >
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >Sanity</span
-                  >
-                </div>
-                <div
-                  class="text-indigo-400 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                >
-                  View Project →
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- GMS Campus -->
-          <a
-            href="https://www.ganeshmansingh.edu.np/"
-            target="_blank"
-            class="group block bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-300"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://themewagon.com/wp-content/uploads/2021/11/grad-school-1.png"
-                alt="GMS Campus"
-                class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">GMS Campus</h3>
-              <p class="text-sm text-gray-400 mb-4">
-                Educational institution website with student portal
-              </p>
-              <div class="flex flex-wrap items-center justify-between">
-                <div class="flex gap-2">
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >Django</span
-                  >
-                  <span class="bg-white/5 px-3 py-1 text-xs text-gray-300"
-                    >PostgreSQL</span
-                  >
-                </div>
-                <div
-                  class="text-indigo-400 text-sm group-hover:translate-x-2 transition-transform duration-300"
-                >
-                  View Project →
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Bottom Decoration -->
-        <div class="mt-16 flex justify-center">
-          <div class="flex items-center gap-6 bg-white/[0.02] px-6 py-3">
-            <div
-              class="h-px w-12 bg-gradient-to-r from-indigo-500 to-transparent"
-            ></div>
-            <span class="text-sm text-gray-400" id="intro"></span>
-            <div
-              class="h-px w-12 bg-gradient-to-l from-pink-500 to-transparent"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Recent Works -->
-
-
-    <!-- About Section -->
-    <section class="py-20 relative overflow-hidden">
-      <!-- Background Effects -->
-      <div class="absolute inset-0 grid-pattern opacity-10"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <!-- Header -->
-        <div class="flex items-center gap-3 mb-16">
-          <i class="ri-user-3-line text-xl text-gray-100"></i>
+  <!-- Featured Projects / Missions Section -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-6">
           <div>
-            <h2 class="text-xl font-bold text-gray-100">ABOUT ME</h2>
+            <h2 class="text-4xl font-bold gradient-text">
+              S-Rank Missions
+            </h2>
+            <div class="mt-2 font-mono text-sm text-gray-400/60">
+              <span class="text-[#FF7800]/60">const</span>
+              <span class="text-[#52D1DC]/60">missions</span>
+              <span class="text-gray-400/60">=</span>
+              <span class="text-green-500/60">"Completed with honor and excellence"</span>
+              <span class="text-gray-400/60">;</span>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Main Content -->
-        <div class="grid md:grid-cols-12 gap-16 items-start">
-          <!-- Image Side -->
-          <div class="md:col-span-5 lg:col-span-4">
-            <div class="sticky top-20">
-              <!-- Profile Image -->
-              <div class="relative">
-                <div class="absolute"></div>
-                <img
-                  src="Profile/Hero.gif"
-                  alt="Profile"
-                  class="relative w-full aspect-square object-cover"
-                />
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Pioneer Software -->
+        <a
+          href="https://www.pioneersoftware.com.np/"
+          target="_blank"
+          class="mission-card naruto-card"
+        >
+          <div class="relative h-64 overflow-hidden">
+            <div class="absolute top-2 right-2 z-10">
+              <div class="px-3 py-1 bg-[#FF7800] text-black text-xs font-bold rounded">S-RANK</div>
+            </div>
+            <img
+              src="https://cdn.dribbble.com/users/5731887/screenshots/19479736/media/ac7ce839c93a356d3b464eeb49a4815b.jpg?format=webp&resize=400x300&vertical=center"
+              alt="Pioneer Software"
+              class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="leaf-symbol"></div>
+              <h3 class="text-xl font-bold">Pioneer Software</h3>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">
+              Corporate website development featuring modern design principles
+            </p>
+            <div class="flex flex-wrap items-center justify-between">
+              <div class="flex gap-2">
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#FF7800]"
+                  >React</span
+                >
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#52D1DC]"
+                  >Node.js</span
+                >
               </div>
-
-              <!-- Quick Info -->
-              <div class="mt-8 space-y-4">
-                <div class="bg-white/[0.02] p-4 flex items-center gap-3">
-                  <i class="ri-map-pin-line text-pink-500"></i>
-                  <span class="text-sm text-gray-300">Based in Nepal</span>
-                </div>
-                <div class="bg-white/[0.02] p-4 flex items-center gap-3">
-                  <i class="ri-time-line text-indigo-500"></i>
-                  <span class="text-sm text-gray-300">Full-time Available</span>
-                </div>
-                <div class="bg-white/[0.02] p-4 flex items-center gap-3">
-                  <i class="ri-global-line text-green-500"></i>
-                  <span class="text-sm text-gray-300">Open to Remote Work</span>
-                </div>
+              <div
+                class="text-[#FF7800] text-sm group-hover:translate-x-2 transition-transform duration-300"
+              >
+                View Mission →
               </div>
             </div>
           </div>
+        </a>
 
-          <!-- Text Content -->
-          <div class="md:col-span-7 lg:col-span-8">
-            <div class="space-y-8">
-              <!-- Introduction -->
-              <div class="space-y-6 text-gray-300">
-                <p class="text-2xl font-light leading-relaxed">
-                  Hey there! I'm a passionate Full Stack Developer from the
-                  beautiful landscapes of Nepal 🏔️, where coding meets
-                  creativity!
-                </p>
-
-                <p class="leading-relaxed">
-                  When I’m not chilling in the peaceful vibes of the Himalayas, I’m busy jumping into the exciting world of web development 💻. My tech journey is all about curiosity and having fun while building cool digital stuff that actually helps people.
-                </p>
-
-                <p class="leading-relaxed">
-                  I mix tech smarts with creative thinking to tackle every project. Whether it’s building strong backend systems or designing easy-to-use interfaces, I’m always pumped to take on new challenges 🚀
-                </p>
-
-                <p class="leading-relaxed">
-                  But hey, it’s not all work and no play! I love adding a splash of humor to everything I do. When I’m not busy creating digital wonders, you might catch me trying (and failing) to teach my cat to code 😄 or geeking out over new tech with a cup of Nepali tea ☕.
-                </p>
-
-                <p class="leading-relaxed">
-                  Let’s make something awesome together! Whether you’ve got a project idea or just want to explore the possibilities, I’m always up for new adventures in the digital world 🌟.
-                </p>
+        <!-- Movie App -->
+        <a
+          href="https://nepalicinema.vercel.app/"
+          target="_blank"
+          class="mission-card naruto-card"
+        >
+          <div class="relative h-64 overflow-hidden">
+            <div class="absolute top-2 right-2 z-10">
+              <div class="px-3 py-1 bg-[#52D1DC] text-black text-xs font-bold rounded">A-RANK</div>
+            </div>
+            <img
+              src="https://xdfile.com/wp-content/uploads/2020/04/cinema-website-template-for-xd.jpg"
+              alt="Movie App"
+              class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="leaf-symbol"></div>
+              <h3 class="text-xl font-bold">Nepali Cinema</h3>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">
+              Movie database application with advanced filtering
+            </p>
+            <div class="flex flex-wrap items-center justify-between">
+              <div class="flex gap-2">
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#FF7800]"
+                  >Next.js</span
+                >
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#52D1DC]"
+                  >API</span
+                >
               </div>
+              <div
+                class="text-[#FF7800] text-sm group-hover:translate-x-2 transition-transform duration-300"
+              >
+                View Mission →
+              </div>
+            </div>
+          </div>
+        </a>
 
-              <!-- Bottom Section -->
-              <div class="pt-8 border-t border-white/10">
-                <div class="bg-white/[0.02] p-6">
-                  <pre class="text-xs font-mono text-gray-400/60">
-              <span class="text-pink-500/60">function</span> <span class="text-indigo-500/60">getMotivation</span>() {
-                <span class="text-pink-500/60">return</span> <span class="text-green-500/60">"Why do programmers prefer dark mode? Because light attracts bugs! 🐛"</span>;
-              }</pre>
-                </div>
+        <!-- Axis Solutions -->
+        <a
+          href="https://www.axissolutions.com.np/"
+          target="_blank"
+          class="mission-card naruto-card"
+        >
+          <div class="relative h-64 overflow-hidden">
+            <div class="absolute top-2 right-2 z-10">
+              <div class="px-3 py-1 bg-[#FF7800] text-black text-xs font-bold rounded">S-RANK</div>
+            </div>
+            <img
+              src="https://cdn.dribbble.com/userupload/15150261/file/still-a6179b5ea6d75deb8a47bdb1f4fde84a.png?format=webp&resize=400x300&vertical=center"
+              alt="Axis Solutions"
+              class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="leaf-symbol"></div>
+              <h3 class="text-xl font-bold">Axis Solutions</h3>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">
+              Corporate website with dynamic content management
+            </p>
+            <div class="flex flex-wrap items-center justify-between">
+              <div class="flex gap-2">
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#FF7800]"
+                  >Django</span
+                >
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#52D1DC]"
+                  >AWS</span
+                >
+              </div>
+              <div
+                class="text-[#FF7800] text-sm group-hover:translate-x-2 transition-transform duration-300"
+              >
+                View Mission →
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Portfolio Project -->
+        <a
+          href="https://www.peshrajsyangbo.com.np/"
+          target="_blank"
+          class="mission-card naruto-card"
+        >
+          <div class="relative h-64 overflow-hidden">
+            <div class="absolute top-2 right-2 z-10">
+              <div class="px-3 py-1 bg-[#2E7D32] text-white text-xs font-bold rounded">B-RANK</div>
+            </div>
+            <img
+              src="https://wishdesk-prod.s3.eu-central-1.amazonaws.com/s3fs-public/inline-images/example-of-dark-website-design-3.png"
+              alt="Portfolio"
+              class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="leaf-symbol"></div>
+              <h3 class="text-xl font-bold">Portfolio Design</h3>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">
+              Personal portfolio website showcasing developer skills
+            </p>
+            <div class="flex flex-wrap items-center justify-between">
+              <div class="flex gap-2">
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#FF7800]"
+                  >React</span
+                >
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#52D1DC]"
+                  >GSAP</span
+                >
+              </div>
+              <div
+                class="text-[#FF7800] text-sm group-hover:translate-x-2 transition-transform duration-300"
+              >
+                View Mission →
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Sonal Copy -->
+        <a
+          href="https://sonalcopyproduction.netlify.app/"
+          target="_blank"
+          class="mission-card naruto-card"
+        >
+          <div class="relative h-64 overflow-hidden">
+            <div class="absolute top-2 right-2 z-10">
+              <div class="px-3 py-1 bg-[#52D1DC] text-black text-xs font-bold rounded">A-RANK</div>
+            </div>
+            <img
+              src="https://cdn.dribbble.com/users/4898370/screenshots/17807318/media/b760a14028f9c5ccc8345a3491eaf436.png?resize=400x300&vertical=center"
+              alt="Sonal Copy"
+              class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="leaf-symbol"></div>
+              <h3 class="text-xl font-bold">Sonal Copy Production</h3>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">
+              Business website with portfolio showcase
+            </p>
+            <div class="flex flex-wrap items-center justify-between">
+              <div class="flex gap-2">
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#FF7800]"
+                  >Next.js</span
+                >
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#52D1DC]"
+                  >Sanity</span
+                >
+              </div>
+              <div
+                class="text-[#FF7800] text-sm group-hover:translate-x-2 transition-transform duration-300"
+              >
+                View Mission →
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- GMS Campus -->
+        <a
+          href="https://www.ganeshmansingh.edu.np/"
+          target="_blank"
+          class="mission-card naruto-card"
+        >
+          <div class="relative h-64 overflow-hidden">
+            <div class="absolute top-2 right-2 z-10">
+              <div class="px-3 py-1 bg-[#52D1DC] text-black text-xs font-bold rounded">A-RANK</div>
+            </div>
+            <img
+              src="https://themewagon.com/wp-content/uploads/2021/11/grad-school-1.png"
+              alt="GMS Campus"
+              class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="leaf-symbol"></div>
+              <h3 class="text-xl font-bold">GMS Campus</h3>
+            </div>
+            <p class="text-sm text-gray-400 mb-4">
+              Educational institution website with student portal
+            </p>
+            <div class="flex flex-wrap items-center justify-between">
+              <div class="flex gap-2">
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#FF7800]"
+                  >Django</span
+                >
+                <span class="bg-white/5 px-3 py-1 text-xs text-[#52D1DC]"
+                  >PostgreSQL</span
+                >
+              </div>
+              <div
+                class="text-[#FF7800] text-sm group-hover:translate-x-2 transition-transform duration-300"
+              >
+                View Mission →
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bottom Decoration -->
+      <div class="mt-16 flex justify-center">
+        <div class="flex items-center gap-6 naruto-card px-6 py-3">
+          <div
+            class="h-px w-12 bg-gradient-to-r from-[#FF7800] to-transparent"
+          ></div>
+          <span class="text-sm text-gray-400" id="intro">"The one who completes the mission is a true shinobi."</span>
+          <div
+            class="h-px w-12 bg-gradient-to-l from-[#52D1DC] to-transparent"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Missions Section End -->
+
+
+  <!-- About Section / Ninja Profile -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-16 animated-border">
+        <i class="ri-user-3-line text-xl text-gray-100"></i>
+        <div>
+          <h2 class="text-xl font-bold text-gray-100">NINJA PROFILE</h2>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="grid md:grid-cols-12 gap-16 items-start">
+        <!-- Image Side -->
+        <div class="md:col-span-5 lg:col-span-4">
+          <div class="sticky top-20">
+            <!-- Profile Image -->
+            <div class="relative naruto-card p-1">
+              <img
+                src="Profile/Hero.gif"
+                alt="Profile"
+                class="relative w-full aspect-square object-cover"
+              />
+            </div>
+
+            <!-- Quick Info -->
+            <div class="mt-8 space-y-4">
+              <div class="naruto-card p-4 flex items-center gap-3 transition-all hover:-translate-y-1">
+                <i class="ri-map-pin-line text-[#FF7800]"></i>
+                <span class="text-sm text-gray-300">Hidden Leaf Village (Nepal)</span>
+              </div>
+              <div class="naruto-card p-4 flex items-center gap-3 transition-all hover:-translate-y-1">
+                <i class="ri-time-line text-[#52D1DC]"></i>
+                <span class="text-sm text-gray-300">Available for S-Rank Missions</span>
+              </div>
+              <div class="naruto-card p-4 flex items-center gap-3 transition-all hover:-translate-y-1">
+                <i class="ri-global-line text-[#2E7D32]"></i>
+                <span class="text-sm text-gray-300">Shadow Clone Jutsu (Remote Work)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="md:col-span-7 lg:col-span-8">
+          <div class="space-y-8">
+            <!-- Introduction -->
+            <div class="space-y-6 text-gray-300">
+              <p class="text-2xl font-light leading-relaxed">
+                Welcome to my ninja way! I'm a passionate Full Stack Developer from the
+                beautiful landscapes of the Hidden Leaf Village (Nepal) 🏔️, where code meets
+                creativity!
+              </p>
+
+              <p class="leading-relaxed">
+                When I'm not training in the peaceful mountains of the Himalayas, I'm busy mastering new jutsu in the exciting world of web development 💻. My ninja path is all about curiosity and creating digital solutions that help people on their own journeys.
+              </p>
+
+              <p class="leading-relaxed">
+                I combine technical expertise with creative problem-solving to tackle every mission. Whether it's building robust backend systems or designing intuitive user interfaces, I'm always ready to face new challenges 🚀
+              </p>
+
+              <p class="leading-relaxed">
+                But a true shinobi knows how to balance work and play! I bring a touch of humor to everything I create. When I'm not crafting digital jutsu, you might find me trying (and failing) to teach my cat to perform basic ninjutsu 😄 or discussing the latest technologies over a cup of Ichiraku-style Nepali tea ☕.
+              </p>
+
+              <p class="leading-relaxed">
+                Let's form an alliance and create something amazing together! Whether you have a mission in mind or just want to explore possibilities, I'm ready to join forces in the digital realm 🌟.
+              </p>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="pt-8 border-t border-white/10">
+              <div class="naruto-card p-6">
+                <pre class="text-xs font-mono text-gray-400/60">
+            <span class="text-[#FF7800]/60">function</span> <span class="text-[#52D1DC]/60">getNindoWay</span>() {
+              <span class="text-[#FF7800]/60">return</span> <span class="text-green-500/60">"I never go back on my word. That's my ninja way! 🐸"</span>;
+            }</pre>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- About Section -->
+    </div>
+  </section>
+  <!-- About Section End -->
 
 
-    <!-- Education Section -->
-    <section class="py-20 relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4">
-        <!-- Header -->
-        <div class="flex items-center gap-3 mb-16">
-          <i class="ri-graduation-cap-line text-xl text-gray-100"></i>
-          <div class="flex-1">
-            <h2 class="text-xl font-bold text-gray-100">EDUCATION</h2>
-            <div class="flex items-center gap-4 mt-2">
-              <span class="text-gray-500">Academic Background</span>
-              <div class="flex-1 h-px bg-white/10"></div>
-              <a
-                href="/images/Resume.pdf"
-                target="_blank"
-                class="text-sm text-gray-400 hover:text-white flex items-center gap-2"
-              >
-                View Resume <i class="ri-arrow-right-line"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education List -->
-        <div class="space-y-4">
-          <!-- Bachelor's -->
-          <div
-            class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors group"
-          >
-            <div class="flex p-6">
-              <div class="w-48 flex-shrink-0">
-                <div class="text-sm text-gray-400">CURRENT</div>
-                <div class="text-xl font-medium mt-1">Bachelor's</div>
-                <img
-                  src="images/ganeshclint.png"
-                  alt="GMS Campus"
-                  class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <div class="w-px bg-white/10 mx-8 relative">
-                <div
-                  class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-indigo-500 transition-colors"
-                ></div>
-              </div>
-              <div class="flex-1 pt-1">
-                <h3 class="text-xl font-medium">
-                  Ganesh Man Singh Multiple Campus
-                </h3>
-                <p class="text-gray-400 mt-2">Currently Enrolled</p>
-                <div class="text-sm text-gray-500 mt-4">
-                  Computer Science and Information Technology
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Higher Secondary -->
-          <div
-            class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors group"
-          >
-            <div class="flex p-6">
-              <div class="w-48 flex-shrink-0">
-                <div class="text-sm text-gray-400">2020 - 2022</div>
-                <div class="text-xl font-medium mt-1">H.S.E.B</div>
-                <img
-                  src="images/stx.png"
-                  alt="St. Xavier's"
-                  class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <div class="w-px bg-white/10 mx-8 relative">
-                <div
-                  class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-indigo-500 transition-colors"
-                ></div>
-              </div>
-              <div class="flex-1 pt-1">
-                <h3 class="text-xl font-medium">
-                  St.Xavier's Secondary School
-                </h3>
-                <p class="text-gray-400 mt-2">Completed with GPA: 3.11</p>
-                <div class="text-sm text-gray-500 mt-4 flex items-center gap-2">
-                  <i class="ri-check-line"></i>
-                  Graduated with Computer major
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Secondary -->
-          <div
-            class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors group"
-          >
-            <div class="flex p-6">
-              <div class="w-48 flex-shrink-0">
-                <div class="text-sm text-gray-400">2018 - 2020</div>
-                <div class="text-xl font-medium mt-1">S.L.C</div>
-                <img
-                  src="images/school.png"
-                  alt="School"
-                  class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <div class="w-px bg-white/10 mx-8 relative">
-                <div
-                  class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-indigo-500 transition-colors"
-                ></div>
-              </div>
-              <div class="flex-1 pt-1">
-                <h3 class="text-xl font-medium">
-                  Maisthan Bidyapeeth Secondary School
-                </h3>
-                <p class="text-gray-400 mt-2">Completed with GPA: 3.20</p>
-                <div class="text-sm text-gray-500 mt-4 flex items-center gap-2">
-                  <i class="ri-check-line"></i>
-                  Secondary Education Certificate
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Note -->
-        <div class="mt-16 flex justify-center">
-          <div class="flex items-center gap-4 bg-white/[0.02] px-6 py-3">
-            <span class="text-xs font-mono text-green-500">const</span>
-            <span class="text-xs font-mono text-blue-500"
-              >continuousLearning</span
+  <!-- Academy Training Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-16 animated-border">
+        <i class="ri-graduation-cap-line text-xl text-gray-100"></i>
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-gray-100">NINJA ACADEMY</h2>
+          <div class="flex items-center gap-4 mt-2">
+            <span class="text-gray-500">Training & Advancement</span>
+            <div class="flex-1 h-px bg-white/10"></div>
+            <a
+              href="/images/Resume.pdf"
+              target="_blank"
+              class="text-sm text-gray-400 hover:text-white flex items-center gap-2"
             >
-            =
-            <span class="text-xs font-mono text-pink-500"
-              >"Continuous learning & growth"</span
-            >;
+              View Ninja Scroll <i class="ri-arrow-right-line"></i>
+            </a>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Education Section -->
 
-
-    <!-- Certifications Section -->
-    <section class="py-20 relative overflow-hidden">
-      <!-- Background Effects -->
-      <div class="absolute inset-0 grid-pattern opacity-10"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-transparent via-pink-500/5 to-transparent"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <!-- Section Header -->
-        <div class="flex items-center gap-3 mb-16">
-          <i class="ri-trophy-line text-xl text-gray-100"></i>
-          <h2 class="text-xl font-bold text-gray-100">CERTIFICATIONS</h2>
+      <!-- Education List -->
+      <div class="space-y-4">
+        <!-- Bachelor's -->
+        <div
+          class="naruto-card group transition-all"
+        >
+          <div class="flex p-6 relative z-10">
+            <div class="w-48 flex-shrink-0">
+              <div class="text-sm text-gray-400">CURRENT</div>
+              <div class="text-xl font-medium mt-1">Jonin Training</div>
+              <img
+                src="images/ganeshclint.png"
+                alt="GMS Campus"
+                class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
+              />
+            </div>
+            <div class="w-px bg-white/10 mx-8 relative">
+              <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-[#FF7800] transition-colors"
+              ></div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-medium">
+                Ganesh Man Singh Multiple Campus
+              </h3>
+              <p class="text-gray-400 mt-2">Currently Enrolled</p>
+              <div class="text-sm text-gray-500 mt-4">
+                Advanced Jutsu Training (Computer Science and IT)
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Certifications List -->
-        <div class="space-y-4">
-          <!-- Django Developer -->
-          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            <div class="flex items-center p-4">
+        <!-- Higher Secondary -->
+        <div
+          class="naruto-card group transition-all"
+        >
+          <div class="flex p-6 relative z-10">
+            <div class="w-48 flex-shrink-0">
+              <div class="text-sm text-gray-400">2020 - 2022</div>
+              <div class="text-xl font-medium mt-1">Chunin Level</div>
+              <img
+                src="images/stx.png"
+                alt="St. Xavier's"
+                class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
+              />
+            </div>
+            <div class="w-px bg-white/10 mx-8 relative">
               <div
-                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
-              >
-                <i class="ri-code-box-line text-2xl text-indigo-500"></i>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-medium text-white">Django Developer</h3>
-                <p class="text-gray-500 text-sm">
-                  Two-month Django course with certifications
-                </p>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-gray-500">CERTIFIED</span>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
-                  <span class="text-xs text-gray-400">2023</span>
-                </div>
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-[#FF7800] transition-colors"
+              ></div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-medium">
+                St.Xavier's Secondary School
+              </h3>
+              <p class="text-gray-400 mt-2">Completed with Rank Score: 3.11</p>
+              <div class="text-sm text-gray-500 mt-4 flex items-center gap-2">
+                <i class="ri-check-line"></i>
+                Specialized in Computing Techniques
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Frontend Development -->
-          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            <div class="flex items-center p-4">
-              <div
-                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
-              >
-                <i class="ri-layout-line text-2xl text-pink-500"></i>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-medium text-white">
-                  Frontend Development
-                </h3>
-                <p class="text-gray-500 text-sm">
-                  Advanced web development and modern frameworks
-                </p>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-gray-500">CERTIFIED</span>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
-                  <span class="text-xs text-gray-400">2023</span>
-                </div>
-              </div>
+        <!-- Secondary -->
+        <div
+          class="naruto-card group transition-all"
+        >
+          <div class="flex p-6 relative z-10">
+            <div class="w-48 flex-shrink-0">
+              <div class="text-sm text-gray-400">2018 - 2020</div>
+              <div class="text-xl font-medium mt-1">Genin Graduate</div>
+              <img
+                src="images/school.png"
+                alt="School"
+                class="w-16 h-16 object-contain mt-4 opacity-60 group-hover:opacity-100 transition-opacity"
+              />
             </div>
-          </div>
-
-          <!-- Python Expert -->
-          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            <div class="flex items-center p-4">
+            <div class="w-px bg-white/10 mx-8 relative">
               <div
-                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
-              >
-                <i class="fa-brands fa-python text-2xl text-blue-500"></i>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-medium text-white">Python Expert</h3>
-                <p class="text-gray-500 text-sm">
-                  Advanced Python programming and applications
-                </p>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-gray-500">CERTIFIED</span>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
-                  <span class="text-xs text-gray-400">2023</span>
-                </div>
-              </div>
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/20 group-hover:bg-[#FF7800] transition-colors"
+              ></div>
             </div>
-          </div>
-
-          <!-- MERN Stack -->
-          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            <div class="flex items-center p-4">
-              <div
-                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
-              >
-                <i class="ri-reactjs-line text-2xl text-cyan-500"></i>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-medium text-white">
-                  MERN Stack Developer
-                </h3>
-                <p class="text-gray-500 text-sm">
-                  Full-stack development with MERN technologies
-                </p>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-gray-500">CERTIFIED</span>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
-                  <span class="text-xs text-gray-400">2023</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Linux Operations -->
-          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            <div class="flex items-center p-4">
-              <div
-                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
-              >
-                <i class="ri-terminal-box-line text-2xl text-yellow-500"></i>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-medium text-white">Linux Operations</h3>
-                <p class="text-gray-500 text-sm">
-                  System administration and Linux operations
-                </p>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-gray-500">CERTIFIED</span>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
-                  <span class="text-xs text-gray-400">2023</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ChatGPT Expert -->
-          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            <div class="flex items-center p-4">
-              <div
-                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
-              >
-                <i class="ri-robot-line text-2xl text-purple-500"></i>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-medium text-white">ChatGPT Expert</h3>
-                <p class="text-gray-500 text-sm">
-                  AI applications and ChatGPT implementations
-                </p>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-gray-500">CERTIFIED</span>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
-                  <span class="text-xs text-gray-400">2023</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Anaconda Python -->
-          <div class="bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-            <div class="flex items-center p-4">
-              <div
-                class="w-14 h-14 flex items-center justify-center bg-white/[0.03] mr-6"
-              >
-                <i class="ri-database-2-line text-2xl text-green-500"></i>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-medium text-white">Anaconda Python</h3>
-                <p class="text-gray-500 text-sm">
-                  Data science with Anaconda Python
-                </p>
-              </div>
-              <div class="text-right">
-                <span class="text-xs text-gray-500">CERTIFIED</span>
-                <div class="mt-1 flex items-center gap-2">
-                  <span class="inline-flex h-2 w-2 bg-green-500"></span>
-                  <span class="text-xs text-gray-400">2023</span>
-                </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-medium">
+                Maisthan Bidyapeeth Secondary School
+              </h3>
+              <p class="text-gray-400 mt-2">Completed with Rank Score: 3.20</p>
+              <div class="text-sm text-gray-500 mt-4 flex items-center gap-2">
+                <i class="ri-check-line"></i>
+                Basic Ninja Techniques Certification
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Certifications Section -->
 
-    <!-- Programing Section - Complete -->
-    <section class="py-20 relative overflow-hidden">
-      <!-- Background Effects -->
-      <div class="absolute inset-0 grid-pattern opacity-10"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-transparent via-pink-500/5 to-transparent"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <!-- Section Header -->
-        <div class="flex items-center gap-3 mb-16">
-          <i class="ri-tools-fill text-xl text-gray-100"></i>
-          <div>
-            <h2 class="text-xl font-bold text-gray-100">TECHNICAL SKILLS</h2>
-          </div>
+      <!-- Bottom Note -->
+      <div class="mt-16 flex justify-center">
+        <div class="flex items-center gap-4 naruto-card px-6 py-3">
+          <span class="text-xs font-mono text-green-500">const</span>
+          <span class="text-xs font-mono text-[#52D1DC]"
+            >continuousTraining</span
+          >
+          =
+          <span class="text-xs font-mono text-[#FF7800]"
+            >"The way of the ninja is studying & improving"</span
+          >;
         </div>
+      </div>
+    </div>
+  </section>
+  <!-- Academy Training Section End -->
 
-        <!-- Skills Categories -->
-        <div class="space-y-12">
-          <!-- Frontend Technologies -->
-          <div class="space-y-6">
-            <div class="text-sm text-gray-400">FRONTEND TECHNOLOGIES</div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/html.gif"
-                    alt="HTML"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+
+  <!-- CHAKRA NATURES SECTION - Redesigned with animations -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3 mb-16 animated-border">
+        <i class="ri-tools-fill text-xl text-gray-100"></i>
+        <div>
+          <h2 class="text-xl font-bold text-gray-100">CHAKRA NATURES</h2>
+        </div>
+      </div>
+
+      <!-- Chakra Nature Cards - Animated & Enhanced -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Frontend Chakra Nature -->
+        <div class="chakra-nature-card group">
+          <div class="chakra-nature-content p-8">
+            <!-- Chakra Type Header -->
+            <div class="mb-8 text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-16 h-16 mx-auto mb-4">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF7800" stroke-width="2" />
+                <path d="M50 5 A45 45 0 0 1 95 50" stroke="#FF7800" stroke-width="2" fill="none" />
+                <path d="M50 5 A45 45 0 0 0 5 50" stroke="#FF7800" stroke-width="2" fill="none" />
+                <circle cx="50" cy="50" r="20" fill="none" stroke="#FF7800" stroke-width="1" />
+                <circle cx="50" cy="50" r="10" fill="#FF7800" fill-opacity="0.3" />
+                <text x="50" y="54" text-anchor="middle" fill="#FF7800" font-size="10">火</text>
+              </svg>
+              <h3 class="text-xl font-bold text-[#FF7800]">FRONTEND CHAKRA</h3>
+              <p class="text-sm text-gray-400 mt-2">Fire Release Techniques</p>
+            </div>
+
+            <!-- Chakra Elements -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#FF7800]/30">
+                  <img src="Experties/html.gif" alt="HTML" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">HTML</div>
-                  <div class="text-xs text-gray-500">Web Structure</div>
+                  <div class="text-xs text-gray-500">Structure Jutsu</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/css-3.png"
-                    alt="CSS"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#FF7800]/30">
+                  <img src="Experties/css-3.png" alt="CSS" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">CSS</div>
-                  <div class="text-xs text-gray-500">Styling</div>
+                  <div class="text-xs text-gray-500">Style Release</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/javascript.gif"
-                    alt="JavaScript"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#FF7800]/30">
+                  <img src="Experties/javascript.gif" alt="JavaScript" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">JavaScript</div>
-                  <div class="text-xs text-gray-500">Programming</div>
+                  <div class="text-xs text-gray-500">Dynamic Release</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/reactjs.gif"
-                    alt="React"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#FF7800]/30">
+                  <img src="Experties/reactjs.gif" alt="React" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">React</div>
-                  <div class="text-xs text-gray-500">Framework</div>
+                  <div class="text-xs text-gray-500">Component Jutsu</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Backend Technologies -->
-          <div class="space-y-6">
-            <div class="text-sm text-gray-400">BACKEND TECHNOLOGIES</div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/Python.gif"
-                    alt="Python"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+        <!-- Backend Chakra Nature -->
+        <div class="chakra-nature-card group">
+          <div class="chakra-nature-content p-8">
+            <!-- Chakra Type Header -->
+            <div class="mb-8 text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-16 h-16 mx-auto mb-4">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#52D1DC" stroke-width="2" />
+                <path d="M50 5 A45 45 0 0 1 95 50" stroke="#52D1DC" stroke-width="2" fill="none" />
+                <path d="M50 5 A45 45 0 0 0 5 50" stroke="#52D1DC" stroke-width="2" fill="none" />
+                <circle cx="50" cy="50" r="20" fill="none" stroke="#52D1DC" stroke-width="1" />
+                <circle cx="50" cy="50" r="10" fill="#52D1DC" fill-opacity="0.3" />
+                <text x="50" y="54" text-anchor="middle" fill="#52D1DC" font-size="10">水</text>
+              </svg>
+              <h3 class="text-xl font-bold text-[#52D1DC]">BACKEND CHAKRA</h3>
+              <p class="text-sm text-gray-400 mt-2">Water Release Techniques</p>
+            </div>
+
+            <!-- Chakra Elements -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#52D1DC]/30">
+                  <img src="Experties/Python.gif" alt="Python" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">Python</div>
-                  <div class="text-xs text-gray-500">Programming</div>
+                  <div class="text-xs text-gray-500">Snake Summon</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/Django.gif"
-                    alt="Django"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#52D1DC]/30">
+                  <img src="Experties/Django.gif" alt="Django" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">Django</div>
-                  <div class="text-xs text-gray-500">Framework</div>
+                  <div class="text-xs text-gray-500">Framework Jutsu</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/nodejs.gif"
-                    alt="Node.js"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#52D1DC]/30">
+                  <img src="Experties/nodejs.gif" alt="Node.js" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">Node.js</div>
-                  <div class="text-xs text-gray-500">Runtime</div>
+                  <div class="text-xs text-gray-500">Server Release</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/sql.gif"
-                    alt="SQL"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#52D1DC]/30">
+                  <img src="Experties/sql.gif" alt="SQL" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">SQL</div>
-                  <div class="text-xs text-gray-500">Database</div>
+                  <div class="text-xs text-gray-500">Data Storage</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Development Tools -->
-          <div class="space-y-6">
-            <div class="text-sm text-gray-400">DEVELOPMENT TOOLS</div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/docker.gif"
-                    alt="Docker"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+        <!-- Ninja Tools Chakra Nature -->
+        <div class="chakra-nature-card group">
+          <div class="chakra-nature-content p-8">
+            <!-- Chakra Type Header -->
+            <div class="mb-8 text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-16 h-16 mx-auto mb-4">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#2E7D32" stroke-width="2" />
+                <path d="M50 5 A45 45 0 0 1 95 50" stroke="#2E7D32" stroke-width="2" fill="none" />
+                <path d="M50 5 A45 45 0 0 0 5 50" stroke="#2E7D32" stroke-width="2" fill="none" />
+                <circle cx="50" cy="50" r="20" fill="none" stroke="#2E7D32" stroke-width="1" />
+                <circle cx="50" cy="50" r="10" fill="#2E7D32" fill-opacity="0.3" />
+                <text x="50" y="54" text-anchor="middle" fill="#2E7D32" font-size="10">風</text>
+              </svg>
+              <h3 class="text-xl font-bold text-[#2E7D32]">NINJA TOOLS</h3>
+              <p class="text-sm text-gray-400 mt-2">Wind Release Techniques</p>
+            </div>
+
+            <!-- Chakra Elements -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#2E7D32]/30">
+                  <img src="Experties/docker.gif" alt="Docker" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">Docker</div>
-                  <div class="text-xs text-gray-500">Containerization</div>
+                  <div class="text-xs text-gray-500">Container Jutsu</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/npm.webp"
-                    alt="NPM"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#2E7D32]/30">
+                  <img src="Experties/npm.webp" alt="NPM" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">NPM</div>
-                  <div class="text-xs text-gray-500">Package Manager</div>
+                  <div class="text-xs text-gray-500">Scroll Keeper</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/mongodb.gif"
-                    alt="MongoDB"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#2E7D32]/30">
+                  <img src="Experties/mongodb.gif" alt="MongoDB" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">MongoDB</div>
-                  <div class="text-xs text-gray-500">Database</div>
+                  <div class="text-xs text-gray-500">Scroll Storage</div>
                 </div>
               </div>
 
-              <div
-                class="bg-white/[0.02] hover:bg-white/[0.04] p-4 flex items-center gap-4 group"
-              >
-                <div
-                  class="w-12 h-12 flex items-center justify-center bg-white/[0.03]"
-                >
-                  <img
-                    src="Experties/bootstarp.gif"
-                    alt="Bootstrap"
-                    class="w-8 h-8 group-hover:scale-110 transition-transform"
-                  />
+              <div class="flex items-center gap-4 group transition-all">
+                <div class="w-12 h-12 flex items-center justify-center bg-black/40 rounded-full border border-[#2E7D32]/30">
+                  <img src="Experties/bootstarp.gif" alt="Bootstrap" class="w-8 h-8 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div class="font-medium">Bootstrap</div>
-                  <div class="text-xs text-gray-500">UI Framework</div>
+                  <div class="text-xs text-gray-500">Rapid Style Jutsu</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Programing Section - Complete -->
 
-
-    <!-- Daily Routine Section - Complete -->
-    <section class="py-20 relative overflow-hidden">
-      <!-- Background Effects -->
-      <div class="absolute inset-0 grid-pattern opacity-10"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-4 relative z-10">
-        <!-- Header -->
-        <div class="flex items-center gap-3 mb-16">
-          <i class="ri-code-line text-xl text-gray-100"></i>
-          <div>
-            <h2 class="text-xl font-bold text-gray-100">LIFE LINE</h2>
-          </div>
+      <!-- Chakra Nature Explanation -->
+      <div class="mt-16 naruto-card p-6 max-w-4xl mx-auto relative">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" class="w-32 h-10">
+            <path d="M10 15 H90" stroke="#FF7800" stroke-width="1" fill="none" />
+            <circle cx="50" cy="15" r="10" fill="none" stroke="#52D1DC" stroke-width="1" />
+            <circle cx="50" cy="15" r="5" fill="none" stroke="#FF7800" stroke-width="1" />
+          </svg>
         </div>
+        <div class="text-center">
+          <p class="text-gray-300">
+            "Just as a shinobi must master different chakra natures to become truly powerful, a developer must command various technologies to build complete solutions. The balance of these elements is the key to creating harmony in code."
+          </p>
+          <p class="mt-4 text-[#FF7800] text-sm">— Ninja Scroll of Coding</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CHAKRA NATURES SECTION End -->
 
-        <!-- Routine Items -->
-        <div class="grid grid-cols-[1fr_auto_1fr] gap-8">
-          <!-- Left Side -->
-          <div class="space-y-40">
-            <!-- Eat -->
-            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
-              <div class="flex items-center gap-6">
-                <div
-                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
-                >
-                  <img src="Progres/eat.gif" alt="Eat" class="w-10 h-10" />
-                </div>
-                <div>
-                  <div class="text-sm text-indigo-500">08:00 AM</div>
-                  <h3 class="text-lg font-medium mt-1">Eat</h3>
-                  <p class="text-gray-400 text-sm mt-2">
-                    Fueling creativity, one byte at a time 🍕
-                  </p>
-                </div>
+
+  <!-- Jutsu Mastery Section - Redesigned -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <!-- Section Header -->
+      <div class="flex items-center gap-3 mb-16 animated-border">
+        <i class="ri-trophy-line text-xl text-gray-100"></i>
+        <h2 class="text-xl font-bold text-gray-100">JUTSU MASTERY SCROLLS</h2>
+      </div>
+
+      <!-- Certifications List - REDESIGNED -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Django Developer -->
+        <div class="jutsu-scroll">
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="jutsu-icon w-14 h-14 flex items-center justify-center bg-black/50 rounded-full border border-[#FF7800]/30">
+                <i class="ri-code-box-line text-2xl text-[#FF7800]"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-white">Django Developer Jutsu</h3>
               </div>
             </div>
-
-            <!-- Code -->
-            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
-              <div class="flex items-center gap-6">
-                <div
-                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
-                >
-                  <img src="Progres/code.gif" alt="Code" class="w-10 h-10" />
-                </div>
-                <div>
-                  <div class="text-sm text-indigo-500">09:00 AM</div>
-                  <h3 class="text-lg font-medium mt-1">Code</h3>
-                  <p class="text-gray-400 text-sm mt-2">
-                    Where magic happens, bugs disappear 💻
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Center Line -->
-          <div class="relative flex flex-col items-center">
-            <div
-              class="w-px h-full bg-gradient-to-b from-indigo-500 via-pink-500 to-indigo-500"
-            ></div>
-            <div
-              class="absolute top-[25%] w-4 h-4 bg-indigo-500 rotate-45 transform -translate-x-1/2"
-            ></div>
-            <div
-              class="absolute top-[50%] w-4 h-4 bg-pink-500 rotate-45 transform -translate-x-1/2"
-            ></div>
-            <div
-              class="absolute top-[75%] w-4 h-4 bg-indigo-500 rotate-45 transform -translate-x-1/2"
-            ></div>
-          </div>
-
-          <!-- Right Side -->
-          <div class="space-y-40 pt-40">
-            <!-- Sleep -->
-            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
-              <div class="flex items-center gap-6">
-                <div
-                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
-                >
-                  <img src="Progres/sleep.gif" alt="Sleep" class="w-10 h-10" />
-                </div>
-                <div>
-                  <div class="text-sm text-pink-500">12:00 AM</div>
-                  <h3 class="text-lg font-medium mt-1">Sleep</h3>
-                  <p class="text-gray-400 text-sm mt-2">
-                    Debugging dreams in sleep mode 😴
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Repeat -->
-            <div class="group bg-white/[0.02] hover:bg-white/[0.04] p-8">
-              <div class="flex items-center gap-6">
-                <div
-                  class="w-16 h-16 bg-white/[0.03] flex items-center justify-center"
-                >
-                  <img
-                    src="Progres/repeet.gif"
-                    alt="Repeat"
-                    class="w-10 h-10"
-                  />
-                </div>
-                <div>
-                  <div class="text-sm text-pink-500">24/7</div>
-                  <h3 class="text-lg font-medium mt-1">Repeat</h3>
-                  <p class="text-gray-400 text-sm mt-2">
-                    Because excellence is a habit 🔄
-                  </p>
-                </div>
+            <div class="ml-18 pl-4 border-l-2 border-[#FF7800]/30">
+              <p class="text-gray-400 text-sm mb-3">
+                Two-month intense Django training with certification scrolls
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </span>
+                <span class="text-xs bg-[#FF7800]/20 text-[#FF7800] px-2 py-1 rounded">MASTERED</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Progress Bar -->
-        <div class="mt-20">
-          <div class="max-w-md mx-auto">
-            <div
-              class="flex items-center justify-between mb-2 text-sm text-gray-400"
-            >
-              <span>Progress</span>
-              <span>∞</span>
+        <!-- Frontend Development -->
+        <div class="jutsu-scroll">
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="jutsu-icon w-14 h-14 flex items-center justify-center bg-black/50 rounded-full border border-[#FF7800]/30">
+                <i class="ri-layout-line text-2xl text-[#FF7800]"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-white">Frontend Combat Techniques</h3>
+              </div>
             </div>
-            <div class="h-1 bg-white/[0.02]">
+            <div class="ml-18 pl-4 border-l-2 border-[#FF7800]/30">
+              <p class="text-gray-400 text-sm mb-3">
+                Advanced web development with modern frameworks
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </span>
+                <span class="text-xs bg-[#FF7800]/20 text-[#FF7800] px-2 py-1 rounded">MASTERED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Python Expert -->
+        <div class="jutsu-scroll">
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="jutsu-icon w-14 h-14 flex items-center justify-center bg-black/50 rounded-full border border-[#52D1DC]/30">
+                <i class="fa-brands fa-python text-2xl text-[#52D1DC]"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-white">Python Sage Mode</h3>
+              </div>
+            </div>
+            <div class="ml-18 pl-4 border-l-2 border-[#52D1DC]/30">
+              <p class="text-gray-400 text-sm mb-3">
+                Advanced Python programming and applications
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </span>
+                <span class="text-xs bg-[#52D1DC]/20 text-[#52D1DC] px-2 py-1 rounded">MASTERED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MERN Stack -->
+        <div class="jutsu-scroll">
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="jutsu-icon w-14 h-14 flex items-center justify-center bg-black/50 rounded-full border border-[#52D1DC]/30">
+                <i class="ri-reactjs-line text-2xl text-[#52D1DC]"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-white">MERN Stack Multi-Shadow Clone Jutsu</h3>
+              </div>
+            </div>
+            <div class="ml-18 pl-4 border-l-2 border-[#52D1DC]/30">
+              <p class="text-gray-400 text-sm mb-3">
+                Full-stack development across multiple technologies
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </span>
+                <span class="text-xs bg-[#52D1DC]/20 text-[#52D1DC] px-2 py-1 rounded">MASTERED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linux Operations -->
+        <div class="jutsu-scroll">
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="jutsu-icon w-14 h-14 flex items-center justify-center bg-black/50 rounded-full border border-yellow-500/30">
+                <i class="ri-terminal-box-line text-2xl text-yellow-500"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-white">Linux Penetration Jutsu</h3>
+              </div>
+            </div>
+            <div class="ml-18 pl-4 border-l-2 border-yellow-500/30">
+              <p class="text-gray-400 text-sm mb-3">
+                System administration and Linux operations
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </span>
+                <span class="text-xs bg-yellow-500/20 text-yellow-500 px-2 py-1 rounded">MASTERED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ChatGPT Expert -->
+        <div class="jutsu-scroll">
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="jutsu-icon w-14 h-14 flex items-center justify-center bg-black/50 rounded-full border border-purple-500/30">
+                <i class="ri-robot-line text-2xl text-purple-500"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-white">Mind Transfer Jutsu (ChatGPT)</h3>
+              </div>
+            </div>
+            <div class="ml-18 pl-4 border-l-2 border-purple-500/30">
+              <p class="text-gray-400 text-sm mb-3">
+                AI applications and ChatGPT implementations
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </span>
+                <span class="text-xs bg-purple-500/20 text-purple-500 px-2 py-1 rounded">MASTERED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Anaconda Python -->
+        <div class="jutsu-scroll">
+          <div class="p-6 relative z-10">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="jutsu-icon w-14 h-14 flex items-center justify-center bg-black/50 rounded-full border border-green-500/30">
+                <i class="ri-database-2-line text-2xl text-green-500"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium text-white">Snake Summoning Jutsu (Anaconda)</h3>
+              </div>
+            </div>
+            <div class="ml-18 pl-4 border-l-2 border-green-500/30">
+              <p class="text-gray-400 text-sm mb-3">
+                Data science with Anaconda Python
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 bg-green-500"></span>
+                  <span class="text-xs text-gray-400">2023</span>
+                </span>
+                <span class="text-xs bg-green-500/20 text-green-500 px-2 py-1 rounded">MASTERED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Jutsu Scroll at Bottom -->
+      <div class="mt-12">
+        <div class="max-w-3xl mx-auto relative">
+          <div class="py-8 px-10 backdrop-blur-sm bg-gradient-to-r from-[#111111]/70 via-[#111111]/90 to-[#111111]/70 border border-[#FF7800]/10 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FF7800]/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#52D1DC]/40 to-transparent"></div>
+            <div class="relative z-10">
+              <div class="text-center">
+                <h4 class="font-bold text-xl mb-4 text-[#FF7800]">Secret Ninja Scroll</h4>
+                <p class="text-gray-300">"A true ninja masters many jutsu, but perfects a few. Choose your path wisely and train with purpose."</p>
+                <div class="mt-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" class="w-32 h-5 mx-auto">
+                    <path d="M0 10 H100" stroke="#FF7800" stroke-width="0.5" stroke-dasharray="5 3" fill="none" />
+                  </svg>
+                </div>
+                <p class="text-sm mt-4 text-right text-[#52D1DC]">— Fifth Hokage</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Jutsu Mastery Section End -->
+
+  <!-- Daily Routine / Ninja Way Section -->
+  <section class="py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-16 animated-border">
+        <i class="ri-code-line text-xl text-gray-100"></i>
+        <div>
+          <h2 class="text-xl font-bold text-gray-100">NINJA WAY</h2>
+        </div>
+      </div>
+
+      <!-- Routine Items -->
+      <div class="grid grid-cols-[1fr_auto_1fr] gap-8">
+        <!-- Left Side -->
+        <div class="space-y-40">
+          <!-- Eat -->
+          <div class="group naruto-card p-8 transition-all">
+            <div class="flex items-center gap-6 relative z-10">
               <div
-                class="w-3/4 h-full bg-gradient-to-r from-indigo-500 to-pink-500"
-              ></div>
+                class="w-16 h-16 bg-black/30 rounded-full border border-[#FF7800]/20 flex items-center justify-center"
+              >
+                <img src="Progres/eat.gif" alt="Eat" class="w-10 h-10" />
+              </div>
+              <div>
+                <div class="text-sm text-[#FF7800]">08:00 AM</div>
+                <h3 class="text-lg font-medium mt-1">Ichiraku Break</h3>
+                <p class="text-gray-400 text-sm mt-2">
+                  Fueling chakra, one bowl at a time 🍜
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="group naruto-card p-8 transition-all">
+            <div class="flex items-center gap-6 relative z-10">
+              <div
+                class="w-16 h-16 bg-black/30 rounded-full border border-[#FF7800]/20 flex items-center justify-center"
+              >
+                <img src="Progres/code.gif" alt="Code" class="w-10 h-10" />
+              </div>
+              <div>
+                <div class="text-sm text-[#FF7800]">09:00 AM</div>
+                <h3 class="text-lg font-medium mt-1">Jutsu Training</h3>
+                <p class="text-gray-400 text-sm mt-2">
+                  Where code magic happens, bugs disappear 💻
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Bottom Code -->
-        <div class="text-center mt-16">
-          <div class="inline-block bg-white/[0.02] px-8 py-4">
-            <code class="text-sm font-mono">
-              <span class="text-pink-500">function</span>
-              <span class="text-gray-400">devLife</span>
-              <span class="text-gray-400">() {</span>
-              <span class="text-indigo-500">return</span>
-              <span class="text-gray-400">'</span>
-              <span class="text-green-500">passion + persistence</span>
-              <span class="text-gray-400">'}</span>
-            </code>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Daily Routine Section - Complete -->
-
-
-
-    <!-- Music Player Section -->
-    <section class="py-20 relative">
-  <div class="max-w-7xl mx-auto px-4">
-    <!-- Header -->
-    <div class="flex items-center gap-3 mb-16">
-      <i class="ri-headphone-line text-xl text-gray-100"></i>
-      <div>
-        <h2 class="text-xl font-bold text-gray-100">LOGIC LOOPS</h2>
-      </div>
-    </div>
-
-    <div class="bg-white/[0.02] backdrop-blur-lg border border-white/5">
-      <div class="grid md:grid-cols-[350px,1fr] divide-x divide-white/5">
-        <!-- Playlist Side -->
-        <div class="p-6">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="font-bold text-lg text-blue-700">Code Jams</h3>
-            <span class="text-sm">
-              <span class="text-teal-500">${songs.length}</span> 
-              <span class="text-yellow-500">tracks</span>
-            </span>
-          </div>
-
-          <div class="space-y-1 max-h-[500px] overflow-y-auto pr-4" id="playlist">
-            <!-- Songs will be added here by JavaScript -->
-          </div>
-        </div>
-
-        <!-- Player Side -->
-        <div class="p-6">
-          <div class="flex flex-col h-full">
-            <!-- Current Song Display -->
-            <div class="flex gap-6 items-start mb-8">
-              <div class="relative w-[200px] h-[200px] flex-shrink-0 bg-black/20">
-                <div id="default-icon" class="absolute inset-0 flex items-center justify-center">
-                  <i class="ri-disc-line text-5xl text-white/20"></i>
-                </div>
-                <img id="current-song-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300">
-              </div>
-              <div class="flex-1 pt-4">
-                <h3 id="current-song-title" class="text-2xl font-bold mb-2">Select a Track</h3>
-                <p id="current-song-artist" class="text-gray-400 mb-4">Choose from your playlist</p>
-                
-                <!-- Volume Controls -->
-                <div class="flex items-center gap-4 mt-8">
-                  <button id="volume-down" class="p-2 hover:bg-white/10 rounded transition-colors">
-                    <i class="ri-volume-down-line text-xl"></i>
-                  </button>
-                  <div class="relative flex-1 h-1 bg-white/10 rounded-full group">
-                    <input type="range" id="volume-slider" class="absolute inset-0 w-full opacity-0 cursor-pointer" min="0" max="100" value="50">
-                    <div class="h-full bg-green-500 rounded-full relative" id="volume-level" style="width: 50%">
-                      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    </div>
-                  </div>
-                  <button id="volume-up" class="p-2 hover:bg-white/10 rounded transition-colors">
-                    <i class="ri-volume-up-line text-xl"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Progress Bar -->
-            <div class="mb-6">
-              <div class="relative h-1 bg-white/10 rounded-full group cursor-pointer" id="progress-container">
-                <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="h-full bg-green-500 rounded-full relative" id="progress-bar">
-                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100"></div>
-                </div>
-              </div>
-              <div class="flex justify-between text-sm text-gray-400 mt-2">
-                <span id="current-time">0:00</span>
-                <span id="duration">0:00</span>
-              </div>
-            </div>
-
-            <!-- Controls -->
-            <div class="flex flex-col gap-6">
-              <!-- Main Controls -->
-              <div class="flex items-center justify-center gap-8">
-                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="shuffle-btn">
-                  <i class="ri-shuffle-line text-xl"></i>
-                </button>
-                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="prev-btn">
-                  <i class="ri-skip-back-fill text-2xl"></i>
-                </button>
-                <button class="w-14 h-14 bg-green-500 hover:bg-green-400 rounded-full flex items-center justify-center transition-colors shadow-lg" id="play-btn">
-                  <i class="ri-play-fill text-2xl"></i>
-                </button>
-                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="next-btn">
-                  <i class="ri-skip-forward-fill text-2xl"></i>
-                </button>
-                <button class="p-2 hover:bg-white/10 rounded-full transition-colors" id="repeat-btn">
-                  <i class="ri-repeat-line text-xl"></i>
-                </button>
-              </div>
-            </div>
-            <div class="mt-8 space-y-3 font-mono text-sm text-gray-500/60">
-              <div class="p-4 bg-black/20">
-                <span class="text-pink-500/60">const</span> 
-                <span class="text-indigo-500/60">musicLovers</span> 
-                <span class="text-gray-400/60">=</span> 
-                <span class="text-green-500/60">"Code + Music = Perfect Harmony"</span>;
-              </div>
-            
-              <div class="p-4 bg-black/20">
-                <span class="text-pink-500/60">function</span> 
-                <span class="text-indigo-500/60">createMusicMagic</span>() {
-                <span class="text-gray-400/60">return</span> 
-                <span class="text-green-500/60">"🎵 + 💻 = 🎮"</span>;
-              </div>
-            
-              <div class="p-4 bg-black/20">
-                <span class="text-pink-500/60">while</span>(<span class="text-indigo-500/60">coding</span>) {
-                  <span class="text-gray-400/60">playMusic</span>.<span class="text-green-500/60">volume</span> = <span class="text-yellow-500/60">∞</span>;
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    </section>
-    <!-- Music Player Section -->
-    
-
-
-    <!-- Testimonials Section -->
-    <section class="py-20 relative">
-      <div class="max-w-7xl mx-auto px-4">
-        <!-- Header -->
-        <div class="flex items-center justify-between mb-16">
-          <div class="flex items-center gap-6">
-            <div>
-              <h2>
-                <span class="text-green-500 text-sm font-mono">const</span>
-                <span class="text-blue-500 text-sm font-mono">feedback =</span>
-                <span class="text-pink-500 text-sm font-mono"
-                  >"Client Feedback"</span
-                >
-              </h2>
-              <div class="border border-b-gray-800 border-transparent"></div>
-            </div>
-          </div>
-          <div class="border border-b-gray-800 border-transparent"></div>
+        <!-- Center Line -->
+        <div class="relative flex flex-col items-center">
           <div
-            class="hidden md:block h-px w-32 bg-gradient-to-r from-transparent via-gray-500 to-transparent"
+            class="w-px h-full bg-gradient-to-b from-[#FF7800] via-[#52D1DC] to-[#FF7800]"
+          ></div>
+          <div
+            class="absolute top-[25%] w-4 h-4 bg-[#FF7800] rotate-45 transform -translate-x-1/2"
+          ></div>
+          <div
+            class="absolute top-[50%] w-4 h-4 bg-[#52D1DC] rotate-45 transform -translate-x-1/2"
+          ></div>
+          <div
+            class="absolute top-[75%] w-4 h-4 bg-[#FF7800] rotate-45 transform -translate-x-1/2"
           ></div>
         </div>
 
-        <!-- Testimonials Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Axis Solutions -->
-          <div class="group">
-            <div class="relative p-8 bg-white/[0.02]">
-              <!-- Quote -->
-              <div class="mb-8">
-                <i class="ri-double-quotes-l text-4xl text-white/10"></i>
-                <p class="text-gray-300 mt-4 leading-relaxed">
-                  Working with Om Pandey has been a game-changer for our
-                  business. His professionalism, reliability, and deep
-                  understanding of development principles have made our project
-                  a resounding success.
-                </p>
-              </div>
-
-              <!-- Author -->
-              <div class="flex items-center gap-4">
-                <img
-                  src="images/axisclint.png"
-                  alt="Axis Solutions"
-                  class="w-12 h-12 object-cover"
-                />
-                <div>
-                  <h4 class="font-semibold">Axis Solutions Pvt Ltd</h4>
-                  <p class="text-sm text-gray-400">CEO & Co-Founder</p>
-                </div>
-                <div class="ml-auto">
-                  <i
-                    class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pioneer Software -->
-          <div class="group">
-            <div class="relative p-8 bg-white/[0.02]">
-              <!-- Quote -->
-              <div class="mb-8">
-                <i class="ri-double-quotes-l text-4xl text-white/10"></i>
-                <p class="text-gray-300 mt-4 leading-relaxed">
-                  Working alongside a developer like Om Pandey has been an
-                  absolute delight! His expertise in web development is truly
-                  remarkable, and his dedication to ensuring every detail is
-                  perfect is commendable.
-                </p>
-              </div>
-
-              <!-- Author -->
-              <div class="flex items-center gap-4">
-                <img
-                  src="images/piclint.png"
-                  alt="Pioneer Software"
-                  class="w-12 h-12 object-cover"
-                />
-                <div>
-                  <h4 class="font-semibold">Pioneer Software Solutions</h4>
-                  <p class="text-sm text-gray-400">CEO & Co-Founder</p>
-                </div>
-                <div class="ml-auto">
-                  <i
-                    class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- GMS Campus -->
-          <div class="group">
-            <div class="relative p-8 bg-white/[0.02]">
-              <!-- Quote -->
-              <div class="mb-8">
-                <i class="ri-double-quotes-l text-4xl text-white/10"></i>
-                <p class="text-gray-300 mt-4 leading-relaxed">
-                  Om Pandey is a developer extraordinaire! His passion for
-                  coding and his knack for turning ideas into reality make him a
-                  valuable asset to any project. Each time, he has proven
-                  himself to be a true expert in his field.
-                </p>
-              </div>
-
-              <!-- Author -->
-              <div class="flex items-center gap-4">
-                <img
-                  src="images/ganeshclint.png"
-                  alt="GMS Campus"
-                  class="w-12 h-12 object-cover"
-                />
-                <div>
-                  <h4 class="font-semibold">GMS Multiple Campus</h4>
-                  <p class="text-sm text-gray-400">CEO & Co-Founder</p>
-                </div>
-                <div class="ml-auto">
-                  <i
-                    class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sonal Copy -->
-          <div class="group">
-            <div class="relative p-8 bg-white/[0.02]">
-              <!-- Quote -->
-              <div class="mb-8">
-                <i class="ri-double-quotes-l text-4xl text-white/10"></i>
-                <p class="text-gray-300 mt-4 leading-relaxed">
-                  In the world of web development, finding someone as talented
-                  and reliable as Om Pandey is like striking gold. His
-                  commitment to delivering high-quality work, paired with his
-                  excellent communication skills, makes him a standout
-                  developer.
-                </p>
-              </div>
-
-              <!-- Author -->
-              <div class="flex items-center gap-4">
-                <img
-                  src="images/sonalclint.png"
-                  alt="Sonal Copy"
-                  class="w-12 h-12 object-cover"
-                />
-                <div>
-                  <h4 class="font-semibold">Sonal Copy Production</h4>
-                  <p class="text-sm text-gray-400">CEO & Co-Founder</p>
-                </div>
-                <div class="ml-auto">
-                  <i
-                    class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Decoration -->
-        <div class="mt-16 flex justify-center">
-          <div class="inline-block bg-white/[0.02] px-8 py-4">
-            <code class="text-sm font-mono">
-              <span class="text-pink-500">const</span>
-              <span class="text-gray-400">feedback</span>
-              <span class="text-gray-400">=</span>
-              <span class="text-gray-400">'</span>
-              <span class="text-green-500"
-                >Authentic feedback from authentic clients</span
+        <!-- Right Side -->
+        <div class="space-y-40 pt-40">
+          <!-- Sleep -->
+          <div class="group naruto-card p-8 transition-all">
+            <div class="flex items-center gap-6 relative z-10">
+              <div
+                class="w-16 h-16 bg-black/30 rounded-full border border-[#52D1DC]/20 flex items-center justify-center"
               >
-              <span class="text-gray-400">'</span>;
-            </code>
+                <img src="Progres/sleep.gif" alt="Sleep" class="w-10 h-10" />
+              </div>
+              <div>
+                <div class="text-sm text-[#52D1DC]">12:00 AM</div>
+                <h3 class="text-lg font-medium mt-1">Chakra Recovery</h3>
+                <p class="text-gray-400 text-sm mt-2">
+                  Restoring energy in dream realm 😴
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat -->
+          <div class="group naruto-card p-8 transition-all">
+            <div class="flex items-center gap-6 relative z-10">
+              <div
+                class="w-16 h-16 bg-black/30 rounded-full border border-[#52D1DC]/20 flex items-center justify-center"
+              >
+                <img
+                  src="Progres/repeet.gif"
+                  alt="Repeat"
+                  class="w-10 h-10"
+                />
+              </div>
+              <div>
+                <div class="text-sm text-[#52D1DC]">24/7</div>
+                <h3 class="text-lg font-medium mt-1">Shadow Clone Cycle</h3>
+                <p class="text-gray-400 text-sm mt-2">
+                  Because a ninja never gives up 🔄
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Testimonials Section -->
 
-      <!-- Contact Section -->
-    <section class="py-20 relative">
-  <div class="max-w-7xl mx-auto px-4">
-    <!-- Header -->
-    <div class="flex items-center justify-between mb-16">
-      <div class="flex items-center gap-6">
+      <!-- Progress Bar -->
+      <div class="mt-20">
+        <div class="max-w-md mx-auto">
+          <div
+            class="flex items-center justify-between mb-2 text-sm text-gray-400"
+          >
+            <span>Chakra Level</span>
+            <span>∞</span>
+          </div>
+          <div class="h-1 bg-black/30 rounded-full overflow-hidden">
+            <div
+              class="w-3/4 h-full bg-gradient-to-r from-[#FF7800] to-[#52D1DC] animate-pulse"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Code -->
+      <div class="text-center mt-16">
+        <div class="naruto-card inline-block px-8 py-4 relative z-10">
+          <code class="text-sm font-mono">
+            <span class="text-[#FF7800]">function</span>
+            <span class="text-gray-400">ninjaWay</span>
+            <span class="text-gray-400">() {</span>
+            <span class="text-[#52D1DC]">return</span>
+            <span class="text-gray-400">'</span>
+            <span class="text-green-500">determination + practice</span>
+            <span class="text-gray-400">'}</span>
+          </code>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Daily Routine / Ninja Way Section End -->
+
+
+
+  <!-- Music Player / Ninja Scrolls Section -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-16 animated-border">
+        <i class="ri-headphone-line text-xl text-gray-100"></i>
         <div>
-          <h2>
-            <span class="text-green-500 text-sm font-mono">const</span>
-            <span class="text-blue-500 text-sm font-mono">contact =</span>
-            <span class="text-pink-500 text-sm font-mono">"Let's Connect"</span>
-          </h2>
-          <div class="border border-b-gray-800 border-transparent"></div>
+          <h2 class="text-xl font-bold text-gray-100">CHAKRA TUNES</h2>
         </div>
       </div>
-      <div class="border border-b-gray-800 border-transparent"></div>
-      <div class="hidden md:block h-px w-32 bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
-    </div>
 
-    <!-- Contact Information -->
-    <div class="max-w-3xl mx-auto">
-      <!-- Status Badges -->
-      <div class="flex justify-center gap-2 text-gray-400 text-sm mb-12">
-        <span class="flex items-center gap-2">
-          <i class="ri-checkbox-circle-line text-green-500"></i>
-          Available for Projects
-        </span>
-        <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
-        <span class="flex items-center gap-2">
-          <i class="ri-time-line text-blue-500"></i>
-          Quick Response
-        </span>
-        <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
-        <span class="flex items-center gap-2">
-          <i class="ri-global-line text-purple-500"></i>
-          <a href="app.json" target="_blank" >Remote Work</a>
-        </span>
+      <div class="naruto-card">
+        <div class="grid md:grid-cols-[350px,1fr] divide-x divide-white/5">
+          <!-- Playlist Side -->
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="font-bold text-lg text-[#FF7800]">Ninja Beats</h3>
+              <span class="text-sm">
+                <span class="text-[#52D1DC]" id="song-count">16</span> 
+                <span class="text-yellow-500">scrolls</span>
+              </span>
+            </div>
+
+            <div class="space-y-1 max-h-[500px] overflow-y-auto pr-4" id="playlist">
+              <!-- Songs will be added here by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Player Side -->
+          <div class="p-6">
+            <div class="flex flex-col h-full">
+              <!-- Current Song Display -->
+              <div class="flex gap-6 items-start mb-8">
+                <div class="relative w-[200px] h-[200px] flex-shrink-0 bg-black/30 border border-white/10">
+                  <div id="default-icon" class="absolute inset-0 flex items-center justify-center">
+                    <i class="ri-disc-line text-5xl text-white/20"></i>
+                  </div>
+                  <img id="current-song-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300">
+                </div>
+                <div class="flex-1 pt-4">
+                  <h3 id="current-song-title" class="text-2xl font-bold mb-2">Select a Scroll</h3>
+                  <p id="current-song-artist" class="text-gray-400 mb-4">Choose from your collection</p>
+                  
+                  <!-- Ninja-themed Volume Bar (No Icons) -->
+                  <div class="mt-8">
+                    <div class="relative h-2 bg-black/50 rounded-full overflow-hidden border border-[#FF7800]/30">
+                      <input type="range" id="volume-slider" class="absolute inset-0 w-full opacity-0 cursor-pointer" min="0" max="100" value="50">
+                      <div class="h-full bg-gradient-to-r from-[#FF7800] to-[#52D1DC] rounded-full relative" id="volume-level" style="width: 50%">
+                        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full opacity-70 shadow-md"></div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-400 mt-1">
+                      <span>Chakra Level</span>
+                      <span>Max Power</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="mb-6">
+                <div class="relative h-1 bg-black/30 rounded-full group cursor-pointer overflow-hidden" id="progress-container">
+                  <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div class="h-full bg-[#FF7800] rounded-full relative" id="progress-bar" style="width: 0%">
+                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100"></div>
+                  </div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-400 mt-2">
+                  <span id="current-time">0:00</span>
+                  <span id="duration">0:00</span>
+                </div>
+              </div>
+
+              <!-- Ninja-Themed Controls -->
+              <div class="flex flex-col gap-6">
+                <!-- Main Controls -->
+                <div class="flex items-center justify-center gap-8">
+                  <!-- Ninja Shuffle Button -->
+                  <div id="shuffle-btn" class="ninja-control w-10 h-10 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <div class="w-8 h-8 bg-black/40 border border-[#FF7800]/40 rounded-full flex items-center justify-center transform rotate-45 overflow-hidden">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L6 8M12 2L18 8M12 2V16M6 16L9 13M18 16L15 13" stroke="#FF7800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <!-- Ninja Previous Button -->
+                  <div id="prev-btn" class="ninja-control w-12 h-12 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <div class="ninja-kunai transform -rotate-90 ">
+                      <div class="w-2 h-10 bg-gradient-to-b from-gray-400 to-gray-600"></div>
+                      <div class="w-6 h-4 bg-gray-700 -mt-1 rounded-sm relative">
+                        <div class="absolute top-1 left-1 w-1 h-1 bg-[#52D1DC] rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Ninja Play/Pause Button -->
+                  <div id="play-btn" class="ninja-control w-16 h-16 relative cursor-pointer hover:scale-105 transition-transform">
+                    <div class="absolute inset-0 bg-[#FF7800] rounded-full shadow-lg shadow-[#FF7800]/20 flex items-center justify-center overflow-hidden">
+                      <div class="w-14 h-14 rounded-full border-2 border-black/10 flex items-center justify-center">
+                        <i class="ri-play-fill text-2xl"></i>
+                      </div>
+                      <div class="absolute inset-0 bg-black/10 opacity-0 hover:opacity-10 transition-opacity"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Ninja Next Button -->
+                  <div id="next-btn" class="ninja-control w-12 h-12 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <div class="ninja-kunai transform rotate-90">
+                      <div class="w-2 h-10 bg-gradient-to-b from-gray-400 to-gray-600"></div>
+                      <div class="w-6 h-4 bg-gray-700 -mt-1 rounded-sm relative">
+                        <div class="absolute top-1 right-1 w-1 h-1 bg-[#52D1DC] rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Ninja Repeat Button -->
+                  <div id="repeat-btn" class="ninja-control w-10 h-10 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                    <div class="w-8 h-8 bg-black/40 border border-[#52D1DC]/40 rounded-full flex items-center justify-center overflow-hidden">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 2L21 6M21 6L17 10M21 6H7C4.79086 6 3 7.79086 3 10V11M7 22L3 18M3 18L7 14M3 18H17C19.2091 18 21 16.2091 21 14V13" stroke="#52D1DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Code Snippets -->
+              <div class="mt-8 space-y-3 font-mono text-sm text-gray-500/60">
+                <div class="p-4 bg-black/30 border border-white/5">
+                  <span class="text-[#FF7800]/60">const</span> 
+                  <span class="text-[#52D1DC]/60">ninjaMusic</span> 
+                  <span class="text-gray-400/60">=</span> 
+                  <span class="text-green-500/60">"Code + Music = Perfect Harmony"</span>;
+                </div>
+              
+                <div class="p-4 bg-black/30 border border-white/5">
+                  <span class="text-[#FF7800]/60">function</span> 
+                  <span class="text-[#52D1DC]/60">createChakraFlow</span>() {
+                  <span class="text-gray-400/60">return</span> 
+                  <span class="text-green-500/60">"🎵 + 💻 = 🎮"</span>;
+                </div>
+              
+                <div class="p-4 bg-black/30 border border-white/5">
+                  <span class="text-[#FF7800]/60">while</span>(<span class="text-[#52D1DC]/60">training</span>) {
+                    <span class="text-gray-400/60">playMusic</span>.<span class="text-green-500/60">volume</span> = <span class="text-yellow-500/60">∞</span>;
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+  <!-- Music Player / Ninja Scrolls Section End -->
+  
 
-      <!-- Contact Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Phone -->
-        <a href="tel:+977-9863588895" class="bg-white/[0.02] p-6 group hover:border-blue-500 border border-transparent transition-all hover:-translate-y-1">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 flex items-center justify-center bg-white/5">
-              <i class="ri-phone-line text-2xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Phone</p>
-              <p class="text-base mt-1 group-hover:text-blue-500 transition-colors">
-                +977-9863588895
-              </p>
-            </div>
-          </div>
-        </a>
 
-        <!-- Email -->
-        <a href="mailto:admin@omkumarpandey.com.np" class="bg-white/[0.02] p-6 group hover:border-red-500 border border-transparent transition-all hover:-translate-y-1">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 flex items-center justify-center bg-white/5">
-              <i class="ri-mail-line text-2xl text-gray-400 group-hover:text-red-500 transition-colors"></i>
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Email</p>
-              <p class="text-base mt-1 group-hover:text-red-500 transition-colors">
-                admin@omkumarpandey.com.np
-              </p>
-            </div>
-          </div>
-        </a>
-
-        <!-- Location -->
-        <a 
-        href="https://www.google.com/maps/place/Kalanki,+Kathmandu+44600/@27.6931714,85.2785685,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb187a97f390b1:0xec3f47092df0d4ca!8m2!3d27.6931052!4d85.2806539!16s%2Fg%2F1tf41c8t?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" 
-        target="_blank" 
-        class="cursor-pointer"
-      >
-        <div class="bg-white/[0.02] p-6 group hover:border-green-500 border border-transparent transition-all hover:-translate-y-1 sm:col-span-2">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 flex items-center justify-center bg-white/5">
-              <i class="ri-map-pin-line text-2xl text-gray-400 group-hover:text-green-500 transition-colors"></i>
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Location</p>
-              <p 
-                class="text-base mt-1 group-hover:text-green-500 transition-colors whitespace-nowrap"
+  <!-- Testimonials Section / Village Recommendations -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-16">
+        <div class="flex items-center gap-6">
+          <div>
+            <h2>
+              <span class="text-green-500 text-sm font-mono">const</span>
+              <span class="text-[#52D1DC] text-sm font-mono">feedback =</span>
+              <span class="text-[#FF7800] text-sm font-mono"
+                >"Village Recommendations"</span
               >
-                Link Marg, Kalanki, Kathmandu 44600
+            </h2>
+            <div class="border border-b-gray-800 border-transparent"></div>
+          </div>
+        </div>
+        <div class="border border-b-gray-800 border-transparent"></div>
+        <div
+          class="hidden md:block h-px w-32 bg-gradient-to-r from-transparent via-gray-500 to-transparent"
+        ></div>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Axis Solutions -->
+        <div class="group">
+          <div class="relative naruto-card p-8">
+            <!-- Quote -->
+            <div class="mb-8 relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-[#FF7800]/20 mb-4">
+                <path fill="currentColor" d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" />
+              </svg>
+              <p class="text-gray-300 leading-relaxed">
+                Working with Ninja Pandey has been a game-changer for our
+                village. His mastery of development jutsu, reliability, and deep
+                understanding of code principles have made our mission
+                a resounding success.
               </p>
+            </div>
+
+            <!-- Author -->
+            <div class="flex items-center gap-4">
+              <img
+                src="images/axisclint.png"
+                alt="Axis Solutions"
+                class="w-12 h-12 object-cover rounded-full border border-[#FF7800]/20"
+              />
+              <div>
+                <h4 class="font-semibold">Axis Solutions Village</h4>
+                <p class="text-sm text-gray-400">Hokage & Co-Founder</p>
+              </div>
+              <div class="ml-auto">
+                <i
+                  class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
+                ></i>
+              </div>
             </div>
           </div>
         </div>
-      </a>
-      
+
+        <!-- Pioneer Software -->
+        <div class="group">
+          <div class="relative naruto-card p-8">
+            <!-- Quote -->
+            <div class="mb-8 relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-[#FF7800]/20 mb-4">
+                <path fill="currentColor" d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" />
+              </svg>
+              <p class="text-gray-300 leading-relaxed">
+                Training alongside a ninja like Pandey has been an
+                absolute honor! His expertise in web jutsu is truly
+                remarkable, and his dedication to perfecting every detail is 
+                worthy of a true shinobi.
+              </p>
+            </div>
+
+            <!-- Author -->
+            <div class="flex items-center gap-4">
+              <img
+                src="images/piclint.png"
+                alt="Pioneer Software"
+                class="w-12 h-12 object-cover rounded-full border border-[#FF7800]/20"
+              />
+              <div>
+                <h4 class="font-semibold">Pioneer Ninja Academy</h4>
+                <p class="text-sm text-gray-400">Jonin & Co-Founder</p>
+              </div>
+              <div class="ml-auto">
+                <i
+                  class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GMS Campus -->
+        <div class="group">
+          <div class="relative naruto-card p-8">
+            <!-- Quote -->
+            <div class="mb-8 relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-[#FF7800]/20 mb-4">
+                <path fill="currentColor" d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" />
+              </svg>
+              <p class="text-gray-300 leading-relaxed">
+                Pandey is a ninja extraordinaire! His passion for
+                coding jutsu and his ability to transform ideas into reality make him a
+                valuable asset to any squad. Each time, he has proven
+                himself to be a true master of his craft.
+              </p>
+            </div>
+
+            <!-- Author -->
+            <div class="flex items-center gap-4">
+              <img
+                src="images/ganeshclint.png"
+                alt="GMS Campus"
+                class="w-12 h-12 object-cover rounded-full border border-[#FF7800]/20"
+              />
+              <div>
+                <h4 class="font-semibold">GMS Ninja Academy</h4>
+                <p class="text-sm text-gray-400">Academy Sensei</p>
+              </div>
+              <div class="ml-auto">
+                <i
+                  class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sonal Copy -->
+        <div class="group">
+          <div class="relative naruto-card p-8">
+            <!-- Quote -->
+            <div class="mb-8 relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-[#FF7800]/20 mb-4">
+                <path fill="currentColor" d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z" />
+              </svg>
+              <p class="text-gray-300 leading-relaxed">
+                In the world of web development, finding a shinobi as talented
+                and reliable as Pandey is like finding a legendary scroll. His
+                commitment to excellence, paired with his excellent communication skills, 
+                makes him a standout among ninjas.
+              </p>
+            </div>
+
+            <!-- Author -->
+            <div class="flex items-center gap-4">
+              <img
+                src="images/sonalclint.png"
+                alt="Sonal Copy"
+                class="w-12 h-12 object-cover rounded-full border border-[#FF7800]/20"
+              />
+              <div>
+                <h4 class="font-semibold">Sonal Copy Production</h4>
+                <p class="text-sm text-gray-400">Village Elder</p>
+              </div>
+              <div class="ml-auto">
+                <i
+                  class="ri-arrow-right-line text-white/20 group-hover:text-white/60 transition-colors"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Social Links -->
-      <div class="mt-8 bg-white/[0.02] p-8 text-center">
-        <p class="mb-6">
-            <span class="text-pink-500/70">const</span> 
-            <span class="text-indigo-500/70">socialMedia</span> 
-            <span class="text-gray-400/70">=</span> 
-            <span class="text-green-500/70">"Connect With Me"</span>
-            <span class="text-gray-400/70">;</span>
-        </p>
-        <div class="flex justify-center gap-6">
-            <a href="https://github.com/ompandey07" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
-                <i class="ri-github-line text-2xl text-gray-400/70 group-hover:text-[#333] transition-colors"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/iamompandey/" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
-                <i class="ri-linkedin-line text-2xl text-gray-400/70 group-hover:text-[#0077b5] transition-colors"></i>
-            </a>
-            <a href="https://x.com/iam_ompandey" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
-                <i class="ri-twitter-line text-2xl text-gray-400/70 group-hover:text-[#1da1f2] transition-colors"></i>
-            </a>
-            <a href="https://www.instagram.com/_iam.ompandey/" target="_blank" class="w-12 h-12 bg-white/[0.02] flex items-center justify-center group hover:-translate-y-1 transition-transform">
-                <i class="ri-instagram-line text-2xl text-gray-400/70 group-hover:text-[#e4405f] transition-colors"></i>
-            </a>
+      <!-- Bottom Decoration -->
+      <div class="mt-16 flex justify-center">
+        <div class="naruto-card inline-block px-8 py-4 relative z-10">
+          <code class="text-sm font-mono">
+            <span class="text-[#FF7800]">const</span>
+            <span class="text-gray-400">alliances</span>
+            <span class="text-gray-400">=</span>
+            <span class="text-gray-400">'</span>
+            <span class="text-green-500"
+              >Forged in battle, proven in code</span
+            >
+            <span class="text-gray-400">'</span>;
+          </code>
         </div>
+      </div>
     </div>
-    </div>
-  </div>
-    </section>
+  </section>
+  <!-- Testimonials Section End -->
 
+  <!-- Contact Section / Ninja Communications -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-16 animated-border">
+        <div class="flex items-center gap-6">
+          <div>
+            <h2>
+              <span class="text-green-500 text-sm font-mono">const</span>
+              <span class="text-[#52D1DC] text-sm font-mono">summon =</span>
+              <span class="text-[#FF7800] text-sm font-mono">"Send a Messenger Bird"</span>
+            </h2>
+            <div class="border border-b-gray-800 border-transparent"></div>
+          </div>
+        </div>
+        <div class="border border-b-gray-800 border-transparent"></div>
+        <div class="hidden md:block h-px w-32 bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="max-w-3xl mx-auto">
+        <!-- Status Badges -->
+        <div class="flex justify-center gap-2 text-gray-400 text-sm mb-12">
+          <span class="flex items-center gap-2">
+            <i class="ri-checkbox-circle-line text-green-500"></i>
+            Available for Missions
+          </span>
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
+          <span class="flex items-center gap-2">
+            <i class="ri-time-line text-[#52D1DC]"></i>
+              Swift Response
+            </span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2"></span>
+            <span class="flex items-center gap-2">
+              <i class="ri-global-line text-[#FF7800]"></i>
+              <a href="app.json" target="_blank" >Shadow Clone (Remote)</a>
+            </span>
+          </div>
+
+          <!-- Contact Grid - CENTERED LAYOUT -->
+          <div class="grid grid-cols-1 gap-6">
+            <!-- Phone -->
+            <a href="tel:+977-9863588895" class="contact-scroll p-6 group hover:-translate-y-2 transition-all">
+              <div class="contact-content flex flex-col items-center text-center gap-4">
+                <div class="w-16 h-16 flex items-center justify-center bg-black/50 rounded-full border border-[#52D1DC]/30">
+                  <i class="ri-phone-line text-3xl text-[#52D1DC]"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-400">MESSENGER BIRD</p>
+                  <p class="text-xl mt-1 text-[#52D1DC]">
+                    +977-9863588895
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:admin@omkumarpandey.com.np" class="contact-scroll p-6 group hover:-translate-y-2 transition-all">
+              <div class="contact-content flex flex-col items-center text-center gap-4">
+                <div class="w-16 h-16 flex items-center justify-center bg-black/50 rounded-full border border-[#FF7800]/30">
+                  <i class="ri-mail-line text-3xl text-[#FF7800]"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-400">SCROLL MESSAGE</p>
+                  <p class="text-xl mt-1 text-[#FF7800]">
+                    admin@omkumarpandey.com.np
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <a 
+              href="https://www.google.com/maps/place/Kalanki,+Kathmandu+44600/@27.6931714,85.2785685,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb187a97f390b1:0xec3f47092df0d4ca!8m2!3d27.6931052!4d85.2806539!16s%2Fg%2F1tf41c8t?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" 
+              target="_blank" 
+              class="contact-scroll p-6 group hover:-translate-y-2 transition-all"
+            >
+              <div class="contact-content flex flex-col items-center text-center gap-4">
+                <div class="w-16 h-16 flex items-center justify-center bg-black/50 rounded-full border border-green-500/30">
+                  <i class="ri-map-pin-line text-3xl text-green-500"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-400">HIDDEN VILLAGE LOCATION</p>
+                  <p class="text-xl mt-1 text-green-500">
+                    Link Marg, Kalanki, Kathmandu 44600
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Decorative Village Symbol -->
+          <div class="mt-16 flex justify-center">
+            <div class="w-16 h-16 relative">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF7800" stroke-width="1" />
+                <path d="M50 5 A45 45 0 0 1 95 50" stroke="#FF7800" stroke-width="1" fill="none" />
+                <path d="M50 5 A45 45 0 0 0 5 50" stroke="#FF7800" stroke-width="1" fill="none" />
+                <path d="M50 95 A45 45 0 0 1 5 50" stroke="#52D1DC" stroke-width="1" fill="none" />
+                <path d="M50 95 A45 45 0 0 0 95 50" stroke="#52D1DC" stroke-width="1" fill="none" />
+                <circle cx="50" cy="50" r="25" fill="none" stroke="#FF7800" stroke-width="1" />
+                <circle cx="50" cy="50" r="15" fill="none" stroke="#52D1DC" stroke-width="1" />
+                <text x="50" y="55" text-anchor="middle" fill="#FF7800" font-size="16">忍</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-8 naruto-card p-8 text-center">
+            <p class="mb-6">
+                <span class="text-[#FF7800]/70">const</span> 
+                <span class="text-[#52D1DC]/70">allianceNetwork</span> 
+                <span class="text-gray-400/70">=</span> 
+                <span class="text-green-500/70">"Form an Alliance"</span>
+                <span class="text-gray-400/70">;</span>
+            </p>
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/ompandey07" target="_blank" class="contact-scroll w-12 h-12 flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <div class="contact-content w-full h-full flex items-center justify-center">
+                  <i class="ri-github-line text-2xl text-gray-400/70 group-hover:text-[#FF7800] transition-colors"></i>
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/iamompandey/" target="_blank" class="contact-scroll w-12 h-12 flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <div class="contact-content w-full h-full flex items-center justify-center">
+                  <i class="ri-linkedin-line text-2xl text-gray-400/70 group-hover:text-[#52D1DC] transition-colors"></i>
+                </div>
+            </a>
+            <a href="https://x.com/iam_ompandey" target="_blank" class="contact-scroll w-12 h-12 flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <div class="contact-content w-full h-full flex items-center justify-center">
+                  <i class="ri-twitter-line text-2xl text-gray-400/70 group-hover:text-[#FF7800] transition-colors"></i>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/_iam.ompandey/" target="_blank" class="contact-scroll w-12 h-12 flex items-center justify-center group hover:-translate-y-1 transition-transform">
+                <div class="contact-content w-full h-full flex items-center justify-center">
+                  <i class="ri-instagram-line text-2xl text-gray-400/70 group-hover:text-[#52D1DC] transition-colors"></i>
+                </div>
+            </a>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section End -->
 
 
     <!-- Footer -->
@@ -1762,26 +2315,45 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center">
           <code class="text-sm font-mono">
-            <span class="text-pink-500">const</span>
-            <span class="text-gray-400">copyright</span>
+            <span class="text-[#FF7800]">const</span>
+            <span class="text-gray-400">ninjaScroll</span>
             <span class="text-gray-400">=</span>
-            <span class="text-gray-400">'Copyright © Om Pandey '</span>
-            <span class="text-indigo-500">+</span>
+            <span class="text-gray-400">'Ninja Scroll © Om Pandey '</span>
+            <span class="text-[#52D1DC]">+</span>
             <span class="text-gray-400" id="current-year"></span>
-            <span class="text-gray-400">All Rights Reserved.</span>;
+            <span class="text-gray-400">All Rights Protected by Jutsu.</span>;
           </code>
         </div>
       </div>
     </footer>
     <!-- Footer -->
 
-    
+    <!-- JavaScript for Adding Extra Elements -->
+    <script>
+      // Add chakra particles dynamically
+      document.addEventListener('DOMContentLoaded', function() {
+        const chakraFlow = document.querySelector('.chakra-flow');
+        
+        // Create chakra particles
+        for (let i = 0; i < 30; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('chakra-particle');
+          
+          // Random position
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.animationDelay = `${Math.random() * 10}s`;
+          
+          chakraFlow.appendChild(particle);
+        }
 
-  
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+      });
+    </script>
 
     <script src="Assests/loder.js"></script>
     <script src="Assests/app.js"></script>
     <!-- Google AdSense -->
-    <script async  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1859761208513074" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1859761208513074" crossorigin="anonymous"></script>
   </body>
 </html>

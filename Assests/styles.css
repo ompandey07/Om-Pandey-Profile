@@ -127,24 +127,64 @@
     pointer-events: none;
   }
 
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+  /* Ninja-Themed Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  ::-webkit-scrollbar-track {
-    background: var(--color-darker);
-  }
+::-webkit-scrollbar-track {
+  background: var(--naruto-darker);
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      135deg,
-      var(--color-primary),
-      var(--color-secondary)
-    );
-    border-radius: 4px;
-  }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg,
+    var(--naruto-orange),
+    var(--chakra-blue)
+  );
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
 
+::-webkit-scrollbar-thumb::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath d='M4 0 L7 4 L4 8 L1 4 Z' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    135deg,
+    var(--chakra-blue),
+    var(--naruto-orange)
+  );
+}
+
+/* Horizontal scrollbar */
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+
+/* Small additional accent line like a kunai edge */
+::-webkit-scrollbar-thumb::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
   /* Selection Color */
   ::selection {
     background: var(--color-primary);
